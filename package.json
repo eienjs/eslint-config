@@ -1,0 +1,65 @@
+{
+  "name": "@eienjs/eslint-config",
+  "type": "module",
+  "version": "0.0.0",
+  "packageManager": "pnpm@10.13.1",
+  "description": "EienJS ESLint Config",
+  "author": "Fernando Isidro <luffynando@gmail.com> (https://github.com/luffynando/)",
+  "license": "MIT",
+  "homepage": "https://github.com/eienjs/eslint-config",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eienjs/eslint-config.git"
+  },
+  "bugs": {
+    "url": "https://github.com/eienjs/eslint-config/issues"
+  },
+  "keywords": [
+    "eslint-config"
+  ],
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": "./bin/index.js",
+  "files": [
+    "bin",
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsdown --clean --dts",
+    "stub": "tsdown",
+    "dev": "npx @eslint/config-inspector --config eslint.config.ts",
+    "build:inspector": "pnpm build && npx @eslint/config-inspector build",
+    "watch": "tsdown --watch",
+    "lint": "eslint . --fix",
+    "lint:check": "eslint .",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "eslint": "^9.32.0"
+  },
+  "dependencies": {
+    "@antfu/install-pkg": "catalog:prod",
+    "@clack/prompts": "catalog:prod",
+    "@eslint-community/eslint-plugin-eslint-comments": "catalog:prod",
+    "@stylistic/eslint-plugin": "catalog:prod",
+    "@typescript-eslint/eslint-plugin": "catalog:prod",
+    "@typescript-eslint/parser": "catalog:prod",
+    "@vitest/eslint-plugin": "catalog:prod"
+  },
+  "devDependencies": {
+    "@eslint/config-inspector": "catalog:dev",
+    "@types/node": "catalog:dev",
+    "eslint": "catalog:peer",
+    "tsdown": "catalog:dev",
+    "tsx": "catalog:dev",
+    "typescript": "catalog:dev",
+    "vitest": "catalog:dev"
+  },
+  "resolutions": {
+    "eslint": "catalog:peer"
+  }
+}
