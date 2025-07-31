@@ -1,0 +1,298 @@
+import { type Linter } from "eslint";
+import { type RuleOptions, type ConfigNames } from "./typegen";
+import { type Options as VueBlocksOptions } from 'eslint-processor-vue-blocks';
+import { type VendoredPrettierOptions } from "./vendored/prettier_types";
+import { type ParserOptions } from "@typescript-eslint/parser";
+import { type StylisticCustomizeOptions } from "@stylistic/eslint-plugin";
+import { type FlatGitignoreOptions } from "eslint-config-flat-gitignore";
+
+export type Awaitable<T> = T | Promise<T>;
+
+export type Rules = Record<string, Linter.RuleEntry<any> | undefined> & RuleOptions;
+
+export type { ConfigNames };
+
+/**
+ * An updated version of ESLint's `Linter.Config`, which provides autocompletion
+ * for `rules` and relaxes type limitations for `plugins` and `rules`, because
+ * many plugins still lack proper type definitions.
+ */
+export type TypedFlatConfigItem = Omit<Linter.Config, 'plugins' | 'rules'> & {
+  /**
+   * An object containing a name-value mapping of plugin names to plugin objects.
+   * When `files` is specified, these plugins are only available to the matching files.
+   *
+   * @see [Using plugins in your configuration](https://eslint.org/docs/latest/user-guide/configuring/configuration-files-new#using-plugins-in-your-configuration)
+   */
+  plugins?: Record<string, any>
+
+  /**
+   * An object containing the configured rules. When `files` or `ignores` are
+   * specified, these rule configurations are only available to the matching files.
+   */
+  rules?: Rules
+}
+
+export interface OptionsFiles {
+  /**
+   * Override the `files` option to provide custom globs.
+   */
+  files?: string[]
+}
+
+export interface OptionsVue extends OptionsOverrides {
+  /**
+   * Create virtual files for Vue SFC blocks to enable linting.
+   *
+   * @see https://github.com/antfu/eslint-processor-vue-blocks
+   * @default true
+   */
+  sfcBlocks?: boolean | VueBlocksOptions
+}
+
+export type OptionsTypescript
+  = (OptionsTypeScriptWithTypes & OptionsOverrides)
+    | (OptionsTypeScriptParserOptions & OptionsOverrides);
+
+export interface OptionsFormatters {
+  /**
+   * Enable formatting support for CSS, Less, Sass, and SCSS.
+   *
+   * Currently only support Prettier.
+   */
+  css?: 'prettier' | boolean
+
+  /**
+   * Enable formatting support for HTML.
+   *
+   * Currently only support Prettier.
+   */
+  html?: 'prettier' | boolean
+
+  /**
+   * Enable formatting support for XML.
+   *
+   * Currently only support Prettier.
+   */
+  xml?: 'prettier' | boolean
+
+  /**
+   * Enable formatting support for SVG.
+   *
+   * Currently only support Prettier.
+   */
+  svg?: 'prettier' | boolean
+
+  /**
+   * Enable formatting support for Markdown.
+   *
+   * Support both Prettier and dprint.
+   *
+   * When set to `true`, it will use Prettier.
+   */
+  markdown?: 'prettier' | boolean
+
+  /**
+   * Custom options for Prettier.
+   *
+   * By default it's controlled by our own config.
+   */
+  prettierOptions?: VendoredPrettierOptions
+
+  /**
+   * Enable formatting support for Astro.
+   *
+   * Currently only support Prettier.
+   */
+  astro?: 'prettier' | boolean
+}
+
+export interface OptionsComponentExts {
+  /**
+   * Additional extensions for components.
+   *
+   * @example ['vue']
+   * @default []
+   */
+  componentExts?: string[]
+}
+
+export interface OptionsTypeScriptParserOptions {
+  /**
+   * Additional parser options for TypeScript.
+   */
+  parserOptions?: Partial<ParserOptions>
+
+  /**
+   * Glob patterns for files that should be type aware.
+   * @default ['**\/*.{ts,tsx}']
+   */
+  filesTypeAware?: string[]
+
+  /**
+   * Glob patterns for files that should not be type aware.
+   * @default ['**\/*.md\/**', '**\/*.astro/*.ts']
+   */
+  ignoresTypeAware?: string[]
+}
+
+export interface OptionsTypeScriptWithTypes {
+  /**
+   * When this options is provided, type aware rules will be enabled.
+   * @see https://typescript-eslint.io/linting/typed-linting/
+   */
+  tsconfigPath?: string
+
+  /**
+   * Override type aware rules.
+   */
+  overridesTypeAware?: TypedFlatConfigItem['rules']
+}
+
+export interface OptionsHasTypeScript {
+  typescript?: boolean
+}
+
+export interface OptionsStylistic {
+  stylistic?: boolean | StylisticConfig
+}
+
+export interface StylisticConfig
+  extends Pick<StylisticCustomizeOptions, 'indent' | 'quotes' | 'semi'> {
+}
+
+export interface OptionsOverrides {
+  overrides?: TypedFlatConfigItem['rules']
+}
+
+export interface OptionsIsInEditor {
+  isInEditor?: boolean
+}
+
+export interface OptionsConfig extends OptionsComponentExts {
+  /**
+   * Enable gitignore support.
+   *
+   * Passing an object to configure the options.
+   *
+   * @see https://github.com/antfu/eslint-config-flat-gitignore
+   * @default true
+   */
+  gitignore?: boolean | FlatGitignoreOptions
+
+  /**
+   * Core rules. Can't be disabled.
+   */
+  javascript?: OptionsOverrides
+
+  /**
+   * Enable TypeScript support.
+   *
+   * Passing an object to enable TypeScript Language Server support.
+   *
+   * @default auto-detect based on the dependencies
+   */
+  typescript?: boolean | OptionsTypescript
+
+  /**
+   * Options for eslint-plugin-import-lite.
+   *
+   * @default true
+   */
+  imports?: boolean | OptionsOverrides
+
+  /**
+   * Enable test support.
+   *
+   * @default true
+   */
+  test?: boolean | OptionsOverrides
+
+  /**
+   * Enable Vue support.
+   *
+   * @default auto-detect based on the dependencies
+   */
+  vue?: boolean | OptionsVue
+
+  /**
+   * Enable JSONC support.
+   *
+   * @default true
+   */
+  jsonc?: boolean | OptionsOverrides
+
+  /**
+   * Enable YAML support.
+   *
+   * @default true
+   */
+  yaml?: boolean | OptionsOverrides
+
+  /**
+   * Enable TOML support.
+   *
+   * @default true
+   */
+  toml?: boolean | OptionsOverrides
+
+  /**
+   * Enable ASTRO support.
+   *
+   * Requires installing:
+   * - `eslint-plugin-astro`
+   *
+   * Requires installing for formatting .astro:
+   * - `prettier-plugin-astro`
+   *
+   * @default false
+   */
+  astro?: boolean | OptionsOverrides
+
+  /**
+   * Enable linting for **code snippets** in Markdown.
+   *
+   * For formatting Markdown content, enable also `formatters.markdown`.
+   *
+   * @default true
+   */
+  markdown?: boolean | OptionsOverrides
+
+  /**
+   * Enable stylistic rules.
+   *
+   * @see https://eslint.style/
+   * @default true
+   */
+  stylistic?: boolean | (StylisticConfig & OptionsOverrides)
+
+  /**
+   * Enable pnpm (workspace/catalogs) support.
+   *
+   * Currently it's disabled by default, as it's still experimental.
+   * In the future it will be smartly enabled based on the project usage.
+   *
+   * @see https://github.com/antfu/pnpm-workspace-utils
+   * @experimental
+   * @default false
+   */
+  pnpm?: boolean
+
+  /**
+   * Use external formatters to format files.
+   *
+   * Requires installing:
+   * - `eslint-plugin-format`
+   *
+   * When set to `true`, it will enable all formatters.
+   *
+   * @default false
+   */
+  formatters?: boolean | OptionsFormatters
+
+  /**
+   * Control to disable some rules in editors.
+   * @default auto-detect based on the process.env
+   */
+  isInEditor?: boolean
+}
