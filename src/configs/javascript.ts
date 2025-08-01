@@ -1,6 +1,6 @@
-import globals from "globals";
-import { OptionsIsInEditor, OptionsOverrides, TypedFlatConfigItem } from "../types"
-import { pluginUnusedImports } from "../plugins";
+import type { OptionsIsInEditor, OptionsOverrides, TypedFlatConfigItem } from '../types';
+import globals from 'globals';
+import { pluginAntfu, pluginUnusedImports } from '../plugins';
 
 export async function javascript(
   options: OptionsIsInEditor & OptionsOverrides = {},
@@ -8,7 +8,7 @@ export async function javascript(
   const {
     isInEditor = false,
     overrides = {},
-  } = options
+  } = options;
 
   return [
     {
@@ -33,13 +33,17 @@ export async function javascript(
       },
       name: 'eienjs/javascript/setup',
     },
-     {
+    {
       name: 'eienjs/javascript/rules',
       plugins: {
+        'antfu': pluginAntfu,
         'unused-imports': pluginUnusedImports,
       },
       rules: {
         'accessor-pairs': ['error', { enforceForClassMembers: true, setWithoutGet: true }],
+
+        'antfu/no-top-level-await': 'error',
+
         'array-callback-return': ['error', { allowImplicit: true, checkForEach: true }],
         'block-scoped-var': 'error',
         'constructor-super': 'error',
@@ -56,7 +60,7 @@ export async function javascript(
         'no-class-assign': 'error',
         'no-compare-neg-zero': 'error',
         'no-cond-assign': ['error', 'always'],
-        'no-console': ['error', { allow: ['warn', 'error',  'info', 'table'] }],
+        'no-console': ['error', { allow: ['warn', 'error', 'info', 'table'] }],
         'no-constant-binary-expression': 'error',
         'no-const-assign': 'error',
         'no-control-regex': 'error',
@@ -241,6 +245,7 @@ export async function javascript(
         'prefer-template': 'error',
         'symbol-description': 'error',
         'unicode-bom': ['error', 'never'],
+
         'unused-imports/no-unused-imports': isInEditor ? 'warn' : 'error',
         'unused-imports/no-unused-vars': [
           'error',
@@ -252,12 +257,14 @@ export async function javascript(
             varsIgnorePattern: '^_',
           },
         ],
+
         'use-isnan': ['error', { enforceForIndexOf: true, enforceForSwitchCase: true }],
         'valid-typeof': ['error', { requireStringLiterals: true }],
         'vars-on-top': 'error',
         'yoda': ['error', 'never'],
+
         ...overrides,
-      }
-     },
-    ];
+      },
+    },
+  ];
 }

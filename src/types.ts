@@ -1,10 +1,10 @@
-import { type Linter } from "eslint";
-import { type RuleOptions, type ConfigNames } from "./typegen";
-import { type Options as VueBlocksOptions } from 'eslint-processor-vue-blocks';
-import { type VendoredPrettierOptions } from "./vendored/prettier_types";
-import { type ParserOptions } from "@typescript-eslint/parser";
-import { type StylisticCustomizeOptions } from "@stylistic/eslint-plugin";
-import { type FlatGitignoreOptions } from "eslint-config-flat-gitignore";
+import type { StylisticCustomizeOptions } from '@stylistic/eslint-plugin';
+import type { ParserOptions } from '@typescript-eslint/parser';
+import type { Linter } from 'eslint';
+import type { FlatGitignoreOptions } from 'eslint-config-flat-gitignore';
+import type { Options as VueBlocksOptions } from 'eslint-processor-vue-blocks';
+import type { ConfigNames, RuleOptions } from './typegen';
+import type { VendoredPrettierOptions } from './vendored/prettier_types';
 
 export type Awaitable<T> = T | Promise<T>;
 
@@ -24,20 +24,20 @@ export type TypedFlatConfigItem = Omit<Linter.Config, 'plugins' | 'rules'> & {
    *
    * @see [Using plugins in your configuration](https://eslint.org/docs/latest/user-guide/configuring/configuration-files-new#using-plugins-in-your-configuration)
    */
-  plugins?: Record<string, any>
+  plugins?: Record<string, unknown>;
 
   /**
    * An object containing the configured rules. When `files` or `ignores` are
    * specified, these rule configurations are only available to the matching files.
    */
-  rules?: Rules
-}
+  rules?: Rules;
+};
 
 export interface OptionsFiles {
   /**
    * Override the `files` option to provide custom globs.
    */
-  files?: string[]
+  files?: string[];
 }
 
 export interface OptionsVue extends OptionsOverrides {
@@ -47,7 +47,7 @@ export interface OptionsVue extends OptionsOverrides {
    * @see https://github.com/antfu/eslint-processor-vue-blocks
    * @default true
    */
-  sfcBlocks?: boolean | VueBlocksOptions
+  sfcBlocks?: boolean | VueBlocksOptions;
 }
 
 export type OptionsTypescript
@@ -60,28 +60,28 @@ export interface OptionsFormatters {
    *
    * Currently only support Prettier.
    */
-  css?: 'prettier' | boolean
+  css?: 'prettier' | boolean;
 
   /**
    * Enable formatting support for HTML.
    *
    * Currently only support Prettier.
    */
-  html?: 'prettier' | boolean
+  html?: 'prettier' | boolean;
 
   /**
    * Enable formatting support for XML.
    *
    * Currently only support Prettier.
    */
-  xml?: 'prettier' | boolean
+  xml?: 'prettier' | boolean;
 
   /**
    * Enable formatting support for SVG.
    *
    * Currently only support Prettier.
    */
-  svg?: 'prettier' | boolean
+  svg?: 'prettier' | boolean;
 
   /**
    * Enable formatting support for Markdown.
@@ -90,21 +90,21 @@ export interface OptionsFormatters {
    *
    * When set to `true`, it will use Prettier.
    */
-  markdown?: 'prettier' | boolean
+  markdown?: 'prettier' | boolean;
 
   /**
    * Custom options for Prettier.
    *
    * By default it's controlled by our own config.
    */
-  prettierOptions?: VendoredPrettierOptions
+  prettierOptions?: VendoredPrettierOptions;
 
   /**
    * Enable formatting support for Astro.
    *
    * Currently only support Prettier.
    */
-  astro?: 'prettier' | boolean
+  astro?: 'prettier' | boolean;
 }
 
 export interface OptionsComponentExts {
@@ -114,26 +114,26 @@ export interface OptionsComponentExts {
    * @example ['vue']
    * @default []
    */
-  componentExts?: string[]
+  componentExts?: string[];
 }
 
 export interface OptionsTypeScriptParserOptions {
   /**
    * Additional parser options for TypeScript.
    */
-  parserOptions?: Partial<ParserOptions>
+  parserOptions?: Partial<ParserOptions>;
 
   /**
    * Glob patterns for files that should be type aware.
    * @default ['**\/*.{ts,tsx}']
    */
-  filesTypeAware?: string[]
+  filesTypeAware?: string[];
 
   /**
    * Glob patterns for files that should not be type aware.
    * @default ['**\/*.md\/**', '**\/*.astro/*.ts']
    */
-  ignoresTypeAware?: string[]
+  ignoresTypeAware?: string[];
 }
 
 export interface OptionsTypeScriptWithTypes {
@@ -141,32 +141,40 @@ export interface OptionsTypeScriptWithTypes {
    * When this options is provided, type aware rules will be enabled.
    * @see https://typescript-eslint.io/linting/typed-linting/
    */
-  tsconfigPath?: string
+  tsconfigPath?: string;
 
   /**
    * Override type aware rules.
    */
-  overridesTypeAware?: TypedFlatConfigItem['rules']
+  overridesTypeAware?: TypedFlatConfigItem['rules'];
 }
 
 export interface OptionsHasTypeScript {
-  typescript?: boolean
+  typescript?: boolean;
 }
 
 export interface OptionsStylistic {
-  stylistic?: boolean | StylisticConfig
+  stylistic?: boolean | StylisticConfig;
 }
 
 export interface StylisticConfig
-  extends Pick<StylisticCustomizeOptions, 'indent' | 'quotes' | 'semi'> {
+  extends Pick<StylisticCustomizeOptions, 'indent' | 'quotes'> {
+  maxLineLength?: number;
 }
 
 export interface OptionsOverrides {
-  overrides?: TypedFlatConfigItem['rules']
+  overrides?: TypedFlatConfigItem['rules'];
+}
+
+export interface OptionsRegExp {
+  /**
+   * Override rulelevels
+   */
+  level?: 'error' | 'warn';
 }
 
 export interface OptionsIsInEditor {
-  isInEditor?: boolean
+  isInEditor?: boolean;
 }
 
 export interface OptionsConfig extends OptionsComponentExts {
@@ -178,12 +186,12 @@ export interface OptionsConfig extends OptionsComponentExts {
    * @see https://github.com/antfu/eslint-config-flat-gitignore
    * @default true
    */
-  gitignore?: boolean | FlatGitignoreOptions
+  gitignore?: boolean | FlatGitignoreOptions;
 
   /**
    * Core rules. Can't be disabled.
    */
-  javascript?: OptionsOverrides
+  javascript?: OptionsOverrides;
 
   /**
    * Enable TypeScript support.
@@ -192,49 +200,56 @@ export interface OptionsConfig extends OptionsComponentExts {
    *
    * @default auto-detect based on the dependencies
    */
-  typescript?: boolean | OptionsTypescript
+  typescript?: boolean | OptionsTypescript;
+
+  /**
+   * Options for eslint-plugin-unicorn.
+   *
+   * @default true
+   */
+  unicorn?: boolean | OptionsOverrides;
 
   /**
    * Options for eslint-plugin-import-lite.
    *
    * @default true
    */
-  imports?: boolean | OptionsOverrides
+  imports?: boolean | OptionsOverrides;
 
   /**
    * Enable test support.
    *
    * @default true
    */
-  test?: boolean | OptionsOverrides
+  test?: boolean | OptionsOverrides;
 
   /**
    * Enable Vue support.
    *
    * @default auto-detect based on the dependencies
    */
-  vue?: boolean | OptionsVue
+  vue?: boolean | OptionsVue;
 
   /**
    * Enable JSONC support.
    *
    * @default true
    */
-  jsonc?: boolean | OptionsOverrides
+  jsonc?: boolean | OptionsOverrides;
 
   /**
    * Enable YAML support.
    *
    * @default true
    */
-  yaml?: boolean | OptionsOverrides
+  yaml?: boolean | OptionsOverrides;
 
   /**
    * Enable TOML support.
    *
    * @default true
    */
-  toml?: boolean | OptionsOverrides
+  toml?: boolean | OptionsOverrides;
 
   /**
    * Enable ASTRO support.
@@ -247,7 +262,7 @@ export interface OptionsConfig extends OptionsComponentExts {
    *
    * @default false
    */
-  astro?: boolean | OptionsOverrides
+  astro?: boolean | OptionsOverrides;
 
   /**
    * Enable linting for **code snippets** in Markdown.
@@ -256,7 +271,7 @@ export interface OptionsConfig extends OptionsComponentExts {
    *
    * @default true
    */
-  markdown?: boolean | OptionsOverrides
+  markdown?: boolean | OptionsOverrides;
 
   /**
    * Enable stylistic rules.
@@ -264,7 +279,15 @@ export interface OptionsConfig extends OptionsComponentExts {
    * @see https://eslint.style/
    * @default true
    */
-  stylistic?: boolean | (StylisticConfig & OptionsOverrides)
+  stylistic?: boolean | (StylisticConfig & OptionsOverrides);
+
+  /**
+   * Enable regexp rules.
+   *
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/
+   * @default true
+   */
+  regexp?: boolean | (OptionsRegExp & OptionsOverrides);
 
   /**
    * Enable pnpm (workspace/catalogs) support.
@@ -276,7 +299,7 @@ export interface OptionsConfig extends OptionsComponentExts {
    * @experimental
    * @default false
    */
-  pnpm?: boolean
+  pnpm?: boolean;
 
   /**
    * Use external formatters to format files.
@@ -288,11 +311,11 @@ export interface OptionsConfig extends OptionsComponentExts {
    *
    * @default false
    */
-  formatters?: boolean | OptionsFormatters
+  formatters?: boolean | OptionsFormatters;
 
   /**
    * Control to disable some rules in editors.
    * @default auto-detect based on the process.env
    */
-  isInEditor?: boolean
+  isInEditor?: boolean;
 }

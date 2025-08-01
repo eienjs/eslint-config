@@ -2,7 +2,7 @@
   "name": "@eienjs/eslint-config",
   "type": "module",
   "version": "0.0.0",
-  "packageManager": "pnpm@10.13.1",
+  "packageManager": "pnpm@10.14.0",
   "description": "EienJS ESLint Config",
   "author": "Fernando Isidro <luffynando@gmail.com> (https://github.com/luffynando/)",
   "license": "MIT",
@@ -40,15 +40,27 @@
     "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {
+    "@prettier/plugin-xml": "^3.4.2",
     "astro-eslint-parser": "^1.2.2",
     "eslint": "^9.32.0",
-    "eslint-plugin-astro": "^1.3.1"
+    "eslint-plugin-astro": "^1.3.1",
+    "eslint-plugin-format": "^1.0.1",
+    "prettier-plugin-astro": "^0.14.1"
   },
   "peerDependenciesMeta": {
+    "@prettier/plugin-xml": {
+      "optional": true
+    },
     "astro-eslint-parser": {
       "optional": true
     },
     "eslint-plugin-astro": {
+      "optional": true
+    },
+    "eslint-plugin-format": {
+      "optional": true
+    },
+    "prettier-plugin-astro": {
       "optional": true
     }
   },
@@ -56,24 +68,47 @@
     "@antfu/install-pkg": "catalog:prod",
     "@clack/prompts": "catalog:prod",
     "@eslint-community/eslint-plugin-eslint-comments": "catalog:prod",
+    "@eslint/markdown": "catalog:prod",
     "@stylistic/eslint-plugin": "catalog:prod",
     "@typescript-eslint/eslint-plugin": "catalog:prod",
     "@typescript-eslint/parser": "catalog:prod",
     "@vitest/eslint-plugin": "catalog:prod",
     "eslint-config-flat-gitignore": "catalog:prod",
     "eslint-flat-config-utils": "catalog:prod",
+    "eslint-merge-processors": "catalog:prod",
+    "eslint-plugin-antfu": "catalog:prod",
+    "eslint-plugin-command": "catalog:prod",
+    "eslint-plugin-import-lite": "catalog:prod",
+    "eslint-plugin-jsdoc": "catalog:prod",
+    "eslint-plugin-jsonc": "catalog:prod",
+    "eslint-plugin-n": "catalog:prod",
+    "eslint-plugin-no-only-tests": "catalog:prod",
+    "eslint-plugin-perfectionist": "catalog:prod",
+    "eslint-plugin-pnpm": "catalog:prod",
+    "eslint-plugin-regexp": "catalog:prod",
+    "eslint-plugin-toml": "catalog:prod",
+    "eslint-plugin-unicorn": "catalog:prod",
     "eslint-plugin-unused-imports": "catalog:prod",
+    "eslint-plugin-vue": "catalog:prod",
+    "eslint-plugin-yml": "catalog:prod",
     "eslint-processor-vue-blocks": "catalog:prod",
     "globals": "catalog:prod",
-    "local-pkg": "catalog:prod"
+    "jsonc-eslint-parser": "catalog:prod",
+    "local-pkg": "catalog:prod",
+    "toml-eslint-parser": "catalog:prod",
+    "vue-eslint-parser": "catalog:prod",
+    "yaml-eslint-parser": "catalog:prod"
   },
   "devDependencies": {
     "@eslint/config-inspector": "catalog:dev",
+    "@prettier/plugin-xml": "catalog:peer",
     "@types/node": "catalog:dev",
     "astro-eslint-parser": "catalog:peer",
     "eslint": "catalog:peer",
     "eslint-plugin-astro": "catalog:peer",
+    "eslint-plugin-format": "catalog:peer",
     "eslint-typegen": "catalog:dev",
+    "prettier-plugin-astro": "catalog:peer",
     "tsdown": "catalog:dev",
     "tsx": "catalog:dev",
     "typescript": "catalog:dev",

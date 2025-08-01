@@ -1,7 +1,6 @@
-import type { OptionsFiles, OptionsOverrides, OptionsStylistic, TypedFlatConfigItem } from '../types'
-
-import { GLOB_ASTRO } from '../globs'
-import { interopDefault } from '../utils'
+import type { OptionsFiles, OptionsOverrides, OptionsStylistic, TypedFlatConfigItem } from '../types';
+import { GLOB_ASTRO } from '../globs';
+import { interopDefault } from '../utils';
 
 export async function astro(
   options: OptionsOverrides & OptionsStylistic & OptionsFiles = {},
@@ -10,7 +9,7 @@ export async function astro(
     files = [GLOB_ASTRO],
     overrides = {},
     stylistic = true,
-  } = options
+  } = options;
 
   const [
     pluginAstro,
@@ -20,7 +19,7 @@ export async function astro(
     interopDefault(import('eslint-plugin-astro')),
     interopDefault(import('astro-eslint-parser')),
     interopDefault(import('@typescript-eslint/parser')),
-  ] as const)
+  ] as const);
 
   return [
     {
@@ -43,6 +42,10 @@ export async function astro(
       name: 'eienjs/astro/rules',
       processor: 'astro/client-side-ts',
       rules: {
+        // Astro uses top level await for e.g. data fetching
+        // https://docs.astro.build/en/guides/data-fetching/#fetch-in-astro
+        'antfu/no-top-level-await': 'off',
+
         // use recommended rules
         'astro/missing-client-only-directive-value': 'error',
         'astro/no-conflict-set-directives': 'error',
@@ -56,16 +59,16 @@ export async function astro(
         'astro/valid-compile': 'error',
 
         ...stylistic
-          ? {
-              'style/indent': 'off',
-              'style/jsx-closing-tag-location': 'off',
-              'style/jsx-one-expression-per-line': 'off',
-              'style/no-multiple-empty-lines': 'off',
-            }
-          : {},
+          ? {}
+          : {
+              '@stylistic/indent': 'off',
+              '@stylistic/jsx-closing-tag-location': 'off',
+              '@stylistic/jsx-one-expression-per-line': 'off',
+              '@stylistic/no-multiple-empty-lines': 'off',
+            },
 
         ...overrides,
       },
     },
-  ]
+  ];
 }

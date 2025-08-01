@@ -1,8 +1,5 @@
-import { eienjs } from './factory';
-
 export * from './factory';
+export { eienjs as default } from './factory';
 export * from './globs';
-export * from './types';
+export type * from './types';
 export * from './utils';
-
-export default eienjs;
