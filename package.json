@@ -27,17 +27,25 @@
     "bin",
     "dist"
   ],
+  "engines": {
+    "node": ">=20.11"
+  },
   "scripts": {
-    "build": "tsdown --clean --dts",
+    "prepare": "husky",
+    "prebuild": "pnpm tool:code",
+    "build": "pnpm gen && tsdown --clean --dts",
     "stub": "tsdown",
     "dev": "npx @eslint/config-inspector --config eslint.config.ts",
     "build:inspector": "pnpm build && npx @eslint/config-inspector build",
     "watch": "tsdown --watch",
     "gen": "tsx scripts/typegen.ts",
+    "changelog": "auto-changelog -p && git add CHANGELOG.md",
+    "release": "np",
+    "version": "pnpm build && pnpm changelog",
     "lint": "eslint . --fix",
     "lint:check": "eslint .",
-    "test": "vitest",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "tool:code": "pnpm lint:check && pnpm typecheck"
   },
   "peerDependencies": {
     "@prettier/plugin-xml": "^3.4.2",
@@ -100,21 +108,44 @@
     "yaml-eslint-parser": "catalog:prod"
   },
   "devDependencies": {
+    "@commitlint/cli": "catalog:dev",
+    "@commitlint/config-conventional": "catalog:dev",
     "@eslint/config-inspector": "catalog:dev",
     "@prettier/plugin-xml": "catalog:peer",
     "@types/node": "catalog:dev",
     "astro-eslint-parser": "catalog:peer",
+    "auto-changelog": "catalog:dev",
     "eslint": "catalog:peer",
     "eslint-plugin-astro": "catalog:peer",
     "eslint-plugin-format": "catalog:peer",
     "eslint-typegen": "catalog:dev",
+    "husky": "catalog:dev",
+    "np": "catalog:dev",
     "prettier-plugin-astro": "catalog:peer",
     "tsdown": "catalog:dev",
     "tsx": "catalog:dev",
-    "typescript": "catalog:dev",
-    "vitest": "catalog:dev"
+    "typescript": "catalog:dev"
   },
   "resolutions": {
     "eslint": "catalog:peer"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "publishConfig": {
+    "access": "public",
+    "tag": "latest"
+  },
+  "auto-changelog": {
+    "template": "keepachangelog",
+    "hideCredit": true
+  },
+  "np": {
+    "message": "chore(release): :tada: %s",
+    "tag": "latest",
+    "branch": "main",
+    "yolo": true
   }
 }
