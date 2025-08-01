@@ -56,7 +56,7 @@ export async function ensurePackages(packages: (string | undefined)[]): Promise<
   if (process.env.CI || process.stdout.isTTY === false || isCwdInScope === false)
     return;
 
-  const nonExistingPackages = packages.filter(i => i && !isPackageInScope(i)) as string[];
+  const nonExistingPackages = packages.filter((i) => i && !isPackageInScope(i)) as string[];
   if (nonExistingPackages.length === 0)
     return;
 
@@ -65,7 +65,7 @@ export async function ensurePackages(packages: (string | undefined)[]): Promise<
     message: `${nonExistingPackages.length === 1 ? 'Package is' : 'Packages are'} required for this config: ${nonExistingPackages.join(', ')}. Do you want to install them?`,
   });
   if (result)
-    await import('@antfu/install-pkg').then(async i => i.installPackage(nonExistingPackages, { dev: true }));
+    await import('@antfu/install-pkg').then(async (i) => i.installPackage(nonExistingPackages, { dev: true }));
 }
 
 export function isInEditorEnv(): boolean {

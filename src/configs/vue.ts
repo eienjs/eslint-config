@@ -96,19 +96,23 @@ export async function vue(
           ]),
       rules: {
         ...pluginVue.configs.base.rules,
-        ...pluginVue.configs['flat/essential'].map(c => c.rules).reduce((acc, c) => ({ ...acc, ...c }), {}),
-        ...pluginVue.configs['flat/strongly-recommended'].map(c => c.rules).reduce((acc, c) => ({ ...acc, ...c }), {}),
-        ...pluginVue.configs['flat/recommended'].map(c => c.rules).reduce((acc, c) => ({ ...acc, ...c }), {}),
+        ...pluginVue.configs['flat/essential'].map((c) => c.rules).reduce((acc, c) => ({ ...acc, ...c }), {}),
+        ...pluginVue.configs['flat/strongly-recommended'].map((c) => c.rules).reduce((acc, c) => ({ ...acc, ...c }), {}),
+        ...pluginVue.configs['flat/recommended'].map((c) => c.rules).reduce((acc, c) => ({ ...acc, ...c }), {}),
 
-        'antfu/no-top-level-await': 'off',
-        'n/prefer-global/process': 'off',
-        '@typescript-eslint/explicit-function-return-type': 'off',
-        '@typescript-eslint/naming-convention': 'off',
-
+        'vue/block-lang': [
+          'error',
+          {
+            script: {
+              lang: 'ts',
+            },
+          },
+        ],
         'vue/block-order': ['error', {
           order: ['script', 'template', 'style'],
         }],
-        'vue/component-name-in-template-casing': ['error', 'PascalCase'],
+        'vue/component-api-style': ['error', ['script-setup']],
+        'vue/component-name-in-template-casing': ['error', 'PascalCase', { registeredComponentsOnly: true }],
         'vue/component-options-name-casing': ['error', 'PascalCase'],
         'vue/custom-event-name-casing': ['error', 'camelCase'],
         'vue/define-macros-order': ['error', {
@@ -123,6 +127,7 @@ export async function vue(
         'vue/max-attributes-per-line': 'off',
         'vue/multi-word-component-names': 'off',
         'vue/no-dupe-keys': 'off',
+        'vue/no-empty-component-block': 'error',
         'vue/no-empty-pattern': 'error',
         'vue/no-irregular-whitespace': 'error',
         'vue/no-loss-of-precision': 'error',
@@ -140,8 +145,8 @@ export async function vue(
         'vue/no-setup-props-reactivity-loss': 'off',
         'vue/no-sparse-arrays': 'error',
         'vue/no-template-target-blank': 'error',
-        'vue/no-unused-refs': 'error',
         'vue/no-unused-properties': 'error',
+        'vue/no-unused-refs': 'error',
         'vue/no-use-v-else-with-v-for': 'error',
         'vue/no-useless-mustaches': 'error',
         'vue/no-useless-v-bind': 'error',
@@ -156,11 +161,12 @@ export async function vue(
         ],
         'vue/prefer-separate-static-class': 'error',
         'vue/prefer-template': 'error',
+        'vue/prefer-true-attribute-shorthand': 'error',
         'vue/prop-name-casing': ['error', 'camelCase'],
-        'vue/require-default-prop': 'off',
-        'vue/require-prop-types': 'off',
+        'vue/require-typed-ref': 'error',
         'vue/space-infix-ops': 'error',
         'vue/space-unary-ops': ['error', { nonwords: false, words: true }],
+        'vue/static-class-names-order': 'off',
 
         ...stylistic
           ? {
@@ -171,7 +177,7 @@ export async function vue(
                 multiline: 'always',
                 singleline: 'always',
               }],
-              'vue/brace-style': ['error', 'stroustrup', { allowSingleLine: true }],
+              'vue/brace-style': ['error', '1tbs', { allowSingleLine: true }],
               'vue/comma-dangle': ['error', 'always-multiline'],
               'vue/comma-spacing': ['error', { after: true, before: false }],
               'vue/comma-style': ['error', 'last'],
@@ -193,6 +199,11 @@ export async function vue(
 
         // Disable usage in vue files
         'unicorn/filename-case': 'off',
+        'antfu/no-top-level-await': 'off',
+        'n/prefer-global/process': 'off',
+        '@typescript-eslint/explicit-function-return-type': 'off',
+        '@typescript-eslint/naming-convention': 'off',
+        '@stylistic/max-len': 'off',
 
         ...overrides,
       },

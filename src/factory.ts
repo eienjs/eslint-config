@@ -67,7 +67,7 @@ export function eienjs(
     regexp: enableRegexp = true,
     typescript: enableTypeScript = isPackageExists('typescript'),
     unicorn: enableUnicorn = true,
-    vue: enableVue = VuePackages.some(i => isPackageExists(i)),
+    vue: enableVue = VuePackages.some((i) => isPackageExists(i)),
   } = options;
 
   let { isInEditor } = options;
@@ -87,13 +87,12 @@ export function eienjs(
 
   if (enableGitignore) {
     if (typeof enableGitignore === 'boolean') {
-      configs.push(interopDefault(import('eslint-config-flat-gitignore')).then(r => [r({
+      configs.push(interopDefault(import('eslint-config-flat-gitignore')).then((r) => [r({
         name: 'eienjs/gitignore',
         strict: false,
       })]));
-    }
-    else {
-      configs.push(interopDefault(import('eslint-config-flat-gitignore')).then(r => [r({
+    } else {
+      configs.push(interopDefault(import('eslint-config-flat-gitignore')).then((r) => [r({
         name: 'eienjs/gitignore',
         ...enableGitignore,
       })]));
@@ -267,7 +266,7 @@ export function eienjs(
         'test/no-only-tests',
         'prefer-const',
       ], {
-        builtinRules: () => import(['eslint', 'use-at-your-own-risk'].join('/')).then(r => r.builtinRules),
+        builtinRules: () => import(['eslint', 'use-at-your-own-risk'].join('/')).then((r) => r.builtinRules),
       });
   }
 

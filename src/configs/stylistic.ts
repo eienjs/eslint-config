@@ -46,6 +46,8 @@ export async function stylistic(
 
         'antfu/top-level-function': 'error',
 
+        '@stylistic/arrow-parens': ['error', 'always'],
+        '@stylistic/brace-style': ['error', '1tbs', { allowSingleLine: true }],
         '@stylistic/max-len': ['error', { 'code': maxLineLength, 'ignoreStrings': true, 'ignoreComments': true }],
         '@stylistic/padding-line-between-statements': [
           'error',
@@ -59,6 +61,7 @@ export async function stylistic(
         ],
         '@stylistic/generator-star-spacing': ['error', { after: true, before: false }],
         '@stylistic/quote-props': ['error', 'consistent'],
+        '@stylistic/quotes': ['error', quotes, { avoidEscape: true }],
         '@stylistic/semi': 'error',
         '@stylistic/comma-spacing': 'error',
         '@stylistic/yield-star-spacing': ['error', { after: true, before: false }],

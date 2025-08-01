@@ -161,7 +161,6 @@ export async function javascript(
         'no-sequences': ['error', { allowInParentheses: false }],
         'no-shadow-restricted-names': 'error',
         'no-sparse-arrays': 'error',
-        'no-template-curly-in-string': 'error',
         'no-this-before-super': 'error',
         'no-throw-literal': 'error',
         'no-undef': 'error',
