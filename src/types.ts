@@ -33,11 +33,31 @@ export type TypedFlatConfigItem = Omit<Linter.Config, 'plugins' | 'rules'> & {
   rules?: Rules;
 };
 
-export interface OptionsFiles {
+export interface OptionsAdonisJS extends OptionsOverrides {
   /**
-   * Override the `files` option to provide custom globs.
+   * Override the `dirs` option to provide custom directories of adonisjs app.
    */
-  files?: string[];
+  dirs?: {
+    root?: string;
+    bin?: string;
+    controllers?: string;
+    exceptions?: string;
+    models?: string;
+    mails?: string;
+    services?: string;
+    listeners?: string;
+    events?: string;
+    middleware?: string;
+    validators?: string;
+    providers?: string;
+    policies?: string;
+    abilities?: string;
+    database?: string;
+    start?: string;
+    tests?: string;
+    config?: string;
+    commands?: string;
+  };
 }
 
 export interface OptionsVue extends OptionsOverrides {
@@ -164,6 +184,13 @@ export interface StylisticConfig
 
 export interface OptionsOverrides {
   overrides?: TypedFlatConfigItem['rules'];
+}
+
+export interface OptionsFiles {
+  /**
+   * Override the `files` option to provide custom globs.
+   */
+  files?: string[];
 }
 
 export interface OptionsRegExp {
@@ -318,4 +345,14 @@ export interface OptionsConfig extends OptionsComponentExts {
    * @default auto-detect based on the process.env
    */
   isInEditor?: boolean;
+
+  /**
+   * Enable AdonisJS support.
+   *
+   * Requires installing:
+   * - `@adonisjs/eslint-plugin`
+   *
+   * @default false
+   */
+  adonisjs?: boolean | OptionsAdonisJS;
 }

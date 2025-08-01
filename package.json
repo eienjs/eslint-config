@@ -47,6 +47,7 @@
     "tool:code": "pnpm lint:check && pnpm typecheck"
   },
   "peerDependencies": {
+    "@adonisjs/eslint-plugin": "^2.0.0",
     "@prettier/plugin-xml": "^3.4.2",
     "astro-eslint-parser": "^1.2.2",
     "eslint": "^9.32.0",
@@ -55,6 +56,9 @@
     "prettier-plugin-astro": "^0.14.1"
   },
   "peerDependenciesMeta": {
+    "@adonisjs/eslint-plugin": {
+      "optional": true
+    },
     "@prettier/plugin-xml": {
       "optional": true
     },
@@ -102,11 +106,13 @@
     "globals": "catalog:prod",
     "jsonc-eslint-parser": "catalog:prod",
     "local-pkg": "catalog:prod",
+    "pathe": "catalog:prod",
     "toml-eslint-parser": "catalog:prod",
     "vue-eslint-parser": "catalog:prod",
     "yaml-eslint-parser": "catalog:prod"
   },
   "devDependencies": {
+    "@adonisjs/eslint-plugin": "catalog:peer",
     "@commitlint/cli": "catalog:dev",
     "@commitlint/config-conventional": "catalog:dev",
     "@eslint/config-inspector": "catalog:dev",

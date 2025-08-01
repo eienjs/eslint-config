@@ -27,5 +27,7 @@
     "yaml",
     "toml",
     "xml"
-  ]
+  ],
+
+  "typescript.preferences.importModuleSpecifier": "relative"
 }

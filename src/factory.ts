@@ -4,6 +4,7 @@ import type { Awaitable, ConfigNames, OptionsConfig, TypedFlatConfigItem } from 
 import { FlatConfigComposer } from 'eslint-flat-config-utils';
 import { isPackageExists } from 'local-pkg';
 import {
+  adonisjs,
   astro,
   command,
   comments,
@@ -68,6 +69,7 @@ export function eienjs(
     typescript: enableTypeScript = isPackageExists('typescript'),
     unicorn: enableUnicorn = true,
     vue: enableVue = VuePackages.some((i) => isPackageExists(i)),
+    adonisjs: enableAdonisjs = false,
   } = options;
 
   let { isInEditor } = options;
@@ -230,6 +232,13 @@ export function eienjs(
       options.formatters,
       typeof stylisticOptions === 'boolean' ? {} : stylisticOptions,
     ));
+  }
+
+  if (enableAdonisjs) {
+    configs.push(adonisjs({
+      ...resolveSubOptions(options, 'adonisjs'),
+      overrides: getOverrides(options, 'adonisjs'),
+    }));
   }
 
   configs.push(
