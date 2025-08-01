@@ -18,13 +18,12 @@
     "eslint-config"
   ],
   "exports": {
-    ".": "./dist/index.js"
+    ".": "./dist/index.js",
+    "./configs": "./dist/configs/index.js"
   },
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "bin": "./bin/index.js",
   "files": [
-    "bin",
     "dist"
   ],
   "engines": {

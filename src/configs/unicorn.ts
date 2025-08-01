@@ -35,7 +35,6 @@ export async function unicorn(options: OptionsOverrides = {}): Promise<TypedFlat
         'unicorn/prefer-dom-node-remove': 'off',
         'unicorn/prefer-dom-node-text-content': 'off',
         'unicorn/prefer-modern-dom-apis': 'off',
-        'unicorn/prefer-export-from': ['error', { ignoreUsedVariables: true }],
         // Disable because ssr not completed query selector
         'unicorn/prefer-query-selector': 'off',
         'unicorn/prefer-switch': ['error', { emptyDefaultCase: 'do-nothing-comment' }],
@@ -47,6 +46,7 @@ export async function unicorn(options: OptionsOverrides = {}): Promise<TypedFlat
         'unicorn/expiring-todo-comments': 'off',
         // Disable because match other functions with object is not array
         'unicorn/no-array-reduce': 'off',
+        'unicorn/prefer-export-from': 'off',
 
         ...overrides,
       },
