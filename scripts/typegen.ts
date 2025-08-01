@@ -2,7 +2,27 @@ import fs from 'node:fs/promises';
 import { flatConfigsToRulesDTS } from 'eslint-typegen/core';
 import { builtinRules } from 'eslint/use-at-your-own-risk';
 import { combine } from '../src';
-import { astro, comments, formatters, imports, javascript, jsdoc, node, perfectionist, stylistic, typescript, unicorn } from '../src/configs';
+import {
+  astro,
+  comments,
+  formatters,
+  imports,
+  javascript,
+  jsdoc,
+  jsonc,
+  markdown,
+  node,
+  perfectionist,
+  regexp,
+  sortPackageJson,
+  stylistic,
+  test,
+  toml,
+  typescript,
+  unicorn,
+  vue,
+  yaml,
+} from '../src/configs';
 
 const configs = await combine(
   {
@@ -18,11 +38,19 @@ const configs = await combine(
   imports(),
   javascript(),
   jsdoc(),
+  jsonc(),
+  markdown(),
   node(),
   perfectionist(),
+  sortPackageJson(),
   stylistic(),
+  test(),
+  toml(),
+  regexp(),
   typescript(),
   unicorn(),
+  vue(),
+  yaml(),
 );
 
 const configNames = configs.map(item => item.name).filter(Boolean) as string[];
