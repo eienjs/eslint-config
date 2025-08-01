@@ -42,6 +42,7 @@ export async function markdown(
     },
     {
       files: [
+        GLOB_MARKDOWN,
         GLOB_MARKDOWN_CODE,
         ...componentExts.map(ext => `${GLOB_MARKDOWN}/**/*.${ext}`),
       ],
@@ -71,6 +72,7 @@ export async function markdown(
         '@stylistic/comma-dangle': 'off',
         '@stylistic/eol-last': 'off',
         '@stylistic/padding-line-between-statements': 'off',
+        '@stylistic/max-len': 'off',
 
         '@typescript-eslint/consistent-type-imports': 'off',
         '@typescript-eslint/explicit-function-return-type': 'off',
