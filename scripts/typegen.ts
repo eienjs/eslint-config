@@ -3,6 +3,7 @@ import { flatConfigsToRulesDTS } from 'eslint-typegen/core';
 import { builtinRules } from 'eslint/use-at-your-own-risk';
 import { combine } from '../src';
 import {
+  adonisjs,
   astro,
   comments,
   formatters,
@@ -32,6 +33,7 @@ const configs = await combine(
       },
     },
   },
+  adonisjs(),
   astro(),
   comments(),
   formatters(),

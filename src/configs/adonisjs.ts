@@ -41,6 +41,15 @@ export async function adonisjs(
   const nestedGlobPattern = `**/*.${GLOB_SRC_EXT}`;
   const fileRoutes = Object.values(dirs).map((dir) => join(dir, nestedGlobPattern));
 
+  const commonRulesSet: TypedFlatConfigItem['rules'] = {
+    '@typescript-eslint/require-await': 'off',
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
+    '@typescript-eslint/no-floating-promises': 'off',
+    '@typescript-eslint/no-unsafe-return': 'off',
+    'unicorn/no-anonymous-default-export': 'off',
+  };
+
   return [
     {
       name: 'eienjs/adonisjs/rules',
@@ -65,49 +74,58 @@ export async function adonisjs(
       files: [join(dirs.database, nestedGlobPattern)],
       name: 'eienjs/adonisjs/database-disables',
       rules: {
-        '@typescript-eslint/require-await': 'off',
-        '@typescript-eslint/explicit-function-return-type': 'off',
-        '@typescript-eslint/explicit-module-boundary-types': 'off',
-        '@typescript-eslint/no-floating-promises': 'off',
-        '@typescript-eslint/no-unsafe-return': 'off',
-        'unicorn/no-anonymous-default-export': 'off',
+        ...commonRulesSet,
       },
     },
     {
       files: [join(dirs.bin, nestedGlobPattern)],
       name: 'eienjs/adonisjs/bin-disables',
       rules: {
-        '@typescript-eslint/require-await': 'off',
-        '@typescript-eslint/explicit-function-return-type': 'off',
-        '@typescript-eslint/explicit-module-boundary-types': 'off',
-        '@typescript-eslint/no-floating-promises': 'off',
-        '@typescript-eslint/no-unsafe-return': 'off',
+        ...commonRulesSet,
         '@typescript-eslint/no-misused-promises': 'off',
-        'unicorn/no-anonymous-default-export': 'off',
       },
     },
     {
       files: [join(dirs.commands, nestedGlobPattern)],
       name: 'eienjs/adonisjs/commands-disables',
       rules: {
-        '@typescript-eslint/require-await': 'off',
-        '@typescript-eslint/explicit-function-return-type': 'off',
-        '@typescript-eslint/explicit-module-boundary-types': 'off',
-        '@typescript-eslint/no-floating-promises': 'off',
-        '@typescript-eslint/no-unsafe-return': 'off',
-        'unicorn/no-anonymous-default-export': 'off',
+        ...commonRulesSet,
       },
     },
     {
       files: [join(dirs.middleware, nestedGlobPattern)],
       name: 'eienjs/adonisjs/middleware-disables',
       rules: {
-        '@typescript-eslint/require-await': 'off',
+        ...commonRulesSet,
+      },
+    },
+    {
+      files: [join(dirs.exceptions, nestedGlobPattern)],
+      name: 'eienjs/adonisjs/exceptions-disables',
+      rules: {
+        ...commonRulesSet,
+      },
+    },
+    {
+      files: [join(dirs.controllers, nestedGlobPattern)],
+      name: 'eienjs/adonisjs/controllers-disables',
+      rules: {
         '@typescript-eslint/explicit-function-return-type': 'off',
         '@typescript-eslint/explicit-module-boundary-types': 'off',
-        '@typescript-eslint/no-floating-promises': 'off',
-        '@typescript-eslint/no-unsafe-return': 'off',
-        'unicorn/no-anonymous-default-export': 'off',
+      },
+    },
+    {
+      files: [join(dirs.config, nestedGlobPattern)],
+      name: 'eienjs/adonisjs/config-disables',
+      rules: {
+        '@typescript-eslint/consistent-type-definitions': 'off',
+      },
+    },
+    {
+      files: [join(dirs.providers, nestedGlobPattern)],
+      name: 'eienjs/adonisjs/providers-disables',
+      rules: {
+        '@typescript-eslint/consistent-type-definitions': 'off',
       },
     },
   ];
