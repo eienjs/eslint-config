@@ -12,14 +12,15 @@ export async function disables(): Promise<TypedFlatConfigItem[]> {
         '@typescript-eslint/explicit-function-return-type': 'off',
       },
     },
-    // {
-    //   files: [`**/cli/${GLOB_SRC}`, `**/cli.${GLOB_SRC_EXT}`],
-    //   name: 'antfu/disables/cli',
-    //   rules: {
-    //     'antfu/no-top-level-await': 'off',
-    //     'no-console': 'off',
-    //   },
-    // },
+    {
+      files: [`**/cli/${GLOB_SRC}`, `**/cli.${GLOB_SRC_EXT}`],
+      name: 'eienjs/disables/cli',
+      rules: {
+        'antfu/no-top-level-await': 'off',
+        'no-console': 'off',
+        'unicorn/no-process-exit': 'off',
+      },
+    },
     {
       files: ['**/bin/**/*', `**/bin.${GLOB_SRC_EXT}`],
       name: 'eienjs/disables/bin',

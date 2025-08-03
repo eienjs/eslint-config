@@ -55,26 +55,35 @@ export function isPackageInScope(name: string): boolean {
 }
 
 export async function ensurePackages(packages: (string | undefined)[]): Promise<void> {
-  if (process.env.CI || process.stdout.isTTY === false || isCwdInScope === false)
+  if (process.env.CI || process.stdout.isTTY === false || isCwdInScope === false) {
     return;
+  }
 
   const nonExistingPackages = packages.filter((i) => i && !isPackageInScope(i)) as string[];
-  if (nonExistingPackages.length === 0)
+  if (nonExistingPackages.length === 0) {
     return;
+  }
 
   const p = await import('@clack/prompts');
+  const packagesMissing = nonExistingPackages.join(', ');
+  const packagesMissingPlural = nonExistingPackages.length === 1 ? 'Package is' : 'Packages are';
   const result = await p.confirm({
-    message: `${nonExistingPackages.length === 1 ? 'Package is' : 'Packages are'} required for this config: ${nonExistingPackages.join(', ')}. Do you want to install them?`,
+    message: `${packagesMissingPlural} required for this config: ${packagesMissing}. Do you want to install them?`,
   });
-  if (result)
+
+  if (result) {
     await import('@antfu/install-pkg').then(async (i) => i.installPackage(nonExistingPackages, { dev: true }));
+  }
 }
 
 export function isInEditorEnv(): boolean {
-  if (process.env.CI)
+  if (process.env.CI) {
     return false;
-  if (isInGitHooksOrLintStaged())
+  }
+
+  if (isInGitHooksOrLintStaged()) {
     return false;
+  }
 
   return Boolean(
     process.env.VSCODE_PID

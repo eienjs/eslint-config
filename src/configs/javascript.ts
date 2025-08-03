@@ -47,6 +47,7 @@ export async function javascript(
         'array-callback-return': ['error', { allowImplicit: true, checkForEach: true }],
         'block-scoped-var': 'error',
         'constructor-super': 'error',
+        'curly': 'error',
         'default-case-last': 'error',
         'dot-notation': ['error', { allowKeywords: true }],
         'eqeqeq': ['error', 'smart'],

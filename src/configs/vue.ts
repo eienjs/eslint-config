@@ -97,7 +97,10 @@ export async function vue(
       rules: {
         ...pluginVue.configs.base.rules,
         ...pluginVue.configs['flat/essential'].map((c) => c.rules).reduce((acc, c) => ({ ...acc, ...c }), {}),
-        ...pluginVue.configs['flat/strongly-recommended'].map((c) => c.rules).reduce((acc, c) => ({ ...acc, ...c }), {}),
+        ...pluginVue.configs['flat/strongly-recommended'].map((c) => c.rules).reduce(
+          (acc, c) => ({ ...acc, ...c }),
+          {},
+        ),
         ...pluginVue.configs['flat/recommended'].map((c) => c.rules).reduce((acc, c) => ({ ...acc, ...c }), {}),
 
         'vue/block-lang': [

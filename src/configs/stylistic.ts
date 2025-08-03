@@ -5,7 +5,6 @@ import { interopDefault } from '../utils';
 export const StylisticConfigDefaults: StylisticConfig = {
   indent: 2,
   quotes: 'single',
-  maxLineLength: 120,
 };
 
 export interface StylisticOptions extends StylisticConfig, OptionsOverrides { }
@@ -17,7 +16,7 @@ export async function stylistic(
     indent,
     overrides = {},
     quotes,
-    maxLineLength,
+    maxLineLength = 120,
   } = {
     ...StylisticConfigDefaults,
     ...options,
@@ -46,7 +45,7 @@ export async function stylistic(
 
         '@stylistic/arrow-parens': ['error', 'always'],
         '@stylistic/brace-style': ['error', '1tbs', { allowSingleLine: true }],
-        '@stylistic/max-len': ['error', { 'code': maxLineLength, 'ignoreStrings': true, 'ignoreComments': true }],
+        '@stylistic/max-len': ['error', { code: maxLineLength, ignoreComments: true }],
         '@stylistic/padding-line-between-statements': [
           'error',
           {
