@@ -5,7 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [v0.2.0](https://luffynando.github.com/eienjs/eslint-config/compare/v0.1.0...v0.2.0)
+## [v0.3.0](https://luffynando.github.com/eienjs/eslint-config/compare/v0.2.0...v0.3.0)
+
+### Commits
+
+- feat: :sparkles: add cli for fast usage and small update migration eslint config [`9349423`](https://luffynando.github.com/eienjs/eslint-config/commit/9349423dfe2a80fa782638f6f10b539fa18b4991)
+- style: :rotating_light: resolve some eslint issues [`1beb533`](https://luffynando.github.com/eienjs/eslint-config/commit/1beb533074cbe2949ab34eee08e6a9091cc012a7)
+- fix: :bug: resolve rules break adonisjs app and general ts and js files [`47440c0`](https://luffynando.github.com/eienjs/eslint-config/commit/47440c0d4d49405cf2deec6a79275fe3e9b3baca)
+
+## [v0.2.0](https://luffynando.github.com/eienjs/eslint-config/compare/v0.1.0...v0.2.0) - 2025-08-01
 
 ### Commits
 
