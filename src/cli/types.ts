@@ -4,7 +4,7 @@ export interface PromItem<T> {
   hint?: string;
 }
 
-export type FrameworkOption = 'vue' | 'astro' | 'adonisjs';
+export type FrameworkOption = 'vue' | 'astro' | 'adonisjs' | 'nuxt';
 
 export type ExtraLibrariesOption = 'formatter';
 

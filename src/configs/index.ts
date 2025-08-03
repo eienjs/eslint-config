@@ -11,6 +11,7 @@ export * from './jsdoc';
 export * from './jsonc';
 export * from './markdown';
 export * from './node';
+export * from './nuxt';
 export * from './perfectionist';
 export * from './pnpm';
 export * from './regexp';

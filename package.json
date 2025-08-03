@@ -52,6 +52,7 @@
   },
   "peerDependencies": {
     "@adonisjs/eslint-plugin": "^2.0.0",
+    "@nuxt/eslint-plugin": " ^1.7.1",
     "@prettier/plugin-xml": "^3.4.2",
     "astro-eslint-parser": "^1.2.2",
     "eslint": "^9.32.0",
@@ -61,6 +62,9 @@
   },
   "peerDependenciesMeta": {
     "@adonisjs/eslint-plugin": {
+      "optional": true
+    },
+    "@nuxt/eslint-plugin": {
       "optional": true
     },
     "@prettier/plugin-xml": {
@@ -123,6 +127,7 @@
     "@commitlint/cli": "catalog:dev",
     "@commitlint/config-conventional": "catalog:dev",
     "@eslint/config-inspector": "catalog:dev",
+    "@nuxt/eslint-plugin": "catalog:peer",
     "@prettier/plugin-xml": "catalog:peer",
     "@types/node": "catalog:dev",
     "astro-eslint-parser": "catalog:peer",

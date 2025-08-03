@@ -17,6 +17,7 @@ import {
   jsonc,
   markdown,
   node,
+  nuxt,
   perfectionist,
   pnpm,
   regexp,
@@ -71,6 +72,7 @@ export function eienjs(
     unicorn: enableUnicorn = true,
     vue: enableVue = VuePackages.some((i) => isPackageExists(i)),
     adonisjs: enableAdonisjs = false,
+    nuxt: enableNuxt = false,
   } = options;
 
   let { isInEditor } = options;
@@ -191,6 +193,14 @@ export function eienjs(
     configs.push(adonisjs({
       ...resolveSubOptions(options, 'adonisjs'),
       overrides: getOverrides(options, 'adonisjs'),
+    }));
+  }
+
+  if (enableNuxt) {
+    configs.push(nuxt({
+      ...resolveSubOptions(options, 'nuxt'),
+      overrides: getOverrides(options, 'nuxt'),
+      stylistic: stylisticOptions,
     }));
   }
 

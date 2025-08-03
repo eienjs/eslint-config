@@ -50,6 +50,10 @@ export const frameworkOptions: PromItem<FrameworkOption>[] = [
     label: c.blueBright('AdonisJS'),
     value: 'adonisjs',
   },
+  {
+    label: c.greenBright('Nuxt'),
+    value: 'nuxt',
+  },
 ];
 
 export const frameworks: FrameworkOption[] = frameworkOptions.map(({ value }) => (value));
@@ -78,5 +82,8 @@ export const dependenciesMap = {
   vue: [],
   adonisjs: [
     '@adonisjs/eslint-plugin',
+  ],
+  nuxt: [
+    '@nuxt/eslint-plugin',
   ],
 } as const;

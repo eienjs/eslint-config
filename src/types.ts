@@ -33,6 +33,80 @@ export type TypedFlatConfigItem = Omit<Linter.Config, 'plugins' | 'rules'> & {
   rules?: Rules;
 };
 
+export interface OptionsNuxt extends OptionsOverrides {
+  /**
+   * Version of Nuxt
+   *
+   * @default 4
+   */
+  version?: 3 | 4;
+
+  /**
+   * Sort keys in nuxt.config to maintain a consistent order
+   *
+   * @default true when `stylistic` is enabled
+   */
+  sortConfigKeys?: boolean;
+
+  dirs?: {
+    /**
+     * Nuxt source directory
+     */
+    src?: string[];
+
+    /**
+     * Root directory for nuxt project
+     */
+    root?: string[];
+
+    /**
+     * Directory for pages
+     */
+    pages?: string[];
+
+    /**
+     * Directory for layouts
+     */
+    layouts?: string[];
+
+    /**
+     * Directory for components
+     */
+    components?: string[];
+
+    /**
+     * Directory for components with prefix
+     * Ignore `vue/multi-word-component-names`
+     */
+    componentsPrefixed?: string[];
+
+    /**
+     * Directory for composobles
+     */
+    composables?: string[];
+
+    /**
+     * Directory for plugins
+     */
+    plugins?: string[];
+
+    /**
+     * Directory for modules
+     */
+    modules?: string[];
+
+    /**
+     * Directory for middleware
+     */
+    middleware?: string[];
+
+    /**
+     * Directory for server
+     */
+    servers?: string[];
+  };
+}
+
 export interface OptionsAdonisJS extends OptionsOverrides {
   /**
    * Override the `dirs` option to provide custom directories of adonisjs app.
@@ -355,4 +429,14 @@ export interface OptionsConfig extends OptionsComponentExts {
    * @default false
    */
   adonisjs?: boolean | OptionsAdonisJS;
+
+  /**
+   * Enable Nuxt support.
+   *
+   * Requires installing:
+   * - `@nuxt/eslint-plugin`
+   *
+   * @default false
+   */
+  nuxt?: boolean | OptionsNuxt;
 }
