@@ -15,7 +15,9 @@
     "url": "https://github.com/eienjs/eslint-config/issues"
   },
   "keywords": [
-    "eslint-config"
+    "eslint-config",
+    "adonisjs",
+    "astro"
   ],
   "exports": {
     ".": "./dist/index.js",
@@ -23,7 +25,9 @@
   },
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "bin": "./bin/index.js",
   "files": [
+    "bin",
     "dist"
   ],
   "engines": {
@@ -37,7 +41,7 @@
     "dev": "npx @eslint/config-inspector --config eslint.config.ts",
     "build:inspector": "pnpm build && npx @eslint/config-inspector build",
     "watch": "tsdown --watch",
-    "gen": "tsx scripts/typegen.ts",
+    "gen": "tsx scripts/typegen.ts && tsx scripts/versiongen.ts",
     "changelog": "auto-changelog -p && git add CHANGELOG.md",
     "release": "np",
     "version": "pnpm build && pnpm changelog",
@@ -84,6 +88,8 @@
     "@typescript-eslint/eslint-plugin": "catalog:prod",
     "@typescript-eslint/parser": "catalog:prod",
     "@vitest/eslint-plugin": "catalog:prod",
+    "ansis": "catalog:prod",
+    "cac": "catalog:prod",
     "eslint-config-flat-gitignore": "catalog:prod",
     "eslint-flat-config-utils": "catalog:prod",
     "eslint-merge-processors": "catalog:prod",
@@ -106,6 +112,7 @@
     "globals": "catalog:prod",
     "jsonc-eslint-parser": "catalog:prod",
     "local-pkg": "catalog:prod",
+    "parse-gitignore": "catalog:prod",
     "pathe": "catalog:prod",
     "toml-eslint-parser": "catalog:prod",
     "vue-eslint-parser": "catalog:prod",
