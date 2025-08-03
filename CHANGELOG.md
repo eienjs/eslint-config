@@ -5,7 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [v0.3.0](https://luffynando.github.com/eienjs/eslint-config/compare/v0.2.0...v0.3.0)
+## [v0.4.0](https://luffynando.github.com/eienjs/eslint-config/compare/v0.3.0...v0.4.0)
+
+### Commits
+
+- feat: :sparkles: add nuxt support config [`420ea01`](https://luffynando.github.com/eienjs/eslint-config/commit/420ea01a17152d37b91e22c0b7eadddf02723ffb)
+
+## [v0.3.0](https://luffynando.github.com/eienjs/eslint-config/compare/v0.2.0...v0.3.0) - 2025-08-03
 
 ### Commits
 
