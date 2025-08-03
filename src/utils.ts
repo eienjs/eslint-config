@@ -10,6 +10,7 @@ export const parserPlain = {
   meta: {
     name: 'parser-plain',
   },
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   parseForESLint: (code: string) => ({
     ast: {
       body: [],
@@ -45,6 +46,7 @@ export function toArray<T>(value: T | T[]): T[] {
 export async function interopDefault<T>(m: Awaitable<T>): Promise<T extends { default: infer U } ? U : T> {
   const resolved = await m;
 
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-member-access
   return (resolved as any).default || resolved;
 }
 

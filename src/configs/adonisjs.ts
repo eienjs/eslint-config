@@ -39,7 +39,7 @@ export async function adonisjs(
   dirs.commands = dirs.commands || `${dirs.root}/commands`;
 
   const nestedGlobPattern = `**/*.${GLOB_SRC_EXT}`;
-  const fileRoutes = Object.values(dirs).map((dir) => join(dir, nestedGlobPattern));
+  const fileRoutes = [...Object.values(dirs).map((dir) => join(dir, nestedGlobPattern)), `${dirs.root}/ace.js`];
 
   const commonRulesSet: TypedFlatConfigItem['rules'] = {
     '@typescript-eslint/require-await': 'off',
@@ -64,7 +64,7 @@ export async function adonisjs(
       },
     },
     {
-      files: [fileRoutes],
+      files: fileRoutes,
       name: 'eienjs/adonisjs/disables',
       rules: {
         'antfu/no-top-level-await': 'off',
@@ -126,6 +126,14 @@ export async function adonisjs(
       name: 'eienjs/adonisjs/providers-disables',
       rules: {
         '@typescript-eslint/consistent-type-definitions': 'off',
+      },
+    },
+    {
+      files: [join(dirs.tests, nestedGlobPattern)],
+      name: 'eienjs/adonisjs/tests-disables',
+      rules: {
+        '@typescript-eslint/explicit-function-return-type': 'off',
+        '@typescript-eslint/explicit-module-boundary-types': 'off',
       },
     },
   ];

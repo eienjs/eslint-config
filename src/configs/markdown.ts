@@ -66,6 +66,7 @@ export async function markdown(
         'no-unused-expressions': 'off',
         'no-unused-labels': 'off',
         'no-unused-vars': 'off',
+        'unicode-bom': 'off',
 
         'n/prefer-global/process': 'off',
 
@@ -83,9 +84,10 @@ export async function markdown(
         '@typescript-eslint/no-unused-vars': 'off',
         '@typescript-eslint/no-use-before-define': 'off',
 
-        'unicode-bom': 'off',
         'unused-imports/no-unused-imports': 'off',
         'unused-imports/no-unused-vars': 'off',
+
+        'unicorn/filename-case': 'off',
 
         ...overrides,
       },

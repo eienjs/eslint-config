@@ -46,7 +46,10 @@ export async function unicorn(options: OptionsOverrides = {}): Promise<TypedFlat
         'unicorn/expiring-todo-comments': 'off',
         // Disable because match other functions with object is not array
         'unicorn/no-array-reduce': 'off',
+
+        // Preferences
         'unicorn/prefer-export-from': 'off',
+        'unicorn/prefer-top-level-await': 'off',
 
         ...overrides,
       },

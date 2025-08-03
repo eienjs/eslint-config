@@ -1,5 +1,5 @@
 import type { TypedFlatConfigItem } from '../types';
-import { GLOB_MARKDOWN, GLOB_SRC, GLOB_SRC_EXT } from '../globs';
+import { GLOB_SRC, GLOB_SRC_EXT } from '../globs';
 
 export async function disables(): Promise<TypedFlatConfigItem[]> {
   return [
@@ -42,13 +42,6 @@ export async function disables(): Promise<TypedFlatConfigItem[]> {
       name: 'eienjs/disables/cjs',
       rules: {
         '@typescript-eslint/no-require-imports': 'off',
-      },
-    },
-    {
-      files: [GLOB_MARKDOWN],
-      name: 'eienjs/disables/markdown',
-      rules: {
-        'unicorn/filename-case': 'off',
       },
     },
     {

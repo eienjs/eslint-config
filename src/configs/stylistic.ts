@@ -17,7 +17,7 @@ export async function stylistic(
     indent,
     overrides = {},
     quotes,
-    maxLineLength = 120,
+    maxLineLength,
   } = {
     ...StylisticConfigDefaults,
     ...options,
@@ -43,8 +43,6 @@ export async function stylistic(
 
         'antfu/consistent-chaining': 'error',
         'antfu/consistent-list-newline': 'error',
-
-        'antfu/top-level-function': 'error',
 
         '@stylistic/arrow-parens': ['error', 'always'],
         '@stylistic/brace-style': ['error', '1tbs', { allowSingleLine: true }],

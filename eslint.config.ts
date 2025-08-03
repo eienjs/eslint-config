@@ -1,3 +1,7 @@
 import { eienjs } from './src';
 
-export default eienjs();
+export default eienjs({
+  typescript: {
+    tsconfigPath: './tsconfig.json',
+  },
+});

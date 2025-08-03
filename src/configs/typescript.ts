@@ -116,7 +116,6 @@ export async function typescript(
         considerDefaultExhaustiveForUnions: true,
       },
     ],
-    '@typescript-eslint/unbound-method': 'error',
   };
 
   const [

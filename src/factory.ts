@@ -56,6 +56,7 @@ export const defaultPluginRenaming = {
   'yml': 'yaml',
 };
 
+// eslint-disable-next-line @typescript-eslint/promise-function-async
 export function eienjs(
   options: OptionsConfig & Omit<TypedFlatConfigItem, 'files'> = {},
 ): FlatConfigComposer<TypedFlatConfigItem, ConfigNames> {
@@ -185,6 +186,13 @@ export function eienjs(
     }));
   }
 
+  if (enableAdonisjs) {
+    configs.push(adonisjs({
+      ...resolveSubOptions(options, 'adonisjs'),
+      overrides: getOverrides(options, 'adonisjs'),
+    }));
+  }
+
   if (options.jsonc ?? true) {
     configs.push(
       jsonc({
@@ -234,13 +242,6 @@ export function eienjs(
     ));
   }
 
-  if (enableAdonisjs) {
-    configs.push(adonisjs({
-      ...resolveSubOptions(options, 'adonisjs'),
-      overrides: getOverrides(options, 'adonisjs'),
-    }));
-  }
-
   configs.push(
     disables(),
   );
@@ -255,6 +256,7 @@ export function eienjs(
   // We pick the known keys as ESLint would do schema validation
   const fusedConfig = flatConfigProps.reduce((acc, key) => {
     if (key in options)
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       acc[key] = options[key] as any;
 
     return acc;
@@ -275,7 +277,8 @@ export function eienjs(
         'test/no-only-tests',
         'prefer-const',
       ], {
-        builtinRules: () => import(['eslint', 'use-at-your-own-risk'].join('/')).then((r) => r.builtinRules),
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-member-access
+        builtinRules: async () => import(['eslint', 'use-at-your-own-risk'].join('/')).then((r) => r.builtinRules),
       });
   }
 
@@ -290,9 +293,9 @@ export function resolveSubOptions<K extends keyof OptionsConfig>(
   options: OptionsConfig,
   key: K,
 ): ResolvedOptions<OptionsConfig[K]> {
-  return typeof options[key] === 'boolean'
-    ? {} as any
-    : options[key] || {} as any;
+  return (typeof options[key] === 'boolean'
+    ? {}
+    : options[key] || {}) as ResolvedOptions<OptionsConfig[K]>;
 }
 
 export function getOverrides<K extends keyof OptionsConfig>(
