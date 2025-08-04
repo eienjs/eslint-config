@@ -5,11 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [v0.4.0](https://luffynando.github.com/eienjs/eslint-config/compare/v0.3.0...v0.4.0)
+## [v0.4.1](https://luffynando.github.com/eienjs/eslint-config/compare/v0.4.0...v0.4.1)
+
+### Commits
+
+- fix: :bug: resolve problem with vue, composables and nuxt utils rules [`d78a1e5`](https://luffynando.github.com/eienjs/eslint-config/commit/d78a1e576585c90b8528a33fd15caec0ad70dc05)
+
+## [v0.4.0](https://luffynando.github.com/eienjs/eslint-config/compare/v0.3.0...v0.4.0) - 2025-08-03
 
 ### Commits
 
 - feat: :sparkles: add nuxt support config [`420ea01`](https://luffynando.github.com/eienjs/eslint-config/commit/420ea01a17152d37b91e22c0b7eadddf02723ffb)
+- chore(release): :tada: 0.4.0 [`2c4f215`](https://luffynando.github.com/eienjs/eslint-config/commit/2c4f215fa8bb0f4eb92efa12b04591933f007d32)
 
 ## [v0.3.0](https://luffynando.github.com/eienjs/eslint-config/compare/v0.2.0...v0.3.0) - 2025-08-03
 
