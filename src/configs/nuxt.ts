@@ -1,6 +1,6 @@
 import type { OptionsNuxt, OptionsStylistic, TypedFlatConfigItem } from '../types';
 import { join } from 'pathe';
-import { GLOB_EXTS, GLOB_VUE } from '../globs';
+import { GLOB_EXTS, GLOB_SRC, GLOB_VUE } from '../globs';
 import { ensurePackages, interopDefault } from '../utils';
 
 export async function nuxt(
@@ -33,6 +33,7 @@ export async function nuxt(
   dirs.modules = dirs.modules ?? dirs.src.map((src) => `${src}/modules`);
   dirs.middleware = dirs.middleware ?? dirs.src.map((src) => `${src}/middleware`);
   dirs.servers = dirs.servers ?? dirs.src.map((src) => `${src}/servers`);
+  dirs.utils = dirs.utils ?? dirs.src.map((src) => `${src}/utils`);
   dirs.componentsPrefixed = dirs.componentsPrefixed ?? [];
 
   const fileSingleRoot = [
@@ -111,6 +112,13 @@ export async function nuxt(
       rules: {
         'nuxt/prefer-import-meta': 'error',
         ...overrides,
+      },
+    },
+    {
+      files: dirs.utils.map((utilsDir) => join(utilsDir, GLOB_SRC)),
+      name: 'eienjs/nuxt/utils-disables',
+      rules: {
+        '@typescript-eslint/explicit-module-boundary-types': 'off',
       },
     },
     ...sortConfigKeys

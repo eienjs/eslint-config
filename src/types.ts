@@ -104,6 +104,11 @@ export interface OptionsNuxt extends OptionsOverrides {
      * Directory for server
      */
     servers?: string[];
+
+    /**
+     * Directory for utils
+     */
+    utils?: string[];
   };
 }
 

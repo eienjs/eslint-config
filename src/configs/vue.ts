@@ -8,7 +8,7 @@ import type {
   TypedFlatConfigItem,
 } from '../types';
 import { mergeProcessors } from 'eslint-merge-processors';
-import { GLOB_VUE } from '../globs';
+import { GLOB_SRC, GLOB_VUE } from '../globs';
 import { interopDefault } from '../utils';
 
 export async function vue(
@@ -201,7 +201,6 @@ export async function vue(
           : {},
 
         // Disable usage in vue files
-        'unicorn/filename-case': 'off',
         'antfu/no-top-level-await': 'off',
         'n/prefer-global/process': 'off',
         '@typescript-eslint/explicit-function-return-type': 'off',
@@ -209,6 +208,13 @@ export async function vue(
         '@stylistic/max-len': 'off',
 
         ...overrides,
+      },
+    },
+    {
+      files: [`**/composables/${GLOB_SRC}`],
+      name: 'eienjs/vue/composables-disables',
+      rules: {
+        '@typescript-eslint/explicit-module-boundary-types': 'off',
       },
     },
   ];

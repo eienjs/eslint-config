@@ -87,8 +87,6 @@ export async function markdown(
         'unused-imports/no-unused-imports': 'off',
         'unused-imports/no-unused-vars': 'off',
 
-        'unicorn/filename-case': 'off',
-
         ...overrides,
       },
     },

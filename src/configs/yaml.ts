@@ -39,7 +39,6 @@ export async function yaml(
       name: 'eienjs/yaml/rules',
       rules: {
         '@stylistic/spaced-comment': 'off',
-        'unicorn/filename-case': 'off',
 
         'yaml/block-mapping': 'error',
         'yaml/block-sequence': 'error',

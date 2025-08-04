@@ -1,4 +1,5 @@
 import type { OptionsOverrides, TypedFlatConfigItem } from '../types';
+import { GLOB_SRC } from '../globs';
 import { pluginUnicorn } from '../plugins';
 
 export async function unicorn(options: OptionsOverrides = {}): Promise<TypedFlatConfigItem[]> {
@@ -18,12 +19,6 @@ export async function unicorn(options: OptionsOverrides = {}): Promise<TypedFlat
         'unicorn/no-this-assignment': 'off',
         'unicorn/consistent-destructuring': 'error',
         'unicorn/consistent-function-scoping': ['error', { checkArrowFunctions: false }],
-        'unicorn/filename-case': [
-          'error',
-          {
-            case: 'snakeCase',
-          },
-        ],
         'unicorn/no-null': 'off',
         // Enable usage for helpers classes
         'unicorn/no-static-only-class': 'off',
@@ -50,8 +45,21 @@ export async function unicorn(options: OptionsOverrides = {}): Promise<TypedFlat
         // Preferences
         'unicorn/prefer-export-from': 'off',
         'unicorn/prefer-top-level-await': 'off',
+        'unicorn/filename-case': 'off',
 
         ...overrides,
+      },
+    },
+    {
+      files: [GLOB_SRC],
+      name: 'eienjs/unicorn/special-rules',
+      rules: {
+        'unicorn/filename-case': [
+          'error',
+          {
+            case: 'snakeCase',
+          },
+        ],
       },
     },
   ];
