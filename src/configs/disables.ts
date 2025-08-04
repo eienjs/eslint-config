@@ -1,5 +1,5 @@
 import type { TypedFlatConfigItem } from '../types';
-import { GLOB_SRC, GLOB_SRC_EXT } from '../globs';
+import { GLOB_ASTRO, GLOB_JSON, GLOB_JSON5, GLOB_JSONC, GLOB_SRC, GLOB_SRC_EXT, GLOB_TOML, GLOB_YAML } from '../globs';
 
 export async function disables(): Promise<TypedFlatConfigItem[]> {
   return [
@@ -52,6 +52,34 @@ export async function disables(): Promise<TypedFlatConfigItem[]> {
         'antfu/no-top-level-await': 'off',
         'no-console': 'off',
         '@typescript-eslint/explicit-function-return-type': 'off',
+      },
+    },
+    {
+      files: [GLOB_JSON, GLOB_JSON5, GLOB_JSONC],
+      name: 'eienjs/disables/json',
+      rules: {
+        '@stylistic/max-len': 'off',
+      },
+    },
+    {
+      files: [GLOB_YAML],
+      name: 'eienjs/disables/yaml',
+      rules: {
+        '@stylistic/max-len': 'off',
+      },
+    },
+    {
+      files: [GLOB_TOML],
+      name: 'eienjs/disables/toml',
+      rules: {
+        '@stylistic/max-len': 'off',
+      },
+    },
+    {
+      files: [GLOB_ASTRO],
+      name: 'eienjs/disables/astro',
+      rules: {
+        '@stylistic/max-len': 'off',
       },
     },
   ];

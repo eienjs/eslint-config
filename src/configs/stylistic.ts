@@ -45,7 +45,7 @@ export async function stylistic(
 
         '@stylistic/arrow-parens': ['error', 'always'],
         '@stylistic/brace-style': ['error', '1tbs', { allowSingleLine: true }],
-        '@stylistic/max-len': ['error', { code: maxLineLength, ignoreComments: true }],
+        '@stylistic/max-len': ['warn', { code: maxLineLength, ignoreComments: true }],
         '@stylistic/padding-line-between-statements': [
           'error',
           {
