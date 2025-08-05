@@ -5,11 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [v1.0.0](https://luffynando.github.com/eienjs/eslint-config/compare/v0.4.1...v1.0.0)
+## [v1.0.1](https://luffynando.github.com/eienjs/eslint-config/compare/v1.0.0...v1.0.1)
+
+### Commits
+
+- chore: :arrow_up: update dependencies [`748c91e`](https://luffynando.github.com/eienjs/eslint-config/commit/748c91e74daa8e491a3de39c46840f897bdfce94)
+
+## [v1.0.0](https://luffynando.github.com/eienjs/eslint-config/compare/v0.4.1...v1.0.0) - 2025-08-04
 
 ### Commits
 
 - fix: :bug: apply max len warn and disable on files not ts [`e212055`](https://luffynando.github.com/eienjs/eslint-config/commit/e2120550607544c7a21fc0f50639c3d361e9e25c)
+- chore(release): :tada: 1.0.0 [`fc1859a`](https://luffynando.github.com/eienjs/eslint-config/commit/fc1859aa1d5d47156c288dc22741549fcfeed1a8)
 
 ## [v0.4.1](https://luffynando.github.com/eienjs/eslint-config/compare/v0.4.0...v0.4.1) - 2025-08-03
 
