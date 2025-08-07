@@ -5,11 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [v1.0.1](https://luffynando.github.com/eienjs/eslint-config/compare/v1.0.0...v1.0.1)
+## [v1.0.2](https://luffynando.github.com/eienjs/eslint-config/compare/v1.0.1...v1.0.2)
+
+### Commits
+
+- chore: :arrow_up: update dependencies [`51cdce1`](https://luffynando.github.com/eienjs/eslint-config/commit/51cdce15e06a7bbb6f7bc8238503e256c1c4a5f5)
+- chore: :recycle: update file contstants [`30f89b9`](https://luffynando.github.com/eienjs/eslint-config/commit/30f89b9921134428e0bb0bce28fa4ab2dcae66da)
+
+## [v1.0.1](https://luffynando.github.com/eienjs/eslint-config/compare/v1.0.0...v1.0.1) - 2025-08-05
 
 ### Commits
 
 - chore: :arrow_up: update dependencies [`748c91e`](https://luffynando.github.com/eienjs/eslint-config/commit/748c91e74daa8e491a3de39c46840f897bdfce94)
+- chore(release): :tada: 1.0.1 [`02b1b77`](https://luffynando.github.com/eienjs/eslint-config/commit/02b1b77e89f1172fff2c443a6ef0f1b11bf5047c)
 
 ## [v1.0.0](https://luffynando.github.com/eienjs/eslint-config/compare/v0.4.1...v1.0.0) - 2025-08-04
 
