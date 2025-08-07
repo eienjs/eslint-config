@@ -13,7 +13,7 @@ catalogs:
     typescript: ^5.9.2
   peer:
     '@adonisjs/eslint-plugin': ^2.0.1
-    '@nuxt/eslint-plugin': ^1.7.1
+    '@nuxt/eslint-plugin': ^1.8.0
     '@prettier/plugin-xml': ^3.4.2
     astro-eslint-parser: ^1.2.2
     eslint: ^9.32.0
@@ -37,7 +37,7 @@ catalogs:
     eslint-plugin-antfu: ^3.1.1
     eslint-plugin-command: ^3.3.1
     eslint-plugin-import-lite: ^0.3.0
-    eslint-plugin-jsdoc: ^52.0.2
+    eslint-plugin-jsdoc: ^52.0.4
     eslint-plugin-jsonc: ^2.20.1
     eslint-plugin-n: ^17.21.3
     eslint-plugin-no-only-tests: ^3.3.0

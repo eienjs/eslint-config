@@ -52,7 +52,7 @@
   },
   "peerDependencies": {
     "@adonisjs/eslint-plugin": "^2.0.1",
-    "@nuxt/eslint-plugin": " ^1.7.1",
+    "@nuxt/eslint-plugin": "^1.8.0",
     "@prettier/plugin-xml": "^3.4.2",
     "astro-eslint-parser": "^1.2.2",
     "eslint": "^9.32.0",
