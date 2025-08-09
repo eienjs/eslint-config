@@ -2,6 +2,7 @@ import type {
   OptionsComponentExts,
   OptionsFiles,
   OptionsOverrides,
+  OptionsStylistic,
   OptionsTypeScriptParserOptions,
   OptionsTypeScriptWithTypes,
   TypedFlatConfigItem,
@@ -12,14 +13,20 @@ import { pluginAntfu } from '../plugins';
 import { interopDefault } from '../utils';
 
 export async function typescript(
-  options: OptionsFiles
-    & OptionsComponentExts & OptionsOverrides & OptionsTypeScriptWithTypes & OptionsTypeScriptParserOptions = {},
+  options:
+    & OptionsFiles
+    & OptionsComponentExts
+    & OptionsOverrides
+    & OptionsTypeScriptWithTypes
+    & OptionsTypeScriptParserOptions
+    & OptionsStylistic = {},
 ): Promise<TypedFlatConfigItem[]> {
   const {
     componentExts = [],
     overrides = {},
     overridesTypeAware = {},
     parserOptions = {},
+    stylistic = true,
   } = options;
 
   const files = options.files ?? [
@@ -33,7 +40,7 @@ export async function typescript(
     `${GLOB_MARKDOWN}/**`,
     GLOB_ASTRO_TS,
   ];
-  const tsconfigPath = options?.tsconfigPath ?? undefined;
+  const tsconfigPath = options.tsconfigPath ?? undefined;
   const isTypeAware = Boolean(tsconfigPath);
 
   const typeAwareRules: TypedFlatConfigItem['rules'] = {
@@ -173,8 +180,8 @@ export async function typescript(
       files,
       name: 'eienjs/typescript/rules',
       rules: {
-        ...pluginTs.configs['eslint-recommended'].overrides![0].rules!,
-        ...pluginTs.configs.strict.rules!,
+        ...pluginTs.configs['eslint-recommended'].overrides?.[0].rules,
+        ...pluginTs.configs.strict.rules,
 
         'no-dupe-class-members': 'off',
         'no-redeclare': 'off',
@@ -221,6 +228,8 @@ export async function typescript(
           ignores: ignoresTypeAware,
           name: 'eienjs/typescript/rules-type-aware',
           rules: {
+            ...pluginTs.configs['strict-type-checked'].rules,
+            ...stylistic ? pluginTs.configs['stylistic-type-checked'].rules : {},
             ...typeAwareRules,
             ...overridesTypeAware,
           },
