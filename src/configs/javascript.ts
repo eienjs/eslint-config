@@ -13,17 +13,15 @@ export async function javascript(
   return [
     {
       languageOptions: {
-        ecmaVersion: 2022,
         globals: {
           ...globals.browser,
-          ...globals.es2021,
+          ...globals.es2025,
           ...globals.node,
           document: 'readonly',
           navigator: 'readonly',
           window: 'readonly',
         },
         parserOptions: {
-          ecmaVersion: 2022,
           sourceType: 'module',
         },
         sourceType: 'module',
