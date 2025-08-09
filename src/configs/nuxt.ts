@@ -37,9 +37,9 @@ export async function nuxt(
   dirs.componentsPrefixed = dirs.componentsPrefixed ?? [];
 
   const fileSingleRoot = [
-    ...(dirs.layouts?.map((layoutsDir) => join(layoutsDir, `**/*.${GLOB_EXTS}`)) || []),
-    ...(dirs.pages?.map((pagesDir) => join(pagesDir, `**/*.${GLOB_EXTS}`)) || []),
-    ...(dirs.components?.map((componentsDir) => join(componentsDir, `**/*.server.${GLOB_EXTS}`)) || []),
+    ...dirs.layouts.map((layoutsDir) => join(layoutsDir, `**/*.${GLOB_EXTS}`)),
+    ...dirs.pages.map((pagesDir) => join(pagesDir, `**/*.${GLOB_EXTS}`)),
+    ...dirs.components.map((componentsDir) => join(componentsDir, `**/*.server.${GLOB_EXTS}`)),
   ].sort();
 
   // imported from 'eslint-plugin-vue/lib/utils/inline-non-void-elements.json'

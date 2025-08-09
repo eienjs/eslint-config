@@ -27,8 +27,8 @@ export interface CliRunOptions {
 
 export async function run(options: CliRunOptions = {}): Promise<void> {
   const argSkipPrompt = Boolean(process.env.SKIP_PROMPT) || options.yes;
-  const argTemplate = options.frameworks?.map((m) => m?.trim()).filter(Boolean) as FrameworkOption[];
-  const argExtra = options.extra?.map((m) => m?.trim()).filter(Boolean) as ExtraLibrariesOption[];
+  const argTemplate = options.frameworks?.map((m) => m.trim()).filter(Boolean) as FrameworkOption[] | undefined;
+  const argExtra = options.extra?.map((m) => m.trim()).filter(Boolean) as ExtraLibrariesOption[] | undefined;
 
   if (fs.existsSync(path.join(process.cwd(), 'eslint.config.js'))) {
     p.log.warn(c.yellow`eslint.config.js already exists, migration wizard exited.`);
@@ -47,7 +47,7 @@ export async function run(options: CliRunOptions = {}): Promise<void> {
   if (!argSkipPrompt) {
     result = await p.group({
       uncommittedConfirmed: async () => {
-        if (argSkipPrompt || isGitClean()) {
+        if (isGitClean()) {
           return true;
         }
 
@@ -58,13 +58,13 @@ export async function run(options: CliRunOptions = {}): Promise<void> {
       },
       frameworks: async ({ results }) => {
         const isArgTemplateValid
-          = typeof argTemplate === 'string' && Boolean(frameworks.includes((argTemplate as FrameworkOption)));
+          = typeof argTemplate === 'string' && frameworks.includes((argTemplate as FrameworkOption));
 
         if (!results.uncommittedConfirmed || isArgTemplateValid) {
           return;
         }
 
-        const message = !isArgTemplateValid && argTemplate
+        const message = argTemplate
           ? `"${argTemplate.toString()}" isn't a valid template. Please choose from below: `
           : 'Select a framework:';
 
@@ -83,7 +83,7 @@ export async function run(options: CliRunOptions = {}): Promise<void> {
           return;
         }
 
-        const message = !isArgExtraValid && argExtra
+        const message = argExtra
           ? `"${argExtra.toString()}" isn't a valid extra util. Please choose from below: `
           : 'Select a extra utils:';
 

@@ -1,7 +1,7 @@
 import type { TypedFlatConfigItem } from '../types';
 import { GLOB_ASTRO, GLOB_JSON, GLOB_JSON5, GLOB_JSONC, GLOB_SRC, GLOB_SRC_EXT, GLOB_TOML, GLOB_YAML } from '../globs';
 
-export async function disables(): Promise<TypedFlatConfigItem[]> {
+export function disables(): TypedFlatConfigItem[] {
   return [
     {
       files: [`**/scripts/${GLOB_SRC}`],
@@ -10,6 +10,7 @@ export async function disables(): Promise<TypedFlatConfigItem[]> {
         'antfu/no-top-level-await': 'off',
         'no-console': 'off',
         '@typescript-eslint/explicit-function-return-type': 'off',
+        '@typescript-eslint/no-deprecated': 'off',
       },
     },
     {
@@ -19,6 +20,7 @@ export async function disables(): Promise<TypedFlatConfigItem[]> {
         'antfu/no-top-level-await': 'off',
         'no-console': 'off',
         'unicorn/no-process-exit': 'off',
+        '@typescript-eslint/no-unnecessary-condition': 'off',
       },
     },
     {

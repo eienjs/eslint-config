@@ -15,7 +15,7 @@ export async function updatePackageJson(result: PromptResult): Promise<void> {
   p.log.step(c.cyan`Bumping @eienjs/eslint-config to v${version}`);
 
   const pkgContent = await fsp.readFile(pathPackageJSON, 'utf8');
-  const pkg = JSON.parse(pkgContent) as { devDependencies?: Record<string, string> };
+  const pkg = JSON.parse(pkgContent) as { devDependencies?: Record<string, unknown> };
 
   pkg.devDependencies = pkg.devDependencies ?? {};
   pkg.devDependencies['@eienjs/eslint-config'] = `^${version}`;
@@ -48,7 +48,7 @@ export async function updatePackageJson(result: PromptResult): Promise<void> {
 
   for (const framework of result.frameworks) {
     const deps = dependenciesMap[framework];
-    if (deps) {
+    if (deps.length > 0) {
       for (const f of deps) {
         pkg.devDependencies[f] = versionsMap[f as keyof typeof versionsMap];
         addedPackages.push(f);

@@ -1,7 +1,7 @@
 import type { TypedFlatConfigItem } from '../types';
 import { pluginComments } from '../plugins';
 
-export async function comments(): Promise<TypedFlatConfigItem[]> {
+export function comments(): TypedFlatConfigItem[] {
   return [
     {
       name: 'eienjs/eslint-comments/rules',

@@ -1,7 +1,7 @@
 import type { TypedFlatConfigItem } from '../types';
 import createCommand from 'eslint-plugin-command/config';
 
-export async function command(): Promise<TypedFlatConfigItem[]> {
+export function command(): TypedFlatConfigItem[] {
   return [
     {
       ...createCommand(),

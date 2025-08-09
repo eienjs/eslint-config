@@ -6,7 +6,7 @@ export type VendoredPrettierOptions = Partial<VendoredPrettierOptionsRequired>;
 
 export type VendoredPrettierRuleOptions = VendoredPrettierOptions & {
   parser?: BuiltInParserName | ExternalParserName;
-  [k: string]: unknown | undefined;
+  [k: string]: unknown;
 };
 
 export interface VendoredPrettierOptionsRequired {
@@ -76,7 +76,7 @@ export interface VendoredPrettierOptionsRequired {
   /**
    * Provide ability to support new languages to prettier.
    */
-  plugins: Array<string | unknown>;
+  plugins: unknown[];
   /**
    * How to handle whitespaces in HTML.
    * @default "css"
@@ -162,4 +162,5 @@ export type ExternalParserName = 'astro';
 //   https://github.com/microsoft/TypeScript/issues/29729#issuecomment-700527227
 export type LiteralUnion<T extends U, U = string>
   = | T
+    // eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents
     | (Pick<U, never> & { _?: never | undefined });

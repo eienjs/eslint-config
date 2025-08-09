@@ -2,7 +2,7 @@ import type { OptionsOverrides, TypedFlatConfigItem } from '../types';
 import { GLOB_SRC } from '../globs';
 import { pluginUnicorn } from '../plugins';
 
-export async function unicorn(options: OptionsOverrides = {}): Promise<TypedFlatConfigItem[]> {
+export function unicorn(options: OptionsOverrides = {}): TypedFlatConfigItem[] {
   const {
     overrides = {},
   } = options;

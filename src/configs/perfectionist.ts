@@ -6,7 +6,7 @@ import { pluginPerfectionist } from '../plugins';
  *
  * @see https://github.com/azat-io/eslint-plugin-perfectionist
  */
-export async function perfectionist(): Promise<TypedFlatConfigItem[]> {
+export function perfectionist(): TypedFlatConfigItem[] {
   return [
     {
       name: 'eienjs/perfectionist/setup',

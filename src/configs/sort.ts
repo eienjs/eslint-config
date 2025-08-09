@@ -5,7 +5,7 @@ import type { TypedFlatConfigItem } from '../types';
  *
  * Requires `jsonc` config
  */
-export async function sortPackageJson(): Promise<TypedFlatConfigItem[]> {
+export function sortPackageJson(): TypedFlatConfigItem[] {
   return [
     {
       files: ['**/package.json'],

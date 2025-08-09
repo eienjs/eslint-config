@@ -15,7 +15,7 @@ export async function updateEslintFiles(result: PromptResult): Promise<void> {
   const pathPackageJSON = path.join(cwd, 'package.json');
 
   const pkgContent = await fsp.readFile(pathPackageJSON, 'utf8');
-  const pkg = JSON.parse(pkgContent) as Record<string, any>;
+  const pkg = JSON.parse(pkgContent) as Record<string, unknown>;
 
   const configFileName = pkg.type === 'module' ? 'eslint.config.js' : 'eslint.config.mjs';
   const pathFlatConfig = path.join(cwd, configFileName);
@@ -60,7 +60,7 @@ export async function updateEslintFiles(result: PromptResult): Promise<void> {
   const files = fs.readdirSync(cwd);
   const legacyConfig: string[] = [];
   for (const file of files) {
-    if (/eslint|prettier/.test(file) && !/eslint\.config\./.test(file)) {
+    if (/eslint|prettier/.test(file) && !file.includes('eslint.config.')) {
       legacyConfig.push(file);
     }
   }

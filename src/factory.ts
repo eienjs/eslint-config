@@ -151,6 +151,7 @@ export function eienjs(
     configs.push(typescript({
       ...typescriptOptions,
       componentExts,
+      stylistic: stylisticOptions,
       overrides: getOverrides(options, 'typescript'),
     }));
   }
@@ -269,14 +270,14 @@ export function eienjs(
 
   // User can optionally pass a flat config item to the first argument
   // We pick the known keys as ESLint would do schema validation
-  const fusedConfig = flatConfigProps.reduce((acc, key) => {
+  const fusedConfig = flatConfigProps.reduce<TypedFlatConfigItem>((acc, key) => {
     if (key in options) {
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-      acc[key] = options[key] as any;
+      // @ts-expect-error - ignore, we're just merging
+      acc[key] = options[key];
     }
 
     return acc;
-  }, {} as TypedFlatConfigItem);
+  }, {});
   if (Object.keys(fusedConfig).length > 0) {
     configs.push([fusedConfig]);
   }
@@ -315,9 +316,9 @@ export function resolveSubOptions<K extends keyof OptionsConfig>(
     : options[key] || {}) as ResolvedOptions<OptionsConfig[K]>;
 }
 
-export function getOverrides<K extends keyof OptionsConfig>(
+export function getOverrides(
   options: OptionsConfig,
-  key: K,
+  key: keyof OptionsConfig,
 ): Partial<Linter.RulesRecord & RuleOptions> {
   const sub = resolveSubOptions(options, key);
 

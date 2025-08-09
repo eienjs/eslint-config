@@ -1,7 +1,7 @@
 import type { OptionsOverrides, OptionsStylistic, TypedFlatConfigItem } from '../types';
 import { pluginAntfu, pluginImportLite } from '../plugins';
 
-export async function imports(options: OptionsOverrides & OptionsStylistic = {}): Promise<TypedFlatConfigItem[]> {
+export function imports(options: OptionsOverrides & OptionsStylistic = {}): TypedFlatConfigItem[] {
   const {
     overrides = {},
     stylistic = true,
