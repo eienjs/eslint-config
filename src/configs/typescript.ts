@@ -182,6 +182,7 @@ export async function typescript(
       rules: {
         ...pluginTs.configs['eslint-recommended'].overrides?.[0].rules,
         ...pluginTs.configs.strict.rules,
+        ...stylistic ? pluginTs.configs.stylistic.rules : {},
 
         'no-dupe-class-members': 'off',
         'no-redeclare': 'off',
