@@ -5,13 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [v1.1.0](https://luffynando.github.com/eienjs/eslint-config/compare/v1.0.2...v1.1.0)
+## [v1.1.1](https://luffynando.github.com/eienjs/eslint-config/compare/v1.1.0...v1.1.1)
+
+### Commits
+
+- chore: :arrow_up: update dependencies [`7c420cb`](https://luffynando.github.com/eienjs/eslint-config/commit/7c420cb5bdfa46a6df01377ace0b4f5e702ccadb)
+- fix: :bug: disable rule for allow callback or not functions [`7c02163`](https://luffynando.github.com/eienjs/eslint-config/commit/7c02163ad0a04a659629904130d66d9a9a4a6685)
+
+## [v1.1.0](https://luffynando.github.com/eienjs/eslint-config/compare/v1.0.2...v1.1.0) - 2025-08-08
 
 ### Commits
 
 - style: :rotating_light: resolve issues reported by eslint [`ee54f22`](https://luffynando.github.com/eienjs/eslint-config/commit/ee54f22a552fd0606cdf5c6a22735b630f9f2a9e)
 - refactor: :recycle: add missing strict type checked and stylistic rules for typescript [`ec345d4`](https://luffynando.github.com/eienjs/eslint-config/commit/ec345d42d024a695919425002536dc3c31e4e8ac)
-- chore: :arrow_up: update dependencies [`b3b5ae7`](https://luffynando.github.com/eienjs/eslint-config/commit/b3b5ae7711318241c1e78c8326d76d0e0b175f7b)
+- chore(release): :tada: 1.1.0 [`53147be`](https://luffynando.github.com/eienjs/eslint-config/commit/53147beffe5a9e908643514943edc2302a3a7858)
 
 ## [v1.0.2](https://luffynando.github.com/eienjs/eslint-config/compare/v1.0.1...v1.0.2) - 2025-08-07
 
