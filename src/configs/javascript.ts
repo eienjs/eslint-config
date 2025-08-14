@@ -203,13 +203,7 @@ export function javascript(
         ],
         'one-var': ['error', { initialized: 'never' }],
         'operator-assignment': ['error', 'always'],
-        'prefer-arrow-callback': [
-          'error',
-          {
-            allowNamedFunctions: false,
-            allowUnboundThis: true,
-          },
-        ],
+        'prefer-arrow-callback': 'off',
         'prefer-const': [
           isInEditor ? 'warn' : 'error',
           {
