@@ -200,7 +200,7 @@ export async function typescript(
         '@typescript-eslint/method-signature-style': ['error', 'property'], // https://www.totaltypescript.com/method-shorthand-syntax-considered-harmful
         '@typescript-eslint/no-dupe-class-members': 'error',
         '@typescript-eslint/no-dynamic-delete': 'off',
-        '@typescript-eslint/no-empty-object-type': ['error', { allowInterfaces: 'always' }],
+        '@typescript-eslint/no-empty-object-type': 'off',
         '@typescript-eslint/no-explicit-any': 'off',
         '@typescript-eslint/no-extraneous-class': 'off',
         '@typescript-eslint/no-import-type-side-effects': 'error',

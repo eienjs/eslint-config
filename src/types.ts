@@ -147,6 +147,25 @@ export interface OptionsVue extends OptionsOverrides {
    * @default true
    */
   sfcBlocks?: boolean | VueBlocksOptions;
+  /**
+   * Only check registered components in template casing.
+   *
+   * @default false
+   */
+  componentNameInTemplateCasingOnlyRegistered?: boolean;
+  /**
+   * Ignored components in template casing.
+   *
+   * @default []
+   */
+  componentNameInTemplateCasingIgnores?: string[];
+
+  /**
+   * Global components in template casing.
+   *
+   * @default []
+   */
+  componentNameInTemplateCasingGlobals?: string[];
 }
 
 export type OptionsTypescript

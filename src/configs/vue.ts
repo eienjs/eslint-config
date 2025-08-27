@@ -19,6 +19,9 @@ export async function vue(
     overrides = {},
     stylistic = true,
     typescript,
+    componentNameInTemplateCasingOnlyRegistered = false,
+    componentNameInTemplateCasingIgnores = [],
+    componentNameInTemplateCasingGlobals = [],
   } = options;
 
   const sfcBlocks = options.sfcBlocks === true
@@ -115,7 +118,11 @@ export async function vue(
           order: ['script', 'template', 'style'],
         }],
         'vue/component-api-style': ['error', ['script-setup']],
-        'vue/component-name-in-template-casing': ['error', 'PascalCase', { registeredComponentsOnly: true }],
+        'vue/component-name-in-template-casing': ['error', 'PascalCase', {
+          registeredComponentsOnly: componentNameInTemplateCasingOnlyRegistered,
+          ignores: componentNameInTemplateCasingIgnores,
+          globals: componentNameInTemplateCasingGlobals,
+        }],
         'vue/component-options-name-casing': ['error', 'PascalCase'],
         'vue/custom-event-name-casing': ['error', 'camelCase'],
         'vue/define-macros-order': ['error', {

@@ -56,6 +56,7 @@ export async function stylistic(
           // require blank lines before all return statements, like the newline-before-return rule.
           { blankLine: 'always', next: 'return', prev: '*' },
         ],
+        '@stylistic/lines-between-class-members': ['error', 'always'],
         '@stylistic/generator-star-spacing': ['error', { after: true, before: false }],
         '@stylistic/quote-props': ['error', 'consistent'],
         '@stylistic/quotes': ['error', quotes, { avoidEscape: true }],
