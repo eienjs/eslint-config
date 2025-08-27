@@ -123,6 +123,19 @@ export async function typescript(
         considerDefaultExhaustiveForUnions: true,
       },
     ],
+    '@typescript-eslint/no-empty-object-type': 'off',
+    '@typescript-eslint/no-unused-vars': [
+      'error',
+      {
+        'args': 'all',
+        'argsIgnorePattern': '^_',
+        'caughtErrors': 'all',
+        'caughtErrorsIgnorePattern': '^_',
+        'destructuredArrayIgnorePattern': '^_',
+        'varsIgnorePattern': '^_',
+        'ignoreRestSiblings': true,
+      },
+    ],
   };
 
   const [
@@ -213,7 +226,18 @@ export async function typescript(
           allowTaggedTemplates: true,
           allowTernary: true,
         }],
-        '@typescript-eslint/no-unused-vars': 'off',
+        '@typescript-eslint/no-unused-vars': [
+          'error',
+          {
+            'args': 'all',
+            'argsIgnorePattern': '^_',
+            'caughtErrors': 'all',
+            'caughtErrorsIgnorePattern': '^_',
+            'destructuredArrayIgnorePattern': '^_',
+            'varsIgnorePattern': '^_',
+            'ignoreRestSiblings': true,
+          },
+        ],
         '@typescript-eslint/no-use-before-define': ['error', { classes: false, functions: false, variables: true }],
         '@typescript-eslint/no-useless-constructor': 'off',
         '@typescript-eslint/no-wrapper-object-types': 'error',
