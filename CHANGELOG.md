@@ -5,10 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [v1.1.1](https://luffynando.github.com/eienjs/eslint-config/compare/v1.1.0...v1.1.1)
+## [v1.2.0](https://luffynando.github.com/eienjs/eslint-config/compare/v1.1.1...v1.2.0)
 
 ### Commits
 
+- fix: :adhesive_bandage: update rules for resolve stylistic and opinionated standars [`0d2f07f`](https://luffynando.github.com/eienjs/eslint-config/commit/0d2f07f3e2db4f0583214d427ab09d6c1ca6eff5)
+- chore: :arrow_up: update dependencies [`4e45d83`](https://luffynando.github.com/eienjs/eslint-config/commit/4e45d83d2833bc3e311199ada7cc9f7c8f8a258f)
+
+## [v1.1.1](https://luffynando.github.com/eienjs/eslint-config/compare/v1.1.0...v1.1.1) - 2025-08-13
+
+### Commits
+
+- chore(release): :tada: 1.1.1 [`550c74e`](https://luffynando.github.com/eienjs/eslint-config/commit/550c74e3108152867403a10a8bf6bb315291ac27)
 - chore: :arrow_up: update dependencies [`7c420cb`](https://luffynando.github.com/eienjs/eslint-config/commit/7c420cb5bdfa46a6df01377ace0b4f5e702ccadb)
 - fix: :bug: disable rule for allow callback or not functions [`7c02163`](https://luffynando.github.com/eienjs/eslint-config/commit/7c02163ad0a04a659629904130d66d9a9a4a6685)
 
