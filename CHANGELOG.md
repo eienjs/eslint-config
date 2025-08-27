@@ -5,12 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [v1.2.0](https://luffynando.github.com/eienjs/eslint-config/compare/v1.1.1...v1.2.0)
+## [v1.2.1](https://luffynando.github.com/eienjs/eslint-config/compare/v1.2.0...v1.2.1)
+
+### Commits
+
+- fix: :adhesive_bandage: resolve no empty object and ignore no unused [`b5f990d`](https://luffynando.github.com/eienjs/eslint-config/commit/b5f990d369e6456782e57c51469ef604e0f201a1)
+
+## [v1.2.0](https://luffynando.github.com/eienjs/eslint-config/compare/v1.1.1...v1.2.0) - 2025-08-26
 
 ### Commits
 
 - fix: :adhesive_bandage: update rules for resolve stylistic and opinionated standars [`0d2f07f`](https://luffynando.github.com/eienjs/eslint-config/commit/0d2f07f3e2db4f0583214d427ab09d6c1ca6eff5)
 - chore: :arrow_up: update dependencies [`4e45d83`](https://luffynando.github.com/eienjs/eslint-config/commit/4e45d83d2833bc3e311199ada7cc9f7c8f8a258f)
+- chore(release): :tada: 1.2.0 [`2504d3c`](https://luffynando.github.com/eienjs/eslint-config/commit/2504d3c922eb868b5639f2696d0d76258ea8ee43)
 
 ## [v1.1.1](https://luffynando.github.com/eienjs/eslint-config/compare/v1.1.0...v1.1.1) - 2025-08-13
 
