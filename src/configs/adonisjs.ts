@@ -132,8 +132,10 @@ export async function adonisjs(
       files: [join(dirs.tests, nestedGlobPattern)],
       name: 'eienjs/adonisjs/tests-disables',
       rules: {
+        '@typescript-eslint/unbound-method': 'off',
         '@typescript-eslint/explicit-function-return-type': 'off',
         '@typescript-eslint/explicit-module-boundary-types': 'off',
+        '@typescript-eslint/no-unsafe-assignment': 'off',
       },
     },
   ];

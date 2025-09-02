@@ -136,6 +136,7 @@ export async function typescript(
         'ignoreRestSiblings': true,
       },
     ],
+    '@typescript-eslint/no-non-null-assertion': 'off',
   };
 
   const [
