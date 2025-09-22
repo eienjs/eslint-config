@@ -13,6 +13,7 @@ export function javascript(
   return [
     {
       languageOptions: {
+        ecmaVersion: 'latest',
         globals: {
           ...globals.browser,
           ...globals.es2025,
@@ -22,6 +23,7 @@ export function javascript(
           window: 'readonly',
         },
         parserOptions: {
+          ecmaVersion: 'latest',
           sourceType: 'module',
         },
         sourceType: 'module',
