@@ -24,7 +24,7 @@ const versions = [...names].map((name) => {
   }
 
   return [name, version];
-}).sort((a, b) => a[0].localeCompare(b[0]));
+}).toSorted((a, b) => a[0].localeCompare(b[0]));
 
 const versionTemplate = `
 export const versionsMap = {

@@ -40,7 +40,7 @@ export async function nuxt(
     ...dirs.layouts.map((layoutsDir) => join(layoutsDir, `**/*.${GLOB_EXTS}`)),
     ...dirs.pages.map((pagesDir) => join(pagesDir, `**/*.${GLOB_EXTS}`)),
     ...dirs.components.map((componentsDir) => join(componentsDir, `**/*.server.${GLOB_EXTS}`)),
-  ].sort();
+  ].toSorted();
 
   // imported from 'eslint-plugin-vue/lib/utils/inline-non-void-elements.json'
   const INLINE_ELEMENTS = [
