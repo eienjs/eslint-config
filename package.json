@@ -21,9 +21,12 @@
   ],
   "exports": {
     ".": "./dist/index.js",
-    "./configs": "./dist/configs/index.js"
+    "./cli": "./dist/cli/index.js",
+    "./configs": "./dist/configs/index.js",
+    "./package.json": "./package.json"
   },
   "main": "./dist/index.js",
+  "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "bin": "./bin/index.js",
   "files": [
@@ -157,7 +160,11 @@
   },
   "auto-changelog": {
     "template": "keepachangelog",
-    "hideCredit": true
+    "hideCredit": true,
+    "commitUrl": "https://github.com/eienjs/eslint-config/commit/{id}",
+    "issueUrl": "https://github.com/eienjs/eslint-config/issues/{id}",
+    "mergeUrl": "https://github.com/eienjs/eslint-config/pull/{id}",
+    "compareUrl": "https://github.com/eienjs/eslint-config/compare/{from}...{to}"
   },
   "np": {
     "message": "chore(release): :tada: %s",
