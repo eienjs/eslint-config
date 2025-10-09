@@ -5,13 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [v1.4.0](https://github.com/eienjs/eslint-config/compare/v1.3.0...v1.4.0)
+## [v1.4.1](https://github.com/eienjs/eslint-config/compare/v1.4.0...v1.4.1)
+
+### Commits
+
+- fix: :bug: resolve correct params resolution for erasable syntax only [`8504087`](https://github.com/eienjs/eslint-config/commit/8504087f993ba63feceaf93f0a240a9c1369a6dc)
+
+## [v1.4.0](https://github.com/eienjs/eslint-config/compare/v1.3.0...v1.4.0) - 2025-10-09
 
 ### Commits
 
 - feat: :sparkles: add new plugin for allow erasableSyntaxOnly [`a43aa64`](https://github.com/eienjs/eslint-config/commit/a43aa642530a1b7a9d23e28a3c22e4e73e79a7d7)
 - chore: :arrow_up: update dependencies [`354dd74`](https://github.com/eienjs/eslint-config/commit/354dd744cf2215982c2b18367170f4866880eff5)
-- chore: :construction: add target on config tsdown [`662307d`](https://github.com/eienjs/eslint-config/commit/662307d7e2bcaa6cf01b848b0a4b80162bb16999)
+- chore(release): :tada: 1.4.0 [`0cfcbcb`](https://github.com/eienjs/eslint-config/commit/0cfcbcb6fbc252bcb15a375e7c81d8600ece81e6)
 
 ## [v1.3.0](https://github.com/eienjs/eslint-config/compare/v1.2.2...v1.3.0) - 2025-09-22
 
