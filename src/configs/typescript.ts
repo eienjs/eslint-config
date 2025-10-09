@@ -281,12 +281,9 @@ export async function typescript(
 
     const pluginErasableSyntaxOnly = await interopDefault(import('eslint-plugin-erasable-syntax-only'));
 
-    const { enums, parameterProperties } = typeof isErasableSyntaxOnly === 'boolean'
-      ? {
-          enums: true,
-          parameterProperties: true,
-        }
-      : isErasableSyntaxOnly;
+    const resolvedErasableSyntaxOnly = typeof erasableSyntaxOnly === 'boolean' ? {} : erasableSyntaxOnly;
+    const enums = resolvedErasableSyntaxOnly.enums ?? true;
+    const parameterProperties = resolvedErasableSyntaxOnly.parameterProperties ?? true;
 
     rules.push({
       files,
