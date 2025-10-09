@@ -5,13 +5,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [v1.3.0](https://github.com/eienjs/eslint-config/compare/v1.2.2...v1.3.0)
+## [v1.4.0](https://github.com/eienjs/eslint-config/compare/v1.3.0...v1.4.0)
 
 ### Commits
 
+- feat: :sparkles: add new plugin for allow erasableSyntaxOnly [`a43aa64`](https://github.com/eienjs/eslint-config/commit/a43aa642530a1b7a9d23e28a3c22e4e73e79a7d7)
+- chore: :arrow_up: update dependencies [`354dd74`](https://github.com/eienjs/eslint-config/commit/354dd744cf2215982c2b18367170f4866880eff5)
+- chore: :construction: add target on config tsdown [`662307d`](https://github.com/eienjs/eslint-config/commit/662307d7e2bcaa6cf01b848b0a4b80162bb16999)
+
+## [v1.3.0](https://github.com/eienjs/eslint-config/compare/v1.2.2...v1.3.0) - 2025-09-22
+
+### Commits
+
+- chore(release): :tada: 1.3.0 [`30e41a7`](https://github.com/eienjs/eslint-config/commit/30e41a78371fe7703b7249aacd69dc2242d032ba)
 - chore: :arrow_up: update dependencies [`6e319a5`](https://github.com/eienjs/eslint-config/commit/6e319a558fcce352d1886518772eaf7bc085443c)
 - chore: :bug: resolve correct generation of build and changelog [`906619f`](https://github.com/eienjs/eslint-config/commit/906619fb6b6f271329b1bc65f4c1ca169b7b2038)
-- chore: :construction: add support to catalogs and bun catalogs [`3d437ea`](https://github.com/eienjs/eslint-config/commit/3d437ea97d498f2b2cc10b0b4df43e5ecd5cd66d)
 
 ## [v1.2.2](https://github.com/eienjs/eslint-config/compare/v1.2.1...v1.2.2) - 2025-09-01
 
