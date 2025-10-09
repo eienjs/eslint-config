@@ -33,6 +33,22 @@ export type TypedFlatConfigItem = Omit<Linter.Config, 'plugins' | 'rules'> & {
   rules?: Rules;
 };
 
+export interface OptionsErasableSyntaxOnly {
+  /**
+   * Enable/disable erasable syntax only rules for enums.
+   *
+   * @default true when `erableSyntaxOnly` is enabled
+   */
+  enums?: boolean;
+
+  /**
+   * Enable/disable erasable syntax only rules for parameter properties.
+   *
+   * @default true when `erableSyntaxOnly` is enabled
+   */
+  parameterProperties?: boolean;
+}
+
 export interface OptionsNuxt extends OptionsOverrides {
   /**
    * Version of Nuxt
@@ -169,8 +185,8 @@ export interface OptionsVue extends OptionsOverrides {
 }
 
 export type OptionsTypescript
-  = (OptionsTypeScriptWithTypes & OptionsOverrides)
-    | (OptionsTypeScriptParserOptions & OptionsOverrides);
+  = (OptionsTypeScriptWithTypes & OptionsOverrides & OptionsTypescriptWithErasableSyntaxOnly)
+    | (OptionsTypeScriptParserOptions & OptionsOverrides & OptionsTypescriptWithErasableSyntaxOnly);
 
 export interface OptionsFormatters {
   /**
@@ -252,6 +268,15 @@ export interface OptionsTypeScriptParserOptions {
    * @default ['**\/*.md\/**', '**\/*.astro/*.ts']
    */
   ignoresTypeAware?: string[];
+}
+
+export interface OptionsTypescriptWithErasableSyntaxOnly {
+  /**
+   * Enable erasable syntax only rules.
+   *
+   * @default false
+   */
+  erasableSyntaxOnly?: boolean | OptionsErasableSyntaxOnly;
 }
 
 export interface OptionsTypeScriptWithTypes {

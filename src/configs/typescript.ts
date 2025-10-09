@@ -4,13 +4,14 @@ import type {
   OptionsOverrides,
   OptionsStylistic,
   OptionsTypeScriptParserOptions,
+  OptionsTypescriptWithErasableSyntaxOnly,
   OptionsTypeScriptWithTypes,
   TypedFlatConfigItem,
 } from '../types';
 import process from 'node:process';
 import { GLOB_ASTRO_TS, GLOB_MARKDOWN, GLOB_TS, GLOB_TSX } from '../globs';
 import { pluginAntfu } from '../plugins';
-import { interopDefault } from '../utils';
+import { ensurePackages, interopDefault } from '../utils';
 
 export async function typescript(
   options:
@@ -19,6 +20,7 @@ export async function typescript(
     & OptionsOverrides
     & OptionsTypeScriptWithTypes
     & OptionsTypeScriptParserOptions
+    & OptionsTypescriptWithErasableSyntaxOnly
     & OptionsStylistic = {},
 ): Promise<TypedFlatConfigItem[]> {
   const {
@@ -27,6 +29,7 @@ export async function typescript(
     overridesTypeAware = {},
     parserOptions = {},
     stylistic = true,
+    erasableSyntaxOnly = false,
   } = options;
 
   const files = options.files ?? [
@@ -42,6 +45,7 @@ export async function typescript(
   ];
   const tsconfigPath = options.tsconfigPath ?? undefined;
   const isTypeAware = Boolean(tsconfigPath);
+  const isErasableSyntaxOnly = Boolean(erasableSyntaxOnly);
 
   const typeAwareRules: TypedFlatConfigItem['rules'] = {
     'dot-notation': 'off',
@@ -123,7 +127,6 @@ export async function typescript(
         considerDefaultExhaustiveForUnions: true,
       },
     ],
-    '@typescript-eslint/no-empty-object-type': 'off',
     '@typescript-eslint/no-unused-vars': [
       'error',
       {
@@ -136,7 +139,6 @@ export async function typescript(
         'ignoreRestSiblings': true,
       },
     ],
-    '@typescript-eslint/no-non-null-assertion': 'off',
   };
 
   const [
@@ -172,7 +174,7 @@ export async function typescript(
     };
   }
 
-  return [
+  const rules: TypedFlatConfigItem[] = [
     {
       // Install the plugins without globs, so they can be configured separately.
       name: 'eienjs/typescript/setup',
@@ -181,85 +183,125 @@ export async function typescript(
         '@typescript-eslint': pluginTs,
       },
     },
-    // assign type-aware parser for type-aware files and type-unaware parser for the rest
-    ...isTypeAware
-      ? [
-          makeParser(false, files),
-          makeParser(true, filesTypeAware, ignoresTypeAware),
-        ]
-      : [
-          makeParser(false, files),
-        ],
-    {
-      files,
-      name: 'eienjs/typescript/rules',
-      rules: {
-        ...pluginTs.configs['eslint-recommended'].overrides?.[0].rules,
-        ...pluginTs.configs.strict.rules,
-        ...stylistic ? pluginTs.configs.stylistic.rules : {},
-
-        'no-dupe-class-members': 'off',
-        'no-redeclare': 'off',
-        'no-use-before-define': 'off',
-        'no-useless-constructor': 'off',
-        '@typescript-eslint/ban-ts-comment': ['error', { 'ts-expect-error': 'allow-with-description' }],
-        '@typescript-eslint/consistent-type-assertions': 'error',
-        '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
-        '@typescript-eslint/consistent-type-imports': ['error', {
-          disallowTypeAnnotations: false,
-          fixStyle: 'separate-type-imports',
-          prefer: 'type-imports',
-        }],
-        '@typescript-eslint/default-param-last': 'error',
-        '@typescript-eslint/method-signature-style': ['error', 'property'], // https://www.totaltypescript.com/method-shorthand-syntax-considered-harmful
-        '@typescript-eslint/no-dupe-class-members': 'error',
-        '@typescript-eslint/no-dynamic-delete': 'off',
-        '@typescript-eslint/no-empty-object-type': 'off',
-        '@typescript-eslint/no-explicit-any': 'off',
-        '@typescript-eslint/no-extraneous-class': 'off',
-        '@typescript-eslint/no-import-type-side-effects': 'error',
-        '@typescript-eslint/no-invalid-void-type': 'off',
-        '@typescript-eslint/no-non-null-assertion': 'off',
-        '@typescript-eslint/no-redeclare': ['error', { builtinGlobals: false }],
-        '@typescript-eslint/no-require-imports': 'error',
-        '@typescript-eslint/no-unused-expressions': ['error', {
-          allowShortCircuit: true,
-          allowTaggedTemplates: true,
-          allowTernary: true,
-        }],
-        '@typescript-eslint/no-unused-vars': [
-          'error',
-          {
-            'args': 'all',
-            'argsIgnorePattern': '^_',
-            'caughtErrors': 'all',
-            'caughtErrorsIgnorePattern': '^_',
-            'destructuredArrayIgnorePattern': '^_',
-            'varsIgnorePattern': '^_',
-            'ignoreRestSiblings': true,
-          },
-        ],
-        '@typescript-eslint/no-use-before-define': ['error', { classes: false, functions: false, variables: true }],
-        '@typescript-eslint/no-useless-constructor': 'off',
-        '@typescript-eslint/no-wrapper-object-types': 'error',
-        '@typescript-eslint/triple-slash-reference': 'off',
-        '@typescript-eslint/unified-signatures': 'off',
-
-        ...overrides,
-      },
-    },
-    ...isTypeAware
-      ? [{
-          files: filesTypeAware,
-          ignores: ignoresTypeAware,
-          name: 'eienjs/typescript/rules-type-aware',
-          rules: {
-            ...pluginTs.configs['strict-type-checked'].rules,
-            ...stylistic ? pluginTs.configs['stylistic-type-checked'].rules : {},
-            ...typeAwareRules,
-            ...overridesTypeAware,
-          },
-        }]
-      : [],
   ];
+
+  if (isTypeAware) {
+    rules.push(
+      makeParser(false, files),
+      makeParser(true, filesTypeAware, ignoresTypeAware),
+    );
+  } else {
+    rules.push(makeParser(false, files));
+  }
+
+  rules.push({
+    files,
+    name: 'eienjs/typescript/rules',
+    rules: {
+      ...pluginTs.configs['eslint-recommended'].overrides?.[0].rules,
+      ...pluginTs.configs.strict.rules,
+      ...stylistic ? pluginTs.configs.stylistic.rules : {},
+
+      'no-dupe-class-members': 'off',
+      'no-redeclare': 'off',
+      'no-use-before-define': 'off',
+      'no-useless-constructor': 'off',
+      '@typescript-eslint/ban-ts-comment': ['error', { 'ts-expect-error': 'allow-with-description' }],
+      '@typescript-eslint/consistent-type-assertions': 'error',
+      '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
+      '@typescript-eslint/consistent-type-imports': ['error', {
+        disallowTypeAnnotations: false,
+        fixStyle: 'separate-type-imports',
+        prefer: 'type-imports',
+      }],
+      '@typescript-eslint/default-param-last': 'error',
+      '@typescript-eslint/method-signature-style': ['error', 'property'], // https://www.totaltypescript.com/method-shorthand-syntax-considered-harmful
+      '@typescript-eslint/no-dupe-class-members': 'error',
+      '@typescript-eslint/no-dynamic-delete': 'off',
+      '@typescript-eslint/no-explicit-any': 'off',
+      '@typescript-eslint/no-import-type-side-effects': 'error',
+      '@typescript-eslint/no-invalid-void-type': 'off',
+      '@typescript-eslint/no-redeclare': ['error', { builtinGlobals: false }],
+      '@typescript-eslint/no-require-imports': 'error',
+      '@typescript-eslint/no-unused-expressions': ['error', {
+        allowShortCircuit: true,
+        allowTaggedTemplates: true,
+        allowTernary: true,
+      }],
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        {
+          'args': 'all',
+          'argsIgnorePattern': '^_',
+          'caughtErrors': 'all',
+          'caughtErrorsIgnorePattern': '^_',
+          'destructuredArrayIgnorePattern': '^_',
+          'varsIgnorePattern': '^_',
+          'ignoreRestSiblings': true,
+        },
+      ],
+      '@typescript-eslint/no-use-before-define': ['error', { classes: false, functions: false, variables: true }],
+      '@typescript-eslint/no-useless-constructor': 'off',
+      '@typescript-eslint/no-wrapper-object-types': 'error',
+      '@typescript-eslint/triple-slash-reference': 'off',
+      '@typescript-eslint/unified-signatures': 'off',
+
+      ...overrides,
+    },
+  });
+
+  if (isTypeAware) {
+    rules.push({
+      files: filesTypeAware,
+      ignores: ignoresTypeAware,
+      name: 'eienjs/typescript/rules-type-aware',
+      rules: {
+        ...pluginTs.configs['strict-type-checked'].rules,
+        ...stylistic ? pluginTs.configs['stylistic-type-checked'].rules : {},
+        ...typeAwareRules,
+        ...overridesTypeAware,
+      },
+    });
+  }
+
+  rules.push({
+    files: isTypeAware ? filesTypeAware : files,
+    name: 'eienjs/typescript/disables',
+    rules: {
+      '@typescript-eslint/no-empty-object-type': 'off',
+      '@typescript-eslint/no-extraneous-class': 'off',
+      '@typescript-eslint/no-non-null-assertion': 'off',
+    },
+  });
+
+  if (isErasableSyntaxOnly) {
+    await ensurePackages([
+      'eslint-plugin-erasable-syntax-only',
+    ]);
+
+    const pluginErasableSyntaxOnly = await interopDefault(import('eslint-plugin-erasable-syntax-only'));
+
+    const { enums, parameterProperties } = typeof isErasableSyntaxOnly === 'boolean'
+      ? {
+          enums: true,
+          parameterProperties: true,
+        }
+      : isErasableSyntaxOnly;
+
+    rules.push({
+      files,
+      name: 'eienjs/typescript/erasable-syntax-only',
+      plugins: {
+        'erasable-syntax-only': pluginErasableSyntaxOnly,
+      },
+      rules: {
+        'erasable-syntax-only/enums': enums ? 'error' : 'off',
+        'erasable-syntax-only/import-aliases': 'error',
+        'erasable-syntax-only/namespaces': 'error',
+        'erasable-syntax-only/parameter-properties': parameterProperties ? 'error' : 'off',
+      },
+    });
+  }
+
+  return rules;
 }
