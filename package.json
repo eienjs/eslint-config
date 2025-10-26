@@ -2,7 +2,7 @@
   "name": "@eienjs/eslint-config",
   "type": "module",
   "version": "1.4.1",
-  "packageManager": "pnpm@10.18.1",
+  "packageManager": "pnpm@10.19.0",
   "description": "EienJS ESLint Config",
   "author": "Fernando Isidro <luffynando@gmail.com> (https://github.com/luffynando/)",
   "license": "MIT",
@@ -58,7 +58,7 @@
     "@nuxt/eslint-plugin": "^1.9.0",
     "@prettier/plugin-xml": "^3.4.2",
     "astro-eslint-parser": "^1.2.2",
-    "eslint": "^9.37.0",
+    "eslint": "^9.38.0",
     "eslint-plugin-astro": "^1.3.1",
     "eslint-plugin-erasable-syntax-only": "^0.3.1",
     "eslint-plugin-format": "^1.0.2",
@@ -165,11 +165,7 @@
   },
   "auto-changelog": {
     "template": "keepachangelog",
-    "hideCredit": true,
-    "commitUrl": "https://github.com/eienjs/eslint-config/commit/{id}",
-    "issueUrl": "https://github.com/eienjs/eslint-config/issues/{id}",
-    "mergeUrl": "https://github.com/eienjs/eslint-config/pull/{id}",
-    "compareUrl": "https://github.com/eienjs/eslint-config/compare/{from}...{to}"
+    "hideCredit": true
   },
   "np": {
     "message": "chore(release): :tada: %s",
