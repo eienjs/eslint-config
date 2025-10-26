@@ -9,7 +9,7 @@ import type {
   TypedFlatConfigItem,
 } from '../types';
 import process from 'node:process';
-import { GLOB_ASTRO_TS, GLOB_MARKDOWN, GLOB_TS, GLOB_TSX } from '../globs';
+import { GLOB_ASTRO_TS, GLOB_MARKDOWN, GLOB_TS, GLOB_TSX, GLOB_VUE } from '../globs';
 import { pluginAntfu } from '../plugins';
 import { ensurePackages, interopDefault } from '../utils';
 
@@ -35,6 +35,7 @@ export async function typescript(
   const files = options.files ?? [
     GLOB_TS,
     GLOB_TSX,
+    GLOB_VUE,
     ...componentExts.map((ext) => `**/*.${ext}`),
   ];
 
