@@ -5,10 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [v1.4.1](https://github.com/eienjs/eslint-config/compare/v1.4.0...v1.4.1)
+## [v1.4.2](https://github.com/eienjs/eslint-config/compare/v1.4.1...v1.4.2)
 
 ### Commits
 
+- chore: :arrow_up: update dependencies [`e66a73f`](https://github.com/eienjs/eslint-config/commit/e66a73fcac440cfe75be7bd64b3db443b47eb19b)
+- refactor: :recycle: disable some rules for adonisjs projects [`a635649`](https://github.com/eienjs/eslint-config/commit/a63564993394ba70a43fae3440d4587b9c6717c5)
+
+## [v1.4.1](https://github.com/eienjs/eslint-config/compare/v1.4.0...v1.4.1) - 2025-10-09
+
+### Commits
+
+- chore(release): :tada: 1.4.1 [`bd703f4`](https://github.com/eienjs/eslint-config/commit/bd703f4ca1ea198115c5755fb83bda6182da17b5)
 - fix: :bug: resolve correct params resolution for erasable syntax only [`8504087`](https://github.com/eienjs/eslint-config/commit/8504087f993ba63feceaf93f0a240a9c1369a6dc)
 
 ## [v1.4.0](https://github.com/eienjs/eslint-config/compare/v1.3.0...v1.4.0) - 2025-10-09
