@@ -1,61 +1,36 @@
 import fs from 'node:fs/promises';
 import { flatConfigsToRulesDTS } from 'eslint-typegen/core';
 import { builtinRules } from 'eslint/use-at-your-own-risk';
-import { combine } from '../src';
-import {
-  adonisjs,
-  astro,
-  comments,
-  formatters,
-  imports,
-  javascript,
-  jsdoc,
-  jsonc,
-  markdown,
-  node,
-  nuxt,
-  perfectionist,
-  regexp,
-  sortPackageJson,
-  stylistic,
-  test,
-  toml,
-  typescript,
-  unicorn,
-  vue,
-  yaml,
-} from '../src/configs';
+import eienjs from '../src';
 
-const configs = await combine(
-  {
-    plugins: {
-      '': {
-        rules: Object.fromEntries(builtinRules.entries()),
-      },
+const configs = await eienjs({
+  adonisjs: true,
+  astro: true,
+  formatters: true,
+  imports: true,
+  jsonc: true,
+  markdown: true,
+  nuxt: true,
+  pnpm: true,
+  regexp: true,
+  stylistic: true,
+  gitignore: true,
+  typescript: {
+    tsconfigPath: 'tsconfig.json',
+    erasableSyntaxOnly: true,
+  },
+  unicorn: true,
+  vue: true,
+  yaml: true,
+  toml: true,
+  test: true,
+}).prepend({
+  plugins: {
+    '': {
+      rules: Object.fromEntries(builtinRules.entries()),
     },
   },
-  adonisjs(),
-  astro(),
-  comments(),
-  formatters(),
-  imports(),
-  javascript(),
-  jsdoc(),
-  jsonc(),
-  markdown(),
-  node(),
-  nuxt(),
-  perfectionist(),
-  sortPackageJson(),
-  stylistic(),
-  test(),
-  toml(),
-  regexp(),
-  typescript(),
-  unicorn(),
-  vue(),
-  yaml(),
-);
+});
 
 const configNames = configs.map((item) => item.name).filter(Boolean) as string[];
 

@@ -53,7 +53,6 @@ const VuePackages = [
 export const defaultPluginRenaming = {
   'import-lite': 'import',
   'vitest': 'test',
-
   'yml': 'yaml',
 };
 
@@ -65,6 +64,7 @@ export function eienjs(
     astro: enableAstro = false,
     componentExts = [],
     gitignore: enableGitignore = true,
+    ignores: userIgnores = [],
     imports: enableImports = true,
     pnpm: enableCatalogs = false,
     regexp: enableRegexp = true,
@@ -109,7 +109,7 @@ export function eienjs(
 
   // Base configs
   configs.push(
-    ignores(options.ignores),
+    ignores(userIgnores),
     javascript({
       isInEditor,
       overrides: getOverrides(options, 'javascript'),
