@@ -1,7 +1,7 @@
 {
   "name": "@eienjs/eslint-config",
   "type": "module",
-  "version": "1.4.2",
+  "version": "1.5.0",
   "packageManager": "pnpm@10.20.0",
   "description": "EienJS ESLint Config",
   "author": "Fernando Isidro <luffynando@gmail.com> (https://github.com/luffynando/)",
@@ -20,14 +20,14 @@
     "astro"
   ],
   "exports": {
-    ".": "./dist/index.js",
-    "./cli": "./dist/cli/index.js",
-    "./configs": "./dist/configs/index.js",
+    ".": "./dist/index.mjs",
+    "./cli": "./dist/cli/index.mjs",
+    "./configs": "./dist/configs/index.mjs",
     "./package.json": "./package.json"
   },
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
   "bin": "./bin/index.js",
   "files": [
     "bin",

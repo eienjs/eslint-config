@@ -5,11 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [v1.4.2](https://github.com/eienjs/eslint-config/compare/v1.4.1...v1.4.2)
+## [v1.5.0](https://github.com/eienjs/eslint-config/compare/v1.4.2...v1.5.0)
+
+### Commits
+
+- feat: :sparkles: accepting functions for ignores [`bb500c9`](https://github.com/eienjs/eslint-config/commit/bb500c9d86bf0f0c3a46239113fdcbb873513b62)
+- chore: :arrow_up: update dependencies [`71a348e`](https://github.com/eienjs/eslint-config/commit/71a348e79904337f178173608c2cdd34083179b6)
+
+## [v1.4.2](https://github.com/eienjs/eslint-config/compare/v1.4.1...v1.4.2) - 2025-10-25
 
 ### Commits
 
 - chore: :arrow_up: update dependencies [`e66a73f`](https://github.com/eienjs/eslint-config/commit/e66a73fcac440cfe75be7bd64b3db443b47eb19b)
+- chore(release): :tada: 1.4.2 [`ebb295f`](https://github.com/eienjs/eslint-config/commit/ebb295fa33ded866539f494ed36a76f30dab51d2)
 - refactor: :recycle: disable some rules for adonisjs projects [`a635649`](https://github.com/eienjs/eslint-config/commit/a63564993394ba70a43fae3440d4587b9c6717c5)
 
 ## [v1.4.1](https://github.com/eienjs/eslint-config/compare/v1.4.0...v1.4.1) - 2025-10-09
