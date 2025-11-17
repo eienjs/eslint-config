@@ -5,12 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [v1.5.0](https://github.com/eienjs/eslint-config/compare/v1.4.2...v1.5.0)
+## [v1.5.1](https://github.com/eienjs/eslint-config/compare/v1.5.0...v1.5.1)
+
+### Commits
+
+- chore: :arrow_up: update dependencies [`22d049d`](https://github.com/eienjs/eslint-config/commit/22d049d492ca0bfd7f8c62a21756cc3e7b62cb3c)
+- chore: :construction: add some ignores and disables [`0ac0d93`](https://github.com/eienjs/eslint-config/commit/0ac0d931afae6dd9fa20e18dd9d3601f161171bb)
+
+## [v1.5.0](https://github.com/eienjs/eslint-config/compare/v1.4.2...v1.5.0) - 2025-11-04
 
 ### Commits
 
 - feat: :sparkles: accepting functions for ignores [`bb500c9`](https://github.com/eienjs/eslint-config/commit/bb500c9d86bf0f0c3a46239113fdcbb873513b62)
 - chore: :arrow_up: update dependencies [`71a348e`](https://github.com/eienjs/eslint-config/commit/71a348e79904337f178173608c2cdd34083179b6)
+- chore(release): :tada: 1.5.0 [`e38b2a4`](https://github.com/eienjs/eslint-config/commit/e38b2a4403c47ff45f7a404f66eff525cf8ab98f)
 
 ## [v1.4.2](https://github.com/eienjs/eslint-config/compare/v1.4.1...v1.4.2) - 2025-10-25
 
