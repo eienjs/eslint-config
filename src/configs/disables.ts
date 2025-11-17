@@ -84,5 +84,14 @@ export function disables(): TypedFlatConfigItem[] {
         '@stylistic/max-len': 'off',
       },
     },
+    {
+      files: ['**/ecosystem.config.js', '**/deploy.js'],
+      name: 'eienjs/disables/deploy-tools',
+      rules: {
+        'antfu/no-top-level-await': 'off',
+        'no-console': 'off',
+        'unicorn/no-process-exit': 'off',
+      },
+    },
   ];
 }
