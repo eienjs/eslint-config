@@ -2,7 +2,7 @@
   "name": "@eienjs/eslint-config",
   "type": "module",
   "version": "1.5.0",
-  "packageManager": "pnpm@10.20.0",
+  "packageManager": "pnpm@10.22.0",
   "description": "EienJS ESLint Config",
   "author": "Fernando Isidro <luffynando@gmail.com> (https://github.com/luffynando/)",
   "license": "MIT",
@@ -59,7 +59,7 @@
     "@prettier/plugin-xml": "^3.4.2",
     "astro-eslint-parser": "^1.2.2",
     "eslint": "^9.39.1",
-    "eslint-plugin-astro": "^1.4.0",
+    "eslint-plugin-astro": "^1.5.0",
     "eslint-plugin-erasable-syntax-only": "^0.4.0",
     "eslint-plugin-format": "^1.0.2",
     "prettier-plugin-astro": "^0.14.1"
