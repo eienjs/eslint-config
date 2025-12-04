@@ -61,18 +61,18 @@ export function eienjs(
   options: OptionsConfig & Omit<TypedFlatConfigItem, 'files' | 'ignores'> = {},
 ): FlatConfigComposer<TypedFlatConfigItem, ConfigNames> {
   const {
+    adonisjs: enableAdonisjs = false,
     astro: enableAstro = false,
     componentExts = [],
     gitignore: enableGitignore = true,
     ignores: userIgnores = [],
     imports: enableImports = true,
+    nuxt: enableNuxt = false,
     pnpm: enableCatalogs = false,
     regexp: enableRegexp = true,
     typescript: enableTypeScript = isPackageExists('typescript'),
     unicorn: enableUnicorn = true,
     vue: enableVue = VuePackages.some((i) => isPackageExists(i)),
-    adonisjs: enableAdonisjs = false,
-    nuxt: enableNuxt = false,
   } = options;
 
   let { isInEditor } = options;
@@ -151,8 +151,8 @@ export function eienjs(
     configs.push(typescript({
       ...typescriptOptions,
       componentExts,
-      stylistic: stylisticOptions,
       overrides: getOverrides(options, 'typescript'),
+      stylistic: stylisticOptions,
     }));
   }
 
@@ -218,7 +218,9 @@ export function eienjs(
 
   if (enableCatalogs) {
     configs.push(
-      pnpm(),
+      pnpm({
+        isInEditor,
+      }),
     );
   }
 
