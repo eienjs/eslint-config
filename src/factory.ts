@@ -58,7 +58,7 @@ export const defaultPluginRenaming = {
 
 // eslint-disable-next-line @typescript-eslint/promise-function-async
 export function eienjs(
-  options: OptionsConfig & Omit<TypedFlatConfigItem, 'files'> = {},
+  options: OptionsConfig & Omit<TypedFlatConfigItem, 'files' | 'ignores'> = {},
 ): FlatConfigComposer<TypedFlatConfigItem, ConfigNames> {
   const {
     astro: enableAstro = false,
