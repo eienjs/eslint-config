@@ -2,7 +2,7 @@
   "name": "@eienjs/eslint-config",
   "type": "module",
   "version": "1.5.2",
-  "packageManager": "pnpm@10.23.0",
+  "packageManager": "pnpm@10.24.0",
   "description": "EienJS ESLint Config",
   "author": "Fernando Isidro <luffynando@gmail.com> (https://github.com/luffynando/)",
   "license": "MIT",
@@ -55,7 +55,7 @@
   },
   "peerDependencies": {
     "@adonisjs/eslint-plugin": "^2.0.1",
-    "@nuxt/eslint-plugin": "^1.10.0",
+    "@nuxt/eslint-plugin": "^1.11.0",
     "@prettier/plugin-xml": "^3.4.2",
     "astro-eslint-parser": "^1.2.2",
     "eslint": "^9.39.1",
