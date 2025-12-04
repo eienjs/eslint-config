@@ -5,11 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [v1.5.2](https://github.com/eienjs/eslint-config/compare/v1.5.1...v1.5.2)
+## [v1.6.0](https://github.com/eienjs/eslint-config/compare/v1.5.2...v1.6.0)
+
+### Commits
+
+- style: :rotating_light: resolve issues with new rule on eslint config [`37af4ba`](https://github.com/eienjs/eslint-config/commit/37af4ba979e2a8c4c02cd599ab76fb5b6a3a1d5d)
+- feat(pnpm): :sparkles: disable pnpm rules autofix when in editor and sort settings [`68a2733`](https://github.com/eienjs/eslint-config/commit/68a2733b4080dc9bfc3235ff47261b9894197e1e)
+- chore: :arrow_up: update dependencies [`715d915`](https://github.com/eienjs/eslint-config/commit/715d9158c68a1b392d12c10befb1f7a87c13e048)
+
+## [v1.5.2](https://github.com/eienjs/eslint-config/compare/v1.5.1...v1.5.2) - 2025-11-21
 
 ### Commits
 
 - chore: :arrow_up: update dependencies [`45a87b3`](https://github.com/eienjs/eslint-config/commit/45a87b3380a0ae6113c048d23f5872ec0b390c13)
+- chore(release): :tada: 1.5.2 [`691b12f`](https://github.com/eienjs/eslint-config/commit/691b12f54a85f38e0c8fa0f4d0bd81cd785f5856)
 - fix: :bug: correct target for cli usage [`3a1f844`](https://github.com/eienjs/eslint-config/commit/3a1f8444f18f66134b40f4c39ce039784711fc0e)
 
 ## [v1.5.1](https://github.com/eienjs/eslint-config/compare/v1.5.0...v1.5.1) - 2025-11-16
