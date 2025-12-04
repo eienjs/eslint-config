@@ -25,11 +25,11 @@ export async function typescript(
 ): Promise<TypedFlatConfigItem[]> {
   const {
     componentExts = [],
+    erasableSyntaxOnly = false,
     overrides = {},
     overridesTypeAware = {},
     parserOptions = {},
     stylistic = true,
-    erasableSyntaxOnly = false,
   } = options;
 
   const files = options.files ?? [
@@ -49,8 +49,6 @@ export async function typescript(
   const isErasableSyntaxOnly = Boolean(erasableSyntaxOnly);
 
   const typeAwareRules: TypedFlatConfigItem['rules'] = {
-    'dot-notation': 'off',
-    'no-implied-eval': 'off',
     '@typescript-eslint/await-thenable': 'error',
     '@typescript-eslint/consistent-type-exports': ['error', { fixMixedExportsWithInlineTypeSpecifier: true }],
     '@typescript-eslint/dot-notation': ['error', { allowKeywords: true }],
@@ -100,9 +98,9 @@ export async function typescript(
         selector: 'interface',
       },
       {
-        selector: 'variable',
         format: ['camelCase', 'UPPER_CASE', 'PascalCase'],
         leadingUnderscore: 'allow',
+        selector: 'variable',
       },
     ],
     '@typescript-eslint/no-floating-promises': 'error',
@@ -115,6 +113,18 @@ export async function typescript(
     '@typescript-eslint/no-unsafe-call': 'error',
     '@typescript-eslint/no-unsafe-member-access': 'error',
     '@typescript-eslint/no-unsafe-return': 'error',
+    '@typescript-eslint/no-unused-vars': [
+      'error',
+      {
+        'args': 'all',
+        'argsIgnorePattern': '^_',
+        'caughtErrors': 'all',
+        'caughtErrorsIgnorePattern': '^_',
+        'destructuredArrayIgnorePattern': '^_',
+        'ignoreRestSiblings': true,
+        'varsIgnorePattern': '^_',
+      },
+    ],
     '@typescript-eslint/prefer-nullish-coalescing': ['error', { ignorePrimitives: { string: true } }],
     '@typescript-eslint/prefer-optional-chain': 'error',
     '@typescript-eslint/prefer-string-starts-ends-with': 'error',
@@ -128,18 +138,8 @@ export async function typescript(
         considerDefaultExhaustiveForUnions: true,
       },
     ],
-    '@typescript-eslint/no-unused-vars': [
-      'error',
-      {
-        'args': 'all',
-        'argsIgnorePattern': '^_',
-        'caughtErrors': 'all',
-        'caughtErrorsIgnorePattern': '^_',
-        'destructuredArrayIgnorePattern': '^_',
-        'varsIgnorePattern': '^_',
-        'ignoreRestSiblings': true,
-      },
-    ],
+    'dot-notation': 'off',
+    'no-implied-eval': 'off',
   };
 
   const [
@@ -180,8 +180,8 @@ export async function typescript(
       // Install the plugins without globs, so they can be configured separately.
       name: 'eienjs/typescript/setup',
       plugins: {
-        'antfu': pluginAntfu,
         '@typescript-eslint': pluginTs,
+        'antfu': pluginAntfu,
       },
     },
   ];
@@ -203,10 +203,6 @@ export async function typescript(
       ...pluginTs.configs.strict.rules,
       ...stylistic ? pluginTs.configs.stylistic.rules : {},
 
-      'no-dupe-class-members': 'off',
-      'no-redeclare': 'off',
-      'no-use-before-define': 'off',
-      'no-useless-constructor': 'off',
       '@typescript-eslint/ban-ts-comment': ['error', { 'ts-expect-error': 'allow-with-description' }],
       '@typescript-eslint/consistent-type-assertions': 'error',
       '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
@@ -237,8 +233,8 @@ export async function typescript(
           'caughtErrors': 'all',
           'caughtErrorsIgnorePattern': '^_',
           'destructuredArrayIgnorePattern': '^_',
-          'varsIgnorePattern': '^_',
           'ignoreRestSiblings': true,
+          'varsIgnorePattern': '^_',
         },
       ],
       '@typescript-eslint/no-use-before-define': ['error', { classes: false, functions: false, variables: true }],
@@ -246,6 +242,10 @@ export async function typescript(
       '@typescript-eslint/no-wrapper-object-types': 'error',
       '@typescript-eslint/triple-slash-reference': 'off',
       '@typescript-eslint/unified-signatures': 'off',
+      'no-dupe-class-members': 'off',
+      'no-redeclare': 'off',
+      'no-use-before-define': 'off',
+      'no-useless-constructor': 'off',
 
       ...overrides,
     },

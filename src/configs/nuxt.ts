@@ -7,10 +7,10 @@ export async function nuxt(
   options: OptionsNuxt & OptionsStylistic = {},
 ): Promise<TypedFlatConfigItem[]> {
   const {
-    overrides = {},
     dirs = {},
-    version = 4,
+    overrides = {},
     stylistic = true,
+    version = 4,
   } = options;
 
   const {
@@ -86,14 +86,14 @@ export async function nuxt(
 
   return [
     {
-      name: 'eienjs/nuxt/setup',
-      plugins: {
-        nuxt: pluginNuxt,
-      },
       languageOptions: {
         globals: {
           $fetch: 'readonly',
         },
+      },
+      name: 'eienjs/nuxt/setup',
+      plugins: {
+        nuxt: pluginNuxt,
       },
     },
     ...fileSingleRoot.length > 0
@@ -141,7 +141,7 @@ export async function nuxt(
               'vue/multiline-html-element-content-newline': [
                 'error',
                 {
-                  ignoreWhenEmpty: true,
+                  allowEmptyLines: false,
                   ignores: [
                     'pre',
                     'textarea',
@@ -153,14 +153,13 @@ export async function nuxt(
                     'ULink',
                     ...INLINE_ELEMENTS,
                   ],
-                  allowEmptyLines: false,
+                  ignoreWhenEmpty: true,
                 },
               ],
               'vue/singleline-html-element-content-newline': [
                 'error',
                 {
-                  ignoreWhenNoAttributes: true,
-                  ignoreWhenEmpty: true,
+                  externalIgnores: [],
                   ignores: [
                     'pre',
                     'textarea',
@@ -172,7 +171,8 @@ export async function nuxt(
                     'ULink',
                     ...INLINE_ELEMENTS,
                   ],
-                  externalIgnores: [],
+                  ignoreWhenEmpty: true,
+                  ignoreWhenNoAttributes: true,
                 },
               ],
             },

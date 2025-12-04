@@ -15,13 +15,13 @@ export async function vue(
   options: OptionsVue & OptionsHasTypeScript & OptionsOverrides & OptionsStylistic & OptionsFiles = {},
 ): Promise<TypedFlatConfigItem[]> {
   const {
+    componentNameInTemplateCasingGlobals = [],
+    componentNameInTemplateCasingIgnores = [],
+    componentNameInTemplateCasingOnlyRegistered = false,
     files = [GLOB_VUE],
     overrides = {},
     stylistic = true,
     typescript,
-    componentNameInTemplateCasingOnlyRegistered = false,
-    componentNameInTemplateCasingIgnores = [],
-    componentNameInTemplateCasingGlobals = [],
   } = options;
 
   const sfcBlocks = options.sfcBlocks === true
@@ -119,9 +119,9 @@ export async function vue(
         }],
         'vue/component-api-style': ['error', ['script-setup']],
         'vue/component-name-in-template-casing': ['error', 'PascalCase', {
-          registeredComponentsOnly: componentNameInTemplateCasingOnlyRegistered,
-          ignores: componentNameInTemplateCasingIgnores,
           globals: componentNameInTemplateCasingGlobals,
+          ignores: componentNameInTemplateCasingIgnores,
+          registeredComponentsOnly: componentNameInTemplateCasingOnlyRegistered,
         }],
         'vue/component-options-name-casing': ['error', 'PascalCase'],
         'vue/custom-event-name-casing': ['error', 'camelCase'],
@@ -207,12 +207,12 @@ export async function vue(
             }
           : {},
 
+        '@stylistic/max-len': 'off',
+        '@typescript-eslint/explicit-function-return-type': 'off',
+        '@typescript-eslint/naming-convention': 'off',
         // Disable usage in vue files
         'antfu/no-top-level-await': 'off',
         'n/prefer-global/process': 'off',
-        '@typescript-eslint/explicit-function-return-type': 'off',
-        '@typescript-eslint/naming-convention': 'off',
-        '@stylistic/max-len': 'off',
 
         ...overrides,
       },

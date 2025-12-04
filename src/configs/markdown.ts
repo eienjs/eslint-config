@@ -55,8 +55,20 @@ export async function markdown(
       },
       name: 'eienjs/markdown/disables',
       rules: {
+        '@stylistic/comma-dangle': 'off',
+        '@stylistic/eol-last': 'off',
+        '@stylistic/max-len': 'off',
+        '@stylistic/padding-line-between-statements': 'off',
+        '@typescript-eslint/consistent-type-imports': 'off',
+        '@typescript-eslint/explicit-function-return-type': 'off',
+        '@typescript-eslint/no-namespace': 'off',
+        '@typescript-eslint/no-redeclare': 'off',
+        '@typescript-eslint/no-require-imports': 'off',
+        '@typescript-eslint/no-unused-expressions': 'off',
+        '@typescript-eslint/no-unused-vars': 'off',
+        '@typescript-eslint/no-use-before-define': 'off',
         'antfu/no-top-level-await': 'off',
-
+        'n/prefer-global/process': 'off',
         'no-alert': 'off',
         'no-console': 'off',
         'no-labels': 'off',
@@ -67,26 +79,8 @@ export async function markdown(
         'no-unused-labels': 'off',
         'no-unused-vars': 'off',
         'unicode-bom': 'off',
-
-        'n/prefer-global/process': 'off',
-
-        '@stylistic/comma-dangle': 'off',
-        '@stylistic/eol-last': 'off',
-        '@stylistic/padding-line-between-statements': 'off',
-        '@stylistic/max-len': 'off',
-
-        '@typescript-eslint/consistent-type-imports': 'off',
-        '@typescript-eslint/explicit-function-return-type': 'off',
-        '@typescript-eslint/no-namespace': 'off',
-        '@typescript-eslint/no-redeclare': 'off',
-        '@typescript-eslint/no-require-imports': 'off',
-        '@typescript-eslint/no-unused-expressions': 'off',
-        '@typescript-eslint/no-unused-vars': 'off',
-        '@typescript-eslint/no-use-before-define': 'off',
-
         'unused-imports/no-unused-imports': 'off',
         'unused-imports/no-unused-vars': 'off',
-
         ...overrides,
       },
     },

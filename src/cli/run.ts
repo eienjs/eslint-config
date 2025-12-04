@@ -46,14 +46,23 @@ export async function run(options: CliRunOptions = {}): Promise<void> {
 
   if (!argSkipPrompt) {
     result = await p.group({
-      uncommittedConfirmed: async () => {
-        if (isGitClean()) {
-          return true;
+      extra: async ({ results }) => {
+        const isArgExtraValid
+          = argExtra?.length
+            && argExtra.filter((element) => !extra.includes((element as ExtraLibrariesOption))).length === 0;
+
+        if (!results.uncommittedConfirmed || isArgExtraValid) {
+          return;
         }
 
-        return p.confirm({
-          initialValue: false,
-          message: 'There are uncommitted changes in the current repository, are you sure to continue?',
+        const message = argExtra
+          ? `"${argExtra.toString()}" isn't a valid extra util. Please choose from below: `
+          : 'Select a extra utils:';
+
+        return p.multiselect<ExtraLibrariesOption>({
+          message: c.reset(message),
+          options: extraOptions,
+          required: false,
         });
       },
       frameworks: async ({ results }) => {
@@ -74,23 +83,14 @@ export async function run(options: CliRunOptions = {}): Promise<void> {
           required: false,
         });
       },
-      extra: async ({ results }) => {
-        const isArgExtraValid
-          = argExtra?.length
-            && argExtra.filter((element) => !extra.includes((element as ExtraLibrariesOption))).length === 0;
-
-        if (!results.uncommittedConfirmed || isArgExtraValid) {
-          return;
+      uncommittedConfirmed: async () => {
+        if (isGitClean()) {
+          return true;
         }
 
-        const message = argExtra
-          ? `"${argExtra.toString()}" isn't a valid extra util. Please choose from below: `
-          : 'Select a extra utils:';
-
-        return p.multiselect<ExtraLibrariesOption>({
-          message: c.reset(message),
-          options: extraOptions,
-          required: false,
+        return p.confirm({
+          initialValue: false,
+          message: 'There are uncommitted changes in the current repository, are you sure to continue?',
         });
       },
       updateVscodeSettings: async ({ results }) => {

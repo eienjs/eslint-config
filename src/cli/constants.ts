@@ -69,6 +69,9 @@ export const extraOptions: PromItem<ExtraLibrariesOption>[] = [
 export const extra: ExtraLibrariesOption[] = extraOptions.map(({ value }) => (value));
 
 export const dependenciesMap = {
+  adonisjs: [
+    '@adonisjs/eslint-plugin',
+  ],
   astro: [
     'eslint-plugin-astro',
     'astro-eslint-parser',
@@ -79,11 +82,8 @@ export const dependenciesMap = {
   formatterAstro: [
     'prettier-plugin-astro',
   ],
-  vue: [],
-  adonisjs: [
-    '@adonisjs/eslint-plugin',
-  ],
   nuxt: [
     '@nuxt/eslint-plugin',
   ],
+  vue: [],
 } as const;

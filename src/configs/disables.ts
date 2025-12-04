@@ -7,20 +7,20 @@ export function disables(): TypedFlatConfigItem[] {
       files: [`**/scripts/${GLOB_SRC}`],
       name: 'eienjs/disables/scripts',
       rules: {
-        'antfu/no-top-level-await': 'off',
-        'no-console': 'off',
         '@typescript-eslint/explicit-function-return-type': 'off',
         '@typescript-eslint/no-deprecated': 'off',
+        'antfu/no-top-level-await': 'off',
+        'no-console': 'off',
       },
     },
     {
       files: [`**/cli/${GLOB_SRC}`, `**/cli.${GLOB_SRC_EXT}`],
       name: 'eienjs/disables/cli',
       rules: {
+        '@typescript-eslint/no-unnecessary-condition': 'off',
         'antfu/no-top-level-await': 'off',
         'no-console': 'off',
         'unicorn/no-process-exit': 'off',
-        '@typescript-eslint/no-unnecessary-condition': 'off',
       },
     },
     {
@@ -51,9 +51,9 @@ export function disables(): TypedFlatConfigItem[] {
       files: [`**/*.config.${GLOB_SRC_EXT}`, `**/*.config.*.${GLOB_SRC_EXT}`],
       name: 'eienjs/disables/config-files',
       rules: {
+        '@typescript-eslint/explicit-function-return-type': 'off',
         'antfu/no-top-level-await': 'off',
         'no-console': 'off',
-        '@typescript-eslint/explicit-function-return-type': 'off',
       },
     },
     {

@@ -43,21 +43,16 @@ export async function test(
       files,
       name: 'eienjs/test/rules',
       rules: {
+        '@typescript-eslint/explicit-function-return-type': 'off',
+        'antfu/no-top-level-await': 'off',
+        'n/prefer-global/process': 'off',
+        'no-unused-expressions': 'off',
         'test/consistent-test-it': ['error', { fn: 'test', withinDescribe: 'test' }],
         'test/no-identical-title': 'error',
         'test/no-import-node-test': 'error',
         'test/no-only-tests': isInEditor ? 'warn' : 'error',
-
         'test/prefer-hooks-in-order': 'error',
         'test/prefer-lowercase-title': 'error',
-
-        // Disables
-
-        'antfu/no-top-level-await': 'off',
-        'no-unused-expressions': 'off',
-        'n/prefer-global/process': 'off',
-        '@typescript-eslint/explicit-function-return-type': 'off',
-
         ...overrides,
       },
     },

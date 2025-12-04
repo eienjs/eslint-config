@@ -7,8 +7,8 @@ export async function adonisjs(
   options: OptionsAdonisJS = {},
 ): Promise<TypedFlatConfigItem[]> {
   const {
-    overrides = {},
     dirs = {},
+    overrides = {},
   } = options;
 
   await ensurePackages([
@@ -42,11 +42,11 @@ export async function adonisjs(
   const fileRoutes = [...Object.values(dirs).map((dir) => join(dir, nestedGlobPattern)), `${dirs.root}/ace.js`];
 
   const commonRulesSet: TypedFlatConfigItem['rules'] = {
-    '@typescript-eslint/require-await': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/no-floating-promises': 'off',
     '@typescript-eslint/no-unsafe-return': 'off',
+    '@typescript-eslint/require-await': 'off',
     'unicorn/no-anonymous-default-export': 'off',
   };
 
@@ -133,12 +133,12 @@ export async function adonisjs(
       files: [join(dirs.tests, nestedGlobPattern)],
       name: 'eienjs/adonisjs/tests-disables',
       rules: {
-        '@typescript-eslint/unbound-method': 'off',
         '@typescript-eslint/explicit-function-return-type': 'off',
         '@typescript-eslint/explicit-module-boundary-types': 'off',
-        '@typescript-eslint/no-unsafe-assignment': 'off',
         '@typescript-eslint/no-explicit-any': 'off',
+        '@typescript-eslint/no-unsafe-assignment': 'off',
         '@typescript-eslint/no-unsafe-return': 'off',
+        '@typescript-eslint/unbound-method': 'off',
       },
     },
   ];

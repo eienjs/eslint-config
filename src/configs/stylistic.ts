@@ -14,9 +14,9 @@ export async function stylistic(
 ): Promise<TypedFlatConfigItem[]> {
   const {
     indent,
+    maxLineLength = 120,
     overrides = {},
     quotes,
-    maxLineLength = 120,
   } = {
     ...StylisticConfigDefaults,
     ...options,
@@ -34,36 +34,33 @@ export async function stylistic(
     {
       name: 'eienjs/stylistic/rules',
       plugins: {
-        'antfu': pluginAntfu,
         '@stylistic': pluginStylistic,
+        'antfu': pluginAntfu,
       },
       rules: {
         ...config.rules,
-
-        'antfu/consistent-chaining': 'error',
-        'antfu/consistent-list-newline': 'error',
-
         '@stylistic/arrow-parens': ['error', 'always'],
         '@stylistic/brace-style': ['error', '1tbs', { allowSingleLine: true }],
+        '@stylistic/comma-spacing': 'error',
+        '@stylistic/generator-star-spacing': ['error', { after: true, before: false }],
+        '@stylistic/lines-between-class-members': ['error', 'always'],
         '@stylistic/max-len': ['warn', { code: maxLineLength, ignoreComments: true }],
         '@stylistic/padding-line-between-statements': [
           'error',
           {
             blankLine: 'always',
-            prev: '*',
             next: ['interface', 'type'],
+            prev: '*',
           },
           // require blank lines before all return statements, like the newline-before-return rule.
           { blankLine: 'always', next: 'return', prev: '*' },
         ],
-        '@stylistic/lines-between-class-members': ['error', 'always'],
-        '@stylistic/generator-star-spacing': ['error', { after: true, before: false }],
         '@stylistic/quote-props': ['error', 'consistent'],
         '@stylistic/quotes': ['error', quotes, { avoidEscape: true }],
         '@stylistic/semi': 'error',
-        '@stylistic/comma-spacing': 'error',
         '@stylistic/yield-star-spacing': ['error', { after: true, before: false }],
-
+        'antfu/consistent-chaining': 'error',
+        'antfu/consistent-list-newline': 'error',
         ...overrides,
       },
     },
