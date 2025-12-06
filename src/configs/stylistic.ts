@@ -3,6 +3,7 @@ import { pluginAntfu } from '../plugins';
 import { interopDefault } from '../utils';
 
 export const StylisticConfigDefaults: StylisticConfig = {
+  experimental: false,
   indent: 2,
   quotes: 'single',
 };
@@ -13,6 +14,7 @@ export async function stylistic(
   options: StylisticOptions = {},
 ): Promise<TypedFlatConfigItem[]> {
   const {
+    experimental,
     indent,
     maxLineLength = 120,
     overrides = {},
@@ -25,6 +27,7 @@ export async function stylistic(
   const pluginStylistic = await interopDefault(import('@stylistic/eslint-plugin'));
 
   const config = pluginStylistic.configs.customize({
+    experimental,
     indent,
     quotes,
     semi: true,
@@ -39,6 +42,7 @@ export async function stylistic(
       },
       rules: {
         ...config.rules,
+
         '@stylistic/arrow-parens': ['error', 'always'],
         '@stylistic/brace-style': ['error', '1tbs', { allowSingleLine: true }],
         '@stylistic/comma-spacing': 'error',

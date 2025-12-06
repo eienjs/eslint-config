@@ -301,7 +301,7 @@ export interface OptionsStylistic {
 }
 
 export interface StylisticConfig
-  extends Pick<StylisticCustomizeOptions, 'indent' | 'quotes'> {
+  extends Pick<StylisticCustomizeOptions, 'indent' | 'quotes' | 'experimental'> {
   maxLineLength?: number;
 }
 
