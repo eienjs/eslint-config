@@ -2,6 +2,7 @@ import type { Linter } from 'eslint';
 import type { RuleOptions } from './typegen';
 import type { Awaitable, ConfigNames, OptionsConfig, TypedFlatConfigItem } from './types';
 import { FlatConfigComposer } from 'eslint-flat-config-utils';
+import { findUpSync } from 'find-up-simple';
 import { isPackageExists } from 'local-pkg';
 import {
   adonisjs,
@@ -68,7 +69,7 @@ export function eienjs(
     ignores: userIgnores = [],
     imports: enableImports = true,
     nuxt: enableNuxt = false,
-    pnpm: enableCatalogs = false,
+    pnpm: enableCatalogs = Boolean(findUpSync('pnpm-workspace.yaml')),
     regexp: enableRegexp = true,
     typescript: enableTypeScript = isPackageExists('typescript'),
     unicorn: enableUnicorn = true,
