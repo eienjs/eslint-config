@@ -61,7 +61,7 @@
     "eslint": "^9.39.1",
     "eslint-plugin-astro": "^1.5.0",
     "eslint-plugin-erasable-syntax-only": "^0.4.0",
-    "eslint-plugin-format": "^1.0.2",
+    "eslint-plugin-format": "^1.1.0",
     "prettier-plugin-astro": "^0.14.1"
   },
   "peerDependenciesMeta": {
@@ -144,8 +144,10 @@
     "eslint-plugin-erasable-syntax-only": "catalog:peer",
     "eslint-plugin-format": "catalog:peer",
     "eslint-typegen": "catalog:dev",
+    "find-up-simple": "catalog:inline",
     "husky": "catalog:dev",
     "np": "catalog:dev",
+    "pnpm-workspace-yaml": "catalog:dev",
     "prettier-plugin-astro": "catalog:peer",
     "tsdown": "catalog:dev",
     "tsx": "catalog:dev",
