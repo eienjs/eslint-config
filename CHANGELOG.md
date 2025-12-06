@@ -5,7 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [v1.6.0](https://github.com/eienjs/eslint-config/compare/v1.5.2...v1.6.0)
+## [v1.7.0](https://github.com/eienjs/eslint-config/compare/v1.6.0...v1.7.0)
+
+### Commits
+
+- feat(pnpm): :sparkles: enhance pnpm workspace config with new sort rules and dynamic catalog mode [`1fc2a23`](https://github.com/eienjs/eslint-config/commit/1fc2a23bca8c177f90e048bb18f0f3eac65d1855)
+- chore: :arrow_up: update eslint-plugin-format and other dependencies in pnpm workspace [`a4222d0`](https://github.com/eienjs/eslint-config/commit/a4222d0dbcfd8375e43cdefe8fcbfae67054275d)
+- feat: :sparkles: add 'experimental' option to StylisticConfig and update defaults [`729fc81`](https://github.com/eienjs/eslint-config/commit/729fc81d21ca14802dab4d53589002b2fe5fcfc5)
+
+## [v1.6.0](https://github.com/eienjs/eslint-config/compare/v1.5.2...v1.6.0) - 2025-12-03
 
 ### Commits
 
