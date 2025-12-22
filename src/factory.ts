@@ -68,6 +68,8 @@ export function eienjs(
     gitignore: enableGitignore = true,
     ignores: userIgnores = [],
     imports: enableImports = true,
+    jsdoc: enableJsdoc = true,
+    node: enableNode = true,
     nuxt: enableNuxt = false,
     pnpm: enableCatalogs = Boolean(findUpSync('pnpm-workspace.yaml')),
     regexp: enableRegexp = true,
@@ -116,28 +118,25 @@ export function eienjs(
       overrides: getOverrides(options, 'javascript'),
     }),
     comments(),
-    node(),
-    jsdoc({
-      stylistic: stylisticOptions,
-    }),
-    imports({
-      stylistic: stylisticOptions,
-    }),
     command(),
     perfectionist(),
   );
 
+  if (enableNode) {
+    configs.push(node());
+  }
+
+  if (enableJsdoc) {
+    configs.push(jsdoc({
+      stylistic: stylisticOptions,
+    }));
+  }
+
   if (enableImports) {
-    configs.push(
-      imports(enableImports === true
-        ? {
-            stylistic: stylisticOptions,
-          }
-        : {
-            stylistic: stylisticOptions,
-            ...enableImports,
-          }),
-    );
+    configs.push(imports({
+      stylistic: stylisticOptions,
+      ...resolveSubOptions(options, 'imports'),
+    }));
   }
 
   if (enableUnicorn) {
@@ -218,9 +217,14 @@ export function eienjs(
   }
 
   if (enableCatalogs) {
+    const optionsPnpm = resolveSubOptions(options, 'pnpm');
+
     configs.push(
       pnpm({
         isInEditor,
+        json: options.jsonc !== false,
+        yaml: options.yaml !== false,
+        ...optionsPnpm,
       }),
     );
   }
