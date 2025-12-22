@@ -152,6 +152,8 @@ export interface OptionsAdonisJS extends OptionsOverrides {
     tests?: string;
     config?: string;
     commands?: string;
+    inertia?: string;
+    types?: string;
   };
 }
 

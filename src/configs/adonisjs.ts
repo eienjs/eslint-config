@@ -37,6 +37,8 @@ export async function adonisjs(
   dirs.tests = dirs.tests || `${dirs.root}/tests`;
   dirs.config = dirs.config || `${dirs.root}/config`;
   dirs.commands = dirs.commands || `${dirs.root}/commands`;
+  dirs.inertia = dirs.inertia || `${dirs.root}/inertia`;
+  dirs.types = dirs.types || `${appPath}/types`;
 
   const nestedGlobPattern = `**/*.${GLOB_SRC_EXT}`;
   const fileRoutes = [...Object.values(dirs).map((dir) => join(dir, nestedGlobPattern)), `${dirs.root}/ace.js`];
@@ -61,6 +63,15 @@ export async function adonisjs(
         '@adonisjs/prefer-lazy-listener-import': 'error',
 
         ...overrides,
+      },
+    },
+    {
+      files: [join(dirs.inertia, nestedGlobPattern)],
+      name: 'eienjs/adonisjs/inertia-rules',
+      rules: {
+        '@adonisjs/no-backend-import-in-frontend': 'error',
+        '@adonisjs/prefer-adonisjs-inertia-form': 'error',
+        '@adonisjs/prefer-adonisjs-inertia-link': 'error',
       },
     },
     {
@@ -139,6 +150,19 @@ export async function adonisjs(
         '@typescript-eslint/no-unsafe-assignment': 'off',
         '@typescript-eslint/no-unsafe-return': 'off',
         '@typescript-eslint/unbound-method': 'off',
+      },
+    },
+    {
+      files: [join(dirs.types, nestedGlobPattern)],
+      name: 'eienjs/adonisjs/types-disables',
+      rules: {
+        '@eslint-community/eslint-comments/no-unlimited-disable': 'off',
+        '@typescript-eslint/consistent-type-definitions': 'off',
+        '@typescript-eslint/explicit-function-return-type': 'off',
+        '@typescript-eslint/no-unsafe-assignment': 'off',
+        '@typescript-eslint/no-unsafe-return': 'off',
+        'no-restricted-syntax': 'off',
+        'unused-imports/no-unused-vars': 'off',
       },
     },
   ];
