@@ -1,48 +1,85 @@
-import type { OptionsIsInEditor, TypedFlatConfigItem } from '../types';
+import type { OptionsPnpm, TypedFlatConfigItem } from '../types';
+import { readFile } from 'node:fs/promises';
+import { findUp } from 'find-up-simple';
 import { interopDefault } from '../utils';
 
+async function detectCatalogUsage(): Promise<boolean> {
+  const workspaceFile = await findUp('pnpm-workspace.yaml');
+  if (!workspaceFile) {
+    return false;
+  }
+
+  const yaml = await readFile(workspaceFile, 'utf8');
+
+  return yaml.includes('catalog:') || yaml.includes('catalogs:');
+}
+
 export async function pnpm(
-  options: OptionsIsInEditor,
+  options: OptionsPnpm,
 ): Promise<TypedFlatConfigItem[]> {
   const [
     pluginPnpm,
+    pluginYaml,
     yamlParser,
     jsoncParser,
   ] = await Promise.all([
     interopDefault(import('eslint-plugin-pnpm')),
+    interopDefault(import('eslint-plugin-yml')),
     interopDefault(import('yaml-eslint-parser')),
     interopDefault(import('jsonc-eslint-parser')),
   ]);
 
-  return [
-    {
-      files: [
-        'package.json',
-        '**/package.json',
-      ],
-      languageOptions: {
-        parser: jsoncParser,
-      },
-      name: 'eienjs/pnpm/package-json',
-      plugins: {
-        pnpm: pluginPnpm,
-      },
-      rules: {
-        'pnpm/json-enforce-catalog': [
-          'error',
-          { autofix: !options.isInEditor },
+  const {
+    catalogs = await detectCatalogUsage(),
+    isInEditor = false,
+    json = true,
+    sort = true,
+    yaml = true,
+  } = options;
+
+  const configs: TypedFlatConfigItem[] = [];
+
+  if (json) {
+    configs.push(
+      {
+        files: [
+          'package.json',
+          '**/package.json',
         ],
-        'pnpm/json-prefer-workspace-settings': [
-          'error',
-          { autofix: !options.isInEditor },
-        ],
-        'pnpm/json-valid-catalog': [
-          'error',
-          { autofix: !options.isInEditor },
-        ],
+        languageOptions: {
+          parser: jsoncParser,
+        },
+        name: 'eienjs/pnpm/package-json',
+        plugins: {
+          pnpm: pluginPnpm,
+        },
+        rules: {
+          ...(catalogs
+            ? {
+                'pnpm/json-enforce-catalog': [
+                  'error',
+                  {
+                    autofix: !isInEditor,
+                    ignores: ['@types/vscode'],
+                  },
+                ],
+              }
+            : {}),
+          'pnpm/json-prefer-workspace-settings': [
+            'error',
+            { autofix: !isInEditor },
+          ],
+          'pnpm/json-valid-catalog': [
+            'error',
+            { autofix: !isInEditor },
+          ],
+        },
       },
-    },
-    {
+    );
+  }
+
+  if (yaml) {
+    configs.push({
       files: ['pnpm-workspace.yaml'],
       languageOptions: {
         parser: yamlParser,
@@ -54,8 +91,6 @@ export async function pnpm(
       rules: {
         'pnpm/yaml-enforce-settings': ['error', {
           settings: {
-            catalogMode: 'prefer',
-            cleanupUnusedCatalogs: true,
             shellEmulator: true,
             trustPolicy: 'no-downgrade',
           },
@@ -63,10 +98,19 @@ export async function pnpm(
         'pnpm/yaml-no-duplicate-catalog-item': 'error',
         'pnpm/yaml-no-unused-catalog-item': 'error',
       },
-    },
-    {
+    });
+  }
+
+  if (sort) {
+    configs.push({
       files: ['pnpm-workspace.yaml'],
+      languageOptions: {
+        parser: yamlParser,
+      },
       name: 'eienjs/pnpm/pnpm-workspace-yaml-sort',
+      plugins: {
+        yaml: pluginYaml,
+      },
       rules: {
         'yaml/sort-keys': [
           'error',
@@ -103,7 +147,7 @@ export async function pnpm(
                 'preferWorkspacePackages',
                 'publicHoistPattern',
                 'registrySupportsTimeField',
-                'requiredScrpts',
+                'requiredScripts',
                 'resolutionMode',
                 'savePrefix',
                 'scriptShell',
@@ -148,6 +192,8 @@ export async function pnpm(
           },
         ],
       },
-    },
-  ];
+    });
+  }
+
+  return configs;
 }
