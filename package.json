@@ -2,7 +2,7 @@
   "name": "@eienjs/eslint-config",
   "type": "module",
   "version": "1.7.0",
-  "packageManager": "pnpm@10.24.0",
+  "packageManager": "pnpm@10.26.1",
   "description": "EienJS ESLint Config",
   "author": "Fernando Isidro <luffynando@gmail.com> (https://github.com/luffynando/)",
   "license": "MIT",
@@ -28,7 +28,7 @@
   "main": "./dist/index.mjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.mts",
-  "bin": "./bin/index.js",
+  "bin": "./bin/index.mjs",
   "files": [
     "bin",
     "dist"
@@ -54,11 +54,11 @@
     "tool:code": "pnpm lint:check && pnpm typecheck"
   },
   "peerDependencies": {
-    "@adonisjs/eslint-plugin": "^2.0.1",
-    "@nuxt/eslint-plugin": "^1.11.0",
+    "@adonisjs/eslint-plugin": "^2.2.0",
+    "@nuxt/eslint-plugin": "^1.12.1",
     "@prettier/plugin-xml": "^3.4.2",
     "astro-eslint-parser": "^1.2.2",
-    "eslint": "^9.39.1",
+    "eslint": "^9.39.2",
     "eslint-plugin-astro": "^1.5.0",
     "eslint-plugin-erasable-syntax-only": "^0.4.0",
     "eslint-plugin-format": "^1.1.0",
@@ -154,6 +154,7 @@
     "typescript": "catalog:dev"
   },
   "resolutions": {
+    "chokidar": "catalog:dev",
     "eslint": "catalog:peer"
   },
   "commitlint": {
