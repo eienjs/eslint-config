@@ -154,7 +154,6 @@
     "typescript": "catalog:dev"
   },
   "resolutions": {
-    "chokidar": "catalog:dev",
     "eslint": "catalog:peer"
   },
   "commitlint": {

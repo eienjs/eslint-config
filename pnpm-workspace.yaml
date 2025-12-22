@@ -5,6 +5,10 @@ shellEmulator: true
 strictPeerDependencies: false
 trustPolicy: no-downgrade
 
+trustPolicyExclude:
+  - chokidar
+  - cached-factory
+
 overrides:
   '@eslint-community/eslint-utils': ^4.9.0
   '@typescript-eslint/types': ^8.50.0
@@ -19,7 +23,6 @@ catalogs:
     '@eslint/config-inspector': ^1.4.2
     '@types/node': ^24.10.4
     auto-changelog: ^2.5.0
-    chokidar: ^5.0.0
     eslint-typegen: ^2.3.0
     husky: ^9.1.7
     np: ^10.2.0
