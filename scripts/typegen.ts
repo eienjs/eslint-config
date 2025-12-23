@@ -1,7 +1,8 @@
 import fs from 'node:fs/promises';
 import { flatConfigsToRulesDTS } from 'eslint-typegen/core';
 import { builtinRules } from 'eslint/use-at-your-own-risk';
-import eienjs, { CONFIG_PRESET_FULL_ON } from '../src';
+import { CONFIG_PRESET_FULL_ON } from '../src/config_presets';
+import { eienjs } from '../src/factory';
 
 const configs = await eienjs(CONFIG_PRESET_FULL_ON)
   .prepend({
