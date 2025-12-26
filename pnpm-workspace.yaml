@@ -27,7 +27,7 @@ catalogs:
     husky: ^9.1.7
     np: ^10.2.0
     pnpm-workspace-yaml: ^1.4.3
-    tsdown: ^0.18.2
+    tsdown: ^0.18.3
     tsx: ^4.21.0
     typescript: ^5.9.3
   inline:
@@ -50,7 +50,7 @@ catalogs:
     '@stylistic/eslint-plugin': ^5.6.1
     '@typescript-eslint/eslint-plugin': ^8.50.1
     '@typescript-eslint/parser': ^8.50.1
-    '@vitest/eslint-plugin': ^1.6.3
+    '@vitest/eslint-plugin': ^1.6.4
     ansis: ^4.2.0
     cac: ^6.7.14
     eslint-config-flat-gitignore: ^2.1.0
