@@ -39,7 +39,7 @@ export async function typescript(
     ...componentExts.map((ext) => `**/*.${ext}`),
   ];
 
-  const filesTypeAware = options.filesTypeAware ?? [GLOB_TS, GLOB_TSX];
+  const filesTypeAware = options.filesTypeAware ?? [GLOB_TS, GLOB_TSX, GLOB_VUE];
   const ignoresTypeAware = options.ignoresTypeAware ?? [
     `${GLOB_MARKDOWN}/**`,
     GLOB_ASTRO_TS,

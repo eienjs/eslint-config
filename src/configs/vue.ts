@@ -128,7 +128,7 @@ export async function vue(
         'vue/define-macros-order': ['error', {
           order: ['defineOptions', 'defineProps', 'defineEmits', 'defineSlots'],
         }],
-        'vue/define-props-declaration': ['error', 'runtime'],
+        'vue/define-props-declaration': 'error',
         'vue/dot-location': ['error', 'property'],
         'vue/dot-notation': ['error', { allowKeywords: true }],
         'vue/eqeqeq': ['error', 'smart'],
