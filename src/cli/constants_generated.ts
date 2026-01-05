@@ -1,5 +1,5 @@
 export const versionsMap = {
-  '@adonisjs/eslint-plugin': '^2.2.0',
+  '@adonisjs/eslint-plugin': '^2.2.1',
   '@nuxt/eslint-plugin': '^1.12.1',
   'astro-eslint-parser': '^1.2.2',
   'eslint': '^9.39.2',
