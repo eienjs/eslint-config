@@ -30,6 +30,7 @@ export async function vue(
 
   const {
     indent = 2,
+    maxLineLength = 120,
   } = typeof stylistic === 'boolean' ? {} : stylistic;
 
   const [
@@ -196,6 +197,11 @@ export async function vue(
               }],
               'vue/key-spacing': ['error', { afterColon: true, beforeColon: false }],
               'vue/keyword-spacing': ['error', { after: true, before: true }],
+              'vue/max-len': ['error', {
+                code: maxLineLength,
+                comments: maxLineLength,
+                template: maxLineLength,
+              }],
               'vue/object-curly-newline': 'off',
               'vue/object-curly-spacing': ['error', 'always'],
               'vue/object-property-newline': ['error', { allowAllPropertiesOnSameLine: true }],
