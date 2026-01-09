@@ -303,7 +303,8 @@ export interface OptionsStylistic {
 }
 
 export interface StylisticConfig
-  extends Pick<StylisticCustomizeOptions, 'indent' | 'quotes' | 'experimental'> {
+  extends Pick<StylisticCustomizeOptions, 'quotes' | 'experimental'> {
+  indent?: number | 'tab';
   maxLineLength?: number;
 }
 
