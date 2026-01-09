@@ -5,10 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [v1.8.2](https://github.com/eienjs/eslint-config/compare/v1.8.1...v1.8.2)
+## [v1.9.0](https://github.com/eienjs/eslint-config/compare/v1.8.2...v1.9.0)
 
 ### Commits
 
+- chore: :arrow_up: update dependencies [`9d4e500`](https://github.com/eienjs/eslint-config/commit/9d4e5007b3e3f5d9c11d80858ac4c5cb1d32a2a3)
+- chore: :arrow_up: update dependencies [`f113f93`](https://github.com/eienjs/eslint-config/commit/f113f9382093aaf0167ec3927bf99a7907bbd208)
+- feat: :sparkles: add rule for vue and max len [`7fb1267`](https://github.com/eienjs/eslint-config/commit/7fb1267f6521970a26a4e1bb3f637225d2efcb30)
+
+## [v1.8.2](https://github.com/eienjs/eslint-config/compare/v1.8.1...v1.8.2) - 2025-12-26
+
+### Commits
+
+- chore(release): :tada: 1.8.2 [`0d54e29`](https://github.com/eienjs/eslint-config/commit/0d54e29f4264a259e490d5aa7c5402719d853536)
 - fix: :bug: resolve correct non null assertions and vue props [`0078468`](https://github.com/eienjs/eslint-config/commit/0078468840ed98bd64fa171b018530db2eb248eb)
 - chore: :arrow_up: update dependencies [`664e273`](https://github.com/eienjs/eslint-config/commit/664e273ac1e049eca5bbd168dece93c63dd2bb24)
 
