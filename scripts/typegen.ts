@@ -15,7 +15,6 @@ const configs = await eienjs(CONFIG_PRESET_FULL_ON)
 
 const configNames = configs.map((item) => item.name).filter(Boolean) as string[];
 
-// @ts-expect-error - ignore, we're just generating the types
 let dts = await flatConfigsToRulesDTS(configs, {
   includeAugmentation: false,
 });
