@@ -6,7 +6,7 @@ export function comments(): TypedFlatConfigItem[] {
     {
       name: 'eienjs/eslint-comments/rules',
       plugins: {
-        '@eslint-community/eslint-comments': pluginComments as unknown,
+        '@eslint-community/eslint-comments': pluginComments,
       },
       rules: {
         '@eslint-community/eslint-comments/disable-enable-pair': [
