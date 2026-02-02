@@ -5,13 +5,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [v1.9.0](https://github.com/eienjs/eslint-config/compare/v1.8.2...v1.9.0)
+## [v1.9.1](https://github.com/eienjs/eslint-config/compare/v1.9.0...v1.9.1)
+
+### Commits
+
+- chore: :arrow_up: update dependencies [`d21dfbf`](https://github.com/eienjs/eslint-config/commit/d21dfbfe0da9789d709cff2368b5a010f9d3deb1)
+- refactor: :recycle: resolve updates of recent packages [`f3fff48`](https://github.com/eienjs/eslint-config/commit/f3fff481fc1a701f08c05e311084cf55bfc8405e)
+- build: :construction_worker: inlcude inlineOnly dependency [`8c52c5c`](https://github.com/eienjs/eslint-config/commit/8c52c5cdf54185d73a46c57a77e9c9fb60094df1)
+
+## [v1.9.0](https://github.com/eienjs/eslint-config/compare/v1.8.2...v1.9.0) - 2026-01-09
 
 ### Commits
 
 - chore: :arrow_up: update dependencies [`9d4e500`](https://github.com/eienjs/eslint-config/commit/9d4e5007b3e3f5d9c11d80858ac4c5cb1d32a2a3)
 - chore: :arrow_up: update dependencies [`f113f93`](https://github.com/eienjs/eslint-config/commit/f113f9382093aaf0167ec3927bf99a7907bbd208)
-- feat: :sparkles: add rule for vue and max len [`7fb1267`](https://github.com/eienjs/eslint-config/commit/7fb1267f6521970a26a4e1bb3f637225d2efcb30)
+- chore(release): :tada: 1.9.0 [`4ca76e2`](https://github.com/eienjs/eslint-config/commit/4ca76e2b0b9622e1b572eba573ec022c6ec9d8c6)
 
 ## [v1.8.2](https://github.com/eienjs/eslint-config/compare/v1.8.1...v1.8.2) - 2025-12-26
 
