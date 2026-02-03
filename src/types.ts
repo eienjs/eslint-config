@@ -143,6 +143,7 @@ export interface OptionsAdonisJS extends OptionsOverrides {
     listeners?: string;
     events?: string;
     middleware?: string;
+    transformers?: string;
     validators?: string;
     providers?: string;
     policies?: string;

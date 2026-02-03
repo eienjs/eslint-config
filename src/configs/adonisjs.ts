@@ -27,10 +27,11 @@ export async function adonisjs(
   dirs.listeners = dirs.listeners || `${appPath}/listeners`;
   dirs.events = dirs.events || `${appPath}/events`;
   dirs.middleware = dirs.middleware || `${appPath}/middleware`;
+  dirs.transformers = dirs.transformers || `${appPath}/transformers`;
   dirs.validators = dirs.validators || `${appPath}/validators`;
+  dirs.providers = dirs.providers || `${dirs.root}/providers`;
   dirs.policies = dirs.policies || `${appPath}/policies`;
   dirs.abilities = dirs.abilities || `${appPath}/abilities`;
-  dirs.providers = dirs.providers || `${dirs.root}/providers`;
   dirs.database = dirs.database || `${dirs.root}/database`;
   dirs.bin = dirs.bin || `${dirs.root}/bin`;
   dirs.start = dirs.start || `${dirs.root}/start`;
@@ -108,6 +109,14 @@ export async function adonisjs(
       name: 'eienjs/adonisjs/middleware-disables',
       rules: {
         ...commonRulesSet,
+      },
+    },
+    {
+      files: [join(dirs.transformers, nestedGlobPattern)],
+      name: 'eienjs/adonisjs/transformers-disables',
+      rules: {
+        '@typescript-eslint/explicit-function-return-type': 'off',
+        '@typescript-eslint/explicit-module-boundary-types': 'off',
       },
     },
     {
