@@ -5,13 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [v1.9.1](https://github.com/eienjs/eslint-config/compare/v1.9.0...v1.9.1)
+## [v1.9.2](https://github.com/eienjs/eslint-config/compare/v1.9.1...v1.9.2)
+
+### Commits
+
+- chore: :construction: update missing dir of adonisjs v7 transformers [`20d1995`](https://github.com/eienjs/eslint-config/commit/20d19952a7d17de6475dbec0f0eb3f47cb23687a)
+
+## [v1.9.1](https://github.com/eienjs/eslint-config/compare/v1.9.0...v1.9.1) - 2026-02-02
 
 ### Commits
 
 - chore: :arrow_up: update dependencies [`d21dfbf`](https://github.com/eienjs/eslint-config/commit/d21dfbfe0da9789d709cff2368b5a010f9d3deb1)
 - refactor: :recycle: resolve updates of recent packages [`f3fff48`](https://github.com/eienjs/eslint-config/commit/f3fff481fc1a701f08c05e311084cf55bfc8405e)
-- build: :construction_worker: inlcude inlineOnly dependency [`8c52c5c`](https://github.com/eienjs/eslint-config/commit/8c52c5cdf54185d73a46c57a77e9c9fb60094df1)
+- chore(release): :tada: 1.9.1 [`06db4b0`](https://github.com/eienjs/eslint-config/commit/06db4b09b90c36b7c80056e7e9d8f7453e7779af)
 
 ## [v1.9.0](https://github.com/eienjs/eslint-config/compare/v1.8.2...v1.9.0) - 2026-01-09
 
