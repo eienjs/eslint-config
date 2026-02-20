@@ -95,6 +95,7 @@ export async function adonisjs(
       rules: {
         ...commonRulesSet,
         '@typescript-eslint/no-misused-promises': 'off',
+        'n/prefer-global/process': 'off',
       },
     },
     {
