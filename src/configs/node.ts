@@ -1,9 +1,11 @@
 import type { TypedFlatConfigItem } from '../types';
+import { GLOB_SRC } from '../globs';
 import { pluginNode } from '../plugins';
 
 export function node(): TypedFlatConfigItem[] {
   return [
     {
+      files: [GLOB_SRC],
       name: 'eienjs/node/rules',
       plugins: {
         n: pluginNode,
