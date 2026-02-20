@@ -56,9 +56,8 @@
     "@nuxt/eslint-plugin": "^1.13.0",
     "@prettier/plugin-xml": "^3.4.2",
     "astro-eslint-parser": "^1.2.2",
-    "eslint": "^9.39.2",
+    "eslint": "^9.39.2 || ^10.0.1",
     "eslint-plugin-astro": "^1.5.0",
-    "eslint-plugin-erasable-syntax-only": "^0.4.0",
     "eslint-plugin-format": "^1.3.1",
     "prettier-plugin-astro": "^0.14.1"
   },
@@ -76,9 +75,6 @@
       "optional": true
     },
     "eslint-plugin-astro": {
-      "optional": true
-    },
-    "eslint-plugin-erasable-syntax-only": {
       "optional": true
     },
     "eslint-plugin-format": {
@@ -137,6 +133,7 @@
     "@types/node": "catalog:dev",
     "astro-eslint-parser": "catalog:peer",
     "auto-changelog": "catalog:dev",
+    "baseline-browser-mapping": "catalog:dev",
     "eslint": "catalog:peer",
     "eslint-plugin-astro": "catalog:peer",
     "eslint-plugin-erasable-syntax-only": "catalog:peer",
@@ -152,7 +149,12 @@
     "typescript": "catalog:dev"
   },
   "resolutions": {
-    "eslint": "catalog:peer"
+    "@eslint-community/eslint-utils": "catalog:peer",
+    "@typescript-eslint/types": "catalog:peer",
+    "@typescript-eslint/utils": "catalog:peer",
+    "chokidar": "catalog:dev",
+    "eslint": "catalog:peer",
+    "tsx": "catalog:dev"
   },
   "commitlint": {
     "extends": [
