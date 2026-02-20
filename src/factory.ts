@@ -112,7 +112,7 @@ export function eienjs(
 
   // Base configs
   configs.push(
-    ignores(userIgnores),
+    ignores(userIgnores, !enableTypeScript),
     javascript({
       isInEditor,
       overrides: getOverrides(options, 'javascript'),
