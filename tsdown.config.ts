@@ -9,6 +9,8 @@ export default defineConfig([
     platform: 'node',
     exports: true,
     unbundle: true,
-    inlineOnly: ['find-up-simple'],
+    inlineOnly: [
+      'find-up-simple',
+    ],
   },
 ]);
