@@ -2,6 +2,7 @@ import type { StylisticCustomizeOptions } from '@stylistic/eslint-plugin';
 import type { ParserOptions } from '@typescript-eslint/parser';
 import type { Linter } from 'eslint';
 import type { FlatGitignoreOptions } from 'eslint-config-flat-gitignore';
+import type { ConfigWithExtends } from 'eslint-flat-config-utils';
 import type { Options as VueBlocksOptions } from 'eslint-processor-vue-blocks';
 import type { ConfigNames, RuleOptions } from './typegen';
 import type { VendoredPrettierOptions } from './vendored/prettier_types';
@@ -10,14 +11,14 @@ export type Awaitable<T> = T | Promise<T>;
 
 export type Rules = Record<string, Linter.RuleEntry | undefined> & RuleOptions;
 
-export type { ConfigNames };
+export type { ConfigNames, RuleOptions };
 
 /**
  * An updated version of ESLint's `Linter.Config`, which provides autocompletion
  * for `rules` and relaxes type limitations for `plugins` and `rules`, because
  * many plugins still lack proper type definitions.
  */
-export type TypedFlatConfigItem = Omit<Linter.Config, 'plugins' | 'rules'> & {
+export type TypedFlatConfigItem = Omit<ConfigWithExtends, 'plugins' | 'rules'> & {
   /**
    * An object containing a name-value mapping of plugin names to plugin objects.
    * When `files` is specified, these plugins are only available to the matching files.
