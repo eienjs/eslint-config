@@ -9,11 +9,14 @@ export async function jsdoc(options: OptionsStylistic = {}): Promise<TypedFlatCo
 
   return [
     {
-      files: [GLOB_SRC],
-      name: 'eienjs/jsdoc/rules',
+      name: 'eienjs/jsdoc/setup',
       plugins: {
         jsdoc: await interopDefault(import('eslint-plugin-jsdoc')),
       },
+    },
+    {
+      files: [GLOB_SRC],
+      name: 'eienjs/jsdoc/rules',
       rules: {
         'jsdoc/check-access': 'warn',
         'jsdoc/check-param-names': 'warn',

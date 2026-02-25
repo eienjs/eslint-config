@@ -59,7 +59,7 @@
     "eslint": "^9.39.2 || ^10.0.1",
     "eslint-plugin-astro": "^1.6.0",
     "eslint-plugin-erasable-syntax-only": "^0.4.0",
-    "eslint-plugin-format": "^1.5.0",
+    "eslint-plugin-format": "^2.0.1",
     "prettier-plugin-astro": "^0.14.1"
   },
   "peerDependenciesMeta": {
@@ -119,7 +119,6 @@
     "eslint-plugin-yml": "catalog:prod",
     "eslint-processor-vue-blocks": "catalog:prod",
     "globals": "catalog:prod",
-    "jsonc-eslint-parser": "catalog:prod",
     "local-pkg": "catalog:prod",
     "parse-gitignore": "catalog:prod",
     "pathe": "catalog:prod",
