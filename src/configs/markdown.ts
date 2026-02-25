@@ -37,7 +37,7 @@ export async function markdown(
     },
     {
       files,
-      language: gfm ? 'markdown/gfm': 'markdown/commonmark',
+      language: gfm ? 'markdown/gfm' : 'markdown/commonmark',
       name: 'eienjs/markdown/parser',
     },
     {
@@ -54,6 +54,7 @@ export async function markdown(
       name: 'eienjs/markdown/disables/markdown',
       rules: {
         // Disable rules do not work with markdown sourcecode.
+        '@stylistic/indent': 'off',
         'command/command': 'off',
         'no-irregular-whitespace': 'off',
         'perfectionist/sort-exports': 'off',
@@ -62,7 +63,6 @@ export async function markdown(
         'regexp/no-missing-g-flag': 'off',
         'regexp/no-useless-dollar-replacements': 'off',
         'regexp/no-useless-flag': 'off',
-        '@stylistic/indent': 'off',
       },
     },
     {

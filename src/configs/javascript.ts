@@ -51,7 +51,6 @@ export function javascript(
         'default-case-last': 'error',
         'dot-notation': ['error', { allowKeywords: true }],
         'eqeqeq': ['error', 'smart'],
-        'logical-assignment-operators': ['error', 'never'],
         'new-cap': ['error', { capIsNew: false, newIsCap: true, properties: true }],
         'no-alert': 'error',
         'no-array-constructor': 'error',
