@@ -5,11 +5,14 @@ import { pluginNode } from '../plugins';
 export function node(): TypedFlatConfigItem[] {
   return [
     {
-      files: [GLOB_SRC],
-      name: 'eienjs/node/rules',
+      name: 'eienjs/node/setup',
       plugins: {
         n: pluginNode,
       },
+    },
+    {
+      files: [GLOB_SRC],
+      name: 'eienjs/node/rules',
       rules: {
         'n/handle-callback-err': ['error', '^(err|error)$'],
         'n/no-deprecated-api': 'error',
