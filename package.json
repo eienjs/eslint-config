@@ -2,7 +2,7 @@
   "name": "@eienjs/eslint-config",
   "type": "module",
   "version": "1.10.0",
-  "packageManager": "pnpm@10.30.2",
+  "packageManager": "pnpm@10.30.3",
   "description": "EienJS ESLint Config",
   "author": "Fernando Isidro <luffynando@gmail.com> (https://github.com/luffynando/)",
   "license": "MIT",
@@ -154,6 +154,7 @@
   "resolutions": {
     "chokidar": "catalog:dev",
     "eslint": "catalog:peer",
+    "eslint-json-compat-utils": "catalog:dev",
     "tsx": "catalog:dev"
   },
   "commitlint": {
