@@ -90,7 +90,8 @@ export function isInEditorEnv(): boolean {
     || process.env.VSCODE_CWD
     || process.env.JETBRAINS_IDE
     || process.env.VIM
-    || process.env.NVIM,
+    || process.env.NVIM
+    || process.env.ZED_ENVIRONMENT,
   );
 }
 

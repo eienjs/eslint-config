@@ -9,6 +9,8 @@ import c from 'ansis';
 import parse from 'parse-gitignore';
 import { getEslintConfigContent } from '../utils';
 
+const ESLINT_OR_PRETTIER = /eslint|prettier/;
+
 export async function updateEslintFiles(result: PromptResult): Promise<void> {
   const cwd = process.cwd();
   const pathESLintIgnore = path.join(cwd, '.eslintignore');
@@ -60,7 +62,7 @@ export async function updateEslintFiles(result: PromptResult): Promise<void> {
   const files = fs.readdirSync(cwd);
   const legacyConfig: string[] = [];
   for (const file of files) {
-    if (/eslint|prettier/.test(file) && !file.includes('eslint.config.')) {
+    if (ESLINT_OR_PRETTIER.test(file) && !file.includes('eslint.config.')) {
       legacyConfig.push(file);
     }
   }

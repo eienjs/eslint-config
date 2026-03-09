@@ -45,6 +45,7 @@ export async function markdown(
       name: 'eienjs/markdown/rules',
       rules: {
         ...markdown.configs.recommended.at(0)?.rules,
+        'markdown/fenced-code-language': 'off',
         'markdown/no-missing-label-refs': 'off',
         ...overridesMarkdown,
       },
