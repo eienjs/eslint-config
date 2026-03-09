@@ -5,7 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [v1.10.0](https://github.com/eienjs/eslint-config/compare/v1.9.3...v1.10.0)
+## [v1.11.0](https://github.com/eienjs/eslint-config/compare/v1.10.0...v1.11.0)
+
+### Commits
+
+- feat: :sparkles: add e18e plugin [`e821904`](https://github.com/eienjs/eslint-config/commit/e8219041070a3aa90307d89f4e0343ce4a6800ae)
+- chore: :arrow_up: update dependencies and tsdown config [`93e2070`](https://github.com/eienjs/eslint-config/commit/93e2070200463c5b74d21b3d6273d4e99ff7c7d4)
+- refactor: :recycle: small refactor code [`6bbd380`](https://github.com/eienjs/eslint-config/commit/6bbd3801fd676db131f2587f8c9b09db10e9e35f)
+
+## [v1.10.0](https://github.com/eienjs/eslint-config/compare/v1.9.3...v1.10.0) - 2026-02-25
 
 ### Commits
 
