@@ -2,7 +2,7 @@
   "name": "@eienjs/eslint-config",
   "type": "module",
   "version": "1.10.0",
-  "packageManager": "pnpm@10.30.3",
+  "packageManager": "pnpm@10.31.0",
   "description": "EienJS ESLint Config",
   "author": "Fernando Isidro <luffynando@gmail.com> (https://github.com/luffynando/)",
   "license": "MIT",
@@ -20,13 +20,13 @@
     "astro"
   ],
   "exports": {
-    ".": "./dist/index.mjs",
-    "./cli": "./dist/cli/index.mjs",
-    "./configs": "./dist/configs/index.mjs",
+    ".": "./dist/index.js",
+    "./cli": "./dist/cli/index.js",
+    "./configs": "./dist/configs/index.js",
     "./package.json": "./package.json"
   },
-  "types": "./dist/index.d.mts",
-  "bin": "./bin/index.mjs",
+  "types": "./dist/index.d.ts",
+  "bin": "./bin/index.js",
   "files": [
     "bin",
     "dist"
@@ -37,7 +37,7 @@
   "scripts": {
     "prepare": "husky",
     "prebuild": "pnpm tool:code",
-    "build": "pnpm gen && tsdown --clean --dts",
+    "build": "pnpm gen && tsdown",
     "stub": "tsdown",
     "dev": "npx @eslint/config-inspector --config eslint.config.ts",
     "build:inspector": "pnpm build && npx @eslint/config-inspector build",
@@ -150,6 +150,9 @@
     "tsdown": "catalog:dev",
     "tsx": "catalog:dev",
     "typescript": "catalog:dev"
+  },
+  "inlinedDependencies": {
+    "find-up-simple": "1.0.1"
   },
   "resolutions": {
     "chokidar": "catalog:dev",

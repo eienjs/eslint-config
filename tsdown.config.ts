@@ -3,14 +3,17 @@ import { defineConfig } from 'tsdown';
 export default defineConfig([
   {
     entry: ['src/index.ts', 'src/cli/index.ts', 'src/configs/index.ts'],
-    shims: true,
-    format: ['esm'],
+    clean: true,
+    format: 'esm',
+    minify: 'dce-only',
+    fixedExtension: false,
+    dts: true,
+    sourcemap: false,
     target: 'esnext',
-    platform: 'node',
     exports: true,
     unbundle: true,
-    inlineOnly: [
-      'find-up-simple',
-    ],
+    deps: {
+      onlyAllowBundle: ['find-up-simple'],
+    },
   },
 ]);
