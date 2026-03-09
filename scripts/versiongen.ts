@@ -16,7 +16,7 @@ const catalogs = Object.values({
   ...yaml.catalogs,
 });
 
-const versions = [...names].map((name) => {
+const versions = Array.from(names, (name) => {
   const version = catalogs.map((c) => c[name]).find(Boolean);
 
   if (!version) {
