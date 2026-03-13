@@ -5,10 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [v1.11.1](https://github.com/eienjs/eslint-config/compare/v1.11.0...v1.11.1)
+## [v1.11.2](https://github.com/eienjs/eslint-config/compare/v1.11.1...v1.11.2)
 
 ### Commits
 
+- chore: :arrow_up: update dependencies [`5ddf9fe`](https://github.com/eienjs/eslint-config/commit/5ddf9fedcf40e5dd221e143baf68b180ddf130e8)
+- refactor: :recycle: disable default moduleReplacements on e18e configs [`be1ec45`](https://github.com/eienjs/eslint-config/commit/be1ec4503011fd0b13a6c134765e026ec96e9be8)
+- chore: :construction: enable typescript on exists tnp package [`dddd8fc`](https://github.com/eienjs/eslint-config/commit/dddd8fc36502b029d4891073511d325b2cdc71f3)
+
+## [v1.11.1](https://github.com/eienjs/eslint-config/compare/v1.11.0...v1.11.1) - 2026-03-09
+
+### Commits
+
+- chore(release): :tada: 1.11.1 [`9922dfa`](https://github.com/eienjs/eslint-config/commit/9922dfaf0b01f03daf6566e8bb082980e3c9aecd)
 - fix: :bug: resolve correct bin resolution for eslint config [`97d735a`](https://github.com/eienjs/eslint-config/commit/97d735a3110978c38e3cca86c8d9acdf378b3331)
 
 ## [v1.11.0](https://github.com/eienjs/eslint-config/compare/v1.10.0...v1.11.0) - 2026-03-09
