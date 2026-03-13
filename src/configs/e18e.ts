@@ -1,12 +1,11 @@
 import type { Linter } from 'eslint';
-import type { OptionsE18e, OptionsIsInEditor, TypedFlatConfigItem } from '../types';
+import type { OptionsE18e, TypedFlatConfigItem } from '../types';
 import { pluginE18e } from '../plugins';
 
-export function e18e(options: OptionsIsInEditor & OptionsE18e = {}): TypedFlatConfigItem[] {
+export function e18e(options: OptionsE18e = {}): TypedFlatConfigItem[] {
   const {
-    isInEditor = false,
     modernization = true,
-    moduleReplacements = isInEditor,
+    moduleReplacements = false,
     overrides = {},
     performanceImprovements = true,
   } = options;
