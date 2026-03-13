@@ -75,7 +75,7 @@ export function eienjs(
     nuxt: enableNuxt = false,
     pnpm: enableCatalogs = Boolean(findUpSync('pnpm-workspace.yaml')),
     regexp: enableRegexp = true,
-    typescript: enableTypeScript = isPackageExists('typescript'),
+    typescript: enableTypeScript = isPackageExists('typescript') || isPackageExists('@typescript/native-preview'),
     unicorn: enableUnicorn = true,
     vue: enableVue = VuePackages.some((i) => isPackageExists(i)),
   } = options;
@@ -143,7 +143,6 @@ export function eienjs(
 
   if (enableE18e) {
     configs.push(e18e({
-      isInEditor,
       ...enableE18e === true ? {} : enableE18e,
     }));
   }
