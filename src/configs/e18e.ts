@@ -25,6 +25,13 @@ export function e18e(options: OptionsE18e = {}): TypedFlatConfigItem[] {
         ...modernization ? { ...configs.modernization.rules } : {},
         ...moduleReplacements ? { ...configs.moduleReplacements.rules } : {},
         ...performanceImprovements ? { ...configs.performanceImprovements.rules } : {},
+
+        // these are a bit opinionated and dangerous, so we'll disable them for now
+        'e18e/prefer-array-to-reversed': 'off',
+        'e18e/prefer-array-to-sorted': 'off',
+        'e18e/prefer-array-to-spliced': 'off',
+        'e18e/prefer-spread-syntax': 'off',
+
         ...overrides,
       },
     },
