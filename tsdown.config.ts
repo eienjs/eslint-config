@@ -13,7 +13,7 @@ export default defineConfig([
     exports: true,
     unbundle: true,
     deps: {
-      onlyAllowBundle: ['find-up-simple'],
+      onlyBundle: ['find-up-simple'],
     },
   },
 ]);
