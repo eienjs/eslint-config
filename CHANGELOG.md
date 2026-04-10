@@ -5,17 +5,29 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [v1.11.3](https://github.com/eienjs/eslint-config.git
-/compare/v1.11.2...v1.11.3)
+## [v1.11.4](https://github.com/eienjs/eslint-config.git
+/compare/v1.11.3...v1.11.4)
 
 ### Commits
 
+- fix: :bug: Update default exclude for generated files and ai related [`8c5e013`](https://github.com/eienjs/eslint-config.git
+/commit/8c5e013afcef1d76827a01f203f403b27fa2b426)
+- chore: :arrow_up: update dependencies [`f94a2e1`](https://github.com/eienjs/eslint-config.git
+/commit/f94a2e100354c54b9fb16b5728727a65066cfe5c)
+- chore: :arrow_up: update files config based on latest package updates [`fbfc932`](https://github.com/eienjs/eslint-config.git
+/commit/fbfc9325d1b574a63f880af1e52c07cb8be480c5)
+
+## [v1.11.3](https://github.com/eienjs/eslint-config.git
+/compare/v1.11.2...v1.11.3) - 2026-04-06
+
+### Commits
+
+- chore(release): :tada: 1.11.3 [`6b879ec`](https://github.com/eienjs/eslint-config.git
+/commit/6b879ec9bbc98d4435ae6519596089a3e0e764cc)
 - chore: :arrow_up: update dependencies [`b0faaf3`](https://github.com/eienjs/eslint-config.git
 /commit/b0faaf3bd21bb9ce59a6d79523405e5dfe60d1f9)
 - chore: :construction: update e18e configs [`8dcf88b`](https://github.com/eienjs/eslint-config.git
 /commit/8dcf88baaa8a50e43854ee807c9dd1c171418169)
-- chore: :construction: update constants and tsdown config [`1d189d5`](https://github.com/eienjs/eslint-config.git
-/commit/1d189d5a23b62a6c0089f80abd25753a8863031b)
 
 ## [v1.11.2](https://github.com/eienjs/eslint-config.git
 /compare/v1.11.1...v1.11.2) - 2026-03-13
