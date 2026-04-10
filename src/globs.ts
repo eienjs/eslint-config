@@ -71,6 +71,7 @@ export const GLOB_EXCLUDE = [
   '**/.tmp',
   '**/vendor',
   '**/public',
+  '**/tests/_files',
   '**/.history',
   '**/.vitepress/cache',
   '**/.adonisjs',
@@ -86,13 +87,23 @@ export const GLOB_EXCLUDE = [
   '**/.vite-inspect',
   '**/.yarn',
   '**/.pnpm-store',
-  '**/vite.config.*.timestamp-*',
 
   '**/CHANGELOG*.md',
-  '**/*.min.*',
   '**/LICENSE*',
+  '**/*.min.*',
   '**/__snapshots__',
+
+  // Tools temp files
+  '**/vite.config.*.timestamp-*',
   '**/auto-import?(s).d.ts',
   '**/components.d.ts',
-  '**/tests/_files',
+  '**/auto_import?(s).d.ts',
+  '**/typed_router.d.ts',
+
+  // AI related
+  '**/.context',
+  '**/.claude',
+  '**/.agents',
+  '**/.*/skills',
+  '**/.continue',
 ];
