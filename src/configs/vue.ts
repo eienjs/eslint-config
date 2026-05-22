@@ -31,7 +31,7 @@ export async function vue(
   const {
     braceStyle = '1tbs',
     indent = 2,
-    maxLineLength = 120,
+    maxLineLength = 160,
   } = typeof stylistic === 'boolean' ? {} : stylistic;
 
   const [

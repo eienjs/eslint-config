@@ -63,7 +63,7 @@ export async function formatters(
     {
       arrowParens: 'always',
       endOfLine: 'lf',
-      printWidth: 120,
+      printWidth: 160,
       semi: true,
       singleQuote: quotes === 'single',
       tabWidth: typeof indent === 'number' ? indent : 2,

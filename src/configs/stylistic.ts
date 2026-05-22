@@ -18,7 +18,7 @@ export async function stylistic(
     braceStyle,
     experimental,
     indent,
-    maxLineLength = 120,
+    maxLineLength = 160,
     overrides = {},
     quotes,
   } = {

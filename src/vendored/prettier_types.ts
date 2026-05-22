@@ -12,7 +12,7 @@ export type VendoredPrettierRuleOptions = VendoredPrettierOptions & {
 export interface VendoredPrettierOptionsRequired {
   /**
    * Specify the line length that the printer will wrap on.
-   * @default 120
+   * @default 160
    */
   printWidth: number;
   /**
