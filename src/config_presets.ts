@@ -12,6 +12,7 @@ export const CONFIG_PRESET_FULL_ON: OptionsConfig = {
   markdown: true,
   node: true,
   nuxt: true,
+  perfectionist: true,
   pnpm: true,
   regexp: true,
   stylistic: {
@@ -39,6 +40,7 @@ export const CONFIG_PRESET_FULL_OFF: OptionsConfig = {
   markdown: false,
   node: false,
   nuxt: false,
+  perfectionist: false,
   pnpm: false,
   regexp: false,
   stylistic: false,

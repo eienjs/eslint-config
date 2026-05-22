@@ -1,4 +1,4 @@
-import type { TypedFlatConfigItem } from '../types';
+import type { OptionsOverrides, TypedFlatConfigItem } from '../types';
 import { pluginPerfectionist } from '../plugins';
 
 /**
@@ -6,7 +6,11 @@ import { pluginPerfectionist } from '../plugins';
  *
  * @see https://github.com/azat-io/eslint-plugin-perfectionist
  */
-export function perfectionist(): TypedFlatConfigItem[] {
+export function perfectionist(options: OptionsOverrides): TypedFlatConfigItem[] {
+  const {
+    overrides = {},
+  } = options;
+
   return [
     {
       name: 'eienjs/perfectionist/setup',
@@ -34,6 +38,7 @@ export function perfectionist(): TypedFlatConfigItem[] {
         }],
         'perfectionist/sort-named-exports': ['error', { order: 'asc', type: 'natural' }],
         'perfectionist/sort-named-imports': ['error', { order: 'asc', type: 'natural' }],
+        ...overrides,
       },
     },
   ];
