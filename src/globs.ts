@@ -104,6 +104,7 @@ export const GLOB_EXCLUDE = [
   '**/.context',
   '**/.claude',
   '**/.agents',
+  '**/.agent',
   '**/.*/skills',
   '**/.continue',
 ];
