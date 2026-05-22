@@ -29,6 +29,7 @@ export async function vue(
     : options.sfcBlocks ?? {};
 
   const {
+    braceStyle = '1tbs',
     indent = 2,
     maxLineLength = 120,
   } = typeof stylistic === 'boolean' ? {} : stylistic;
@@ -188,7 +189,7 @@ export async function vue(
                 multiline: 'always',
                 singleline: 'always',
               }],
-              'vue/brace-style': ['error', '1tbs', { allowSingleLine: true }],
+              'vue/brace-style': ['error', braceStyle, { allowSingleLine: true }],
               'vue/comma-dangle': ['error', 'always-multiline'],
               'vue/comma-spacing': ['error', { after: true, before: false }],
               'vue/comma-style': ['error', 'last'],

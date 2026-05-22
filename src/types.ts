@@ -343,7 +343,7 @@ export interface OptionsStylistic {
 }
 
 export interface StylisticConfig
-  extends Pick<StylisticCustomizeOptions, 'quotes' | 'experimental'> {
+  extends Pick<StylisticCustomizeOptions, 'quotes' | 'braceStyle' | 'experimental'> {
   indent?: number | 'tab';
   maxLineLength?: number;
 }
@@ -464,6 +464,13 @@ export interface OptionsConfig extends OptionsComponentExts {
   unicorn?: boolean | OptionsOverrides;
 
   /**
+   * Options for eslint-plugin-perfectionist.
+   *
+   * @default true
+   */
+  perfectionist?: boolean | OptionsOverrides;
+
+  /**
    * Options for eslint-plugin-import-lite.
    *
    * @default true
@@ -572,6 +579,13 @@ export interface OptionsConfig extends OptionsComponentExts {
    * @default auto-detect based on the process.env
    */
   isInEditor?: boolean;
+
+  /**
+   * Automatically rename plugins in the config.
+   *
+   * @default true
+   */
+  autoRenamePlugins?: boolean;
 
   /**
    * Enable AdonisJS support.

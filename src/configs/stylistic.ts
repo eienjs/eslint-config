@@ -3,6 +3,7 @@ import { pluginAntfu } from '../plugins';
 import { interopDefault } from '../utils';
 
 export const StylisticConfigDefaults: StylisticConfig = {
+  braceStyle: '1tbs',
   experimental: false,
   indent: 2,
   quotes: 'single',
@@ -14,6 +15,7 @@ export async function stylistic(
   options: StylisticOptions = {},
 ): Promise<TypedFlatConfigItem[]> {
   const {
+    braceStyle,
     experimental,
     indent,
     maxLineLength = 120,
@@ -27,6 +29,7 @@ export async function stylistic(
   const pluginStylistic = await interopDefault(import('@stylistic/eslint-plugin'));
 
   const config = pluginStylistic.configs.customize({
+    braceStyle,
     experimental,
     indent,
     quotes,
@@ -44,7 +47,7 @@ export async function stylistic(
         ...config.rules,
 
         '@stylistic/arrow-parens': ['error', 'always'],
-        '@stylistic/brace-style': ['error', '1tbs', { allowSingleLine: true }],
+        '@stylistic/brace-style': ['error', braceStyle, { allowSingleLine: true }],
         '@stylistic/comma-spacing': 'error',
         '@stylistic/generator-star-spacing': ['error', { after: true, before: false }],
         '@stylistic/lines-between-class-members': ['error', 'always'],

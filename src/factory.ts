@@ -33,6 +33,7 @@ import {
   vue,
   yaml,
 } from './configs';
+import { GLOB_MARKDOWN } from './globs';
 import { interopDefault, isInEditorEnv } from './utils';
 
 const flatConfigProps = [
@@ -65,6 +66,7 @@ export function eienjs(
   const {
     adonisjs: enableAdonisjs = false,
     astro: enableAstro = false,
+    autoRenamePlugins = true,
     componentExts = [],
     e18e: enableE18e = true,
     gitignore: enableGitignore = true,
@@ -73,6 +75,7 @@ export function eienjs(
     jsdoc: enableJsdoc = true,
     node: enableNode = true,
     nuxt: enableNuxt = false,
+    perfectionist: enablePerfectionist = true,
     pnpm: enableCatalogs = Boolean(findUpSync('pnpm-workspace.yaml')),
     regexp: enableRegexp = true,
     typescript: enableTypeScript = isPackageExists('typescript') || isPackageExists('@typescript/native-preview'),
@@ -121,8 +124,13 @@ export function eienjs(
     }),
     comments(),
     command(),
-    perfectionist(),
   );
+
+  if (enablePerfectionist) {
+    configs.push(perfectionist({
+      overrides: getOverrides(options, 'perfectionist'),
+    }));
+  }
 
   if (enableNode) {
     configs.push(node());
@@ -160,7 +168,6 @@ export function eienjs(
       ...typescriptOptions,
       componentExts,
       overrides: getOverrides(options, 'typescript'),
-      stylistic: stylisticOptions,
     }));
   }
 
@@ -227,14 +234,12 @@ export function eienjs(
   if (enableCatalogs) {
     const optionsPnpm = resolveSubOptions(options, 'pnpm');
 
-    configs.push(
-      pnpm({
-        isInEditor,
-        json: options.jsonc !== false,
-        yaml: options.yaml !== false,
-        ...optionsPnpm,
-      }),
-    );
+    configs.push(pnpm({
+      isInEditor,
+      json: options.jsonc !== false,
+      yaml: options.yaml !== false,
+      ...optionsPnpm,
+    }));
   }
 
   if (options.yaml ?? true) {
@@ -252,14 +257,10 @@ export function eienjs(
   }
 
   if (options.markdown ?? true) {
-    configs.push(
-      markdown(
-        {
-          componentExts,
-          overrides: getOverrides(options, 'markdown'),
-        },
-      ),
-    );
+    configs.push(markdown({
+      componentExts,
+      overrides: getOverrides(options, 'markdown'),
+    }));
   }
 
   if (options.formatters) {
@@ -298,10 +299,15 @@ export function eienjs(
   }
 
   let composer = new FlatConfigComposer<TypedFlatConfigItem, ConfigNames>();
+  composer = composer.append(...configs);
 
-  composer = composer
-    .append(...configs)
-    .renamePlugins(defaultPluginRenaming);
+  if (options.markdown ?? true) {
+    composer = composer.setDefaultIgnores((prev) => [...prev, GLOB_MARKDOWN]);
+  }
+
+  if (autoRenamePlugins) {
+    composer = composer.renamePlugins(defaultPluginRenaming);
+  }
 
   if (isInEditor) {
     composer = composer
