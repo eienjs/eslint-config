@@ -6,6 +6,7 @@ shellEmulator: true
 strictPeerDependencies: false
 trustPolicy: no-downgrade
 trustPolicyExclude:
+  - tinyexec@1.2.2
   - cached-factory@0.1.0
 
 catalogs:
@@ -15,7 +16,7 @@ catalogs:
     '@eslint/config-inspector': ^3.0.2
     '@types/node': ^24.12.4
     auto-changelog: ^2.5.1
-    baseline-browser-mapping: ^2.10.31
+    baseline-browser-mapping: ^2.10.32
     chokidar: ^5.0.0
     eslint-typegen: ^2.3.1
     husky: ^9.1.7
