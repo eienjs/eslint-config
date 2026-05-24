@@ -1,4 +1,5 @@
 catalogMode: prefer
+lockfile: false
 ignoreWorkspaceRootCheck: true
 minimumReleaseAge: 1440
 shamefullyHoist: true

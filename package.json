@@ -38,6 +38,7 @@
     "prepare": "husky",
     "prebuild": "pnpm tool:code",
     "build": "pnpm gen && tsdown",
+    "commitlint": "commitlint --edit",
     "stub": "tsdown",
     "dev": "npx @eslint/config-inspector --config eslint.config.ts",
     "build:inspector": "pnpm build && npx @eslint/config-inspector build",
