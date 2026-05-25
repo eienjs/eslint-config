@@ -45,7 +45,7 @@
     "watch": "tsdown --watch",
     "gen": "tsx scripts/typegen.ts && tsx scripts/versiongen.ts",
     "changelog": "auto-changelog -p && git add CHANGELOG.md",
-    "release": "np",
+    "release": "bumpp",
     "version": "pnpm build && pnpm changelog",
     "lint": "eslint . --fix",
     "lint:check": "eslint .",
@@ -139,6 +139,7 @@
     "astro-eslint-parser": "catalog:peer",
     "auto-changelog": "catalog:dev",
     "baseline-browser-mapping": "catalog:dev",
+    "bumpp": "catalog:dev",
     "eslint": "catalog:peer",
     "eslint-plugin-astro": "catalog:peer",
     "eslint-plugin-erasable-syntax-only": "catalog:peer",
@@ -146,7 +147,6 @@
     "eslint-typegen": "catalog:dev",
     "find-up-simple": "catalog:inline",
     "husky": "catalog:dev",
-    "np": "catalog:dev",
     "pnpm-workspace-yaml": "catalog:dev",
     "prettier-plugin-astro": "catalog:peer",
     "tsdown": "catalog:dev",
@@ -177,11 +177,5 @@
   "auto-changelog": {
     "template": "keepachangelog",
     "hideCredit": true
-  },
-  "np": {
-    "message": "chore(release): :tada: %s",
-    "tag": "latest",
-    "branch": "main",
-    "yolo": true
   }
 }
