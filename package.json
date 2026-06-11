@@ -44,9 +44,8 @@
     "build:inspector": "pnpm build && npx @eslint/config-inspector build",
     "watch": "tsdown --watch",
     "gen": "tsx scripts/typegen.ts && tsx scripts/versiongen.ts",
-    "changelog": "auto-changelog -p && git add CHANGELOG.md",
-    "release": "bumpp",
-    "version": "pnpm build && pnpm changelog",
+    "changelog": "auto-changelog --stdout -u",
+    "release": "release-it",
     "lint": "eslint . --fix",
     "lint:check": "eslint .",
     "typecheck": "tsc --noEmit",
@@ -139,7 +138,6 @@
     "astro-eslint-parser": "catalog:peer",
     "auto-changelog": "catalog:dev",
     "baseline-browser-mapping": "catalog:dev",
-    "bumpp": "catalog:dev",
     "eslint": "catalog:peer",
     "eslint-plugin-astro": "catalog:peer",
     "eslint-plugin-erasable-syntax-only": "catalog:peer",
@@ -149,6 +147,7 @@
     "husky": "catalog:dev",
     "pnpm-workspace-yaml": "catalog:dev",
     "prettier-plugin-astro": "catalog:peer",
+    "release-it": "catalog:dev",
     "tsdown": "catalog:dev",
     "tsx": "catalog:dev",
     "typescript": "catalog:dev"
@@ -174,6 +173,28 @@
   },
   "auto-changelog": {
     "template": "keepachangelog",
-    "hideCredit": true
+    "hideCredit": true,
+    "commitLimit": false
+  },
+  "release-it": {
+    "git": {
+      "requireCleanWorkingDir": true,
+      "commitMessage": "chore(release): :tada: v${version}",
+      "tagAnnotation": "chore(release): :tada: v${version}"
+    },
+    "github": {
+      "release": true,
+      "releaseName": "Release v${version}",
+      "web": true,
+      "autoGenerate": true
+    },
+    "npm": {
+      "publish": true,
+      "publishPackageManager": "pnpm"
+    },
+    "hooks": {
+      "before:init": ["pnpm run lint:check", "pnpm run typecheck"],
+      "after:bump": ["pnpm run build", "pnpm run changelog -p"]
+    }
   }
 }
