@@ -177,12 +177,7 @@ export function javascript(
           allowTaggedTemplates: true,
           allowTernary: true,
         }],
-        'no-unused-vars': ['error', {
-          args: 'none',
-          caughtErrors: 'none',
-          ignoreRestSiblings: true,
-          vars: 'all',
-        }],
+        'no-unused-vars': 'off',
         'no-use-before-define': ['error', { classes: false, functions: false, variables: true }],
         'no-useless-backreference': 'error',
         'no-useless-call': 'error',

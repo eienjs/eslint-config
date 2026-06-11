@@ -128,6 +128,7 @@ export async function vue(
         'vue/component-options-name-casing': ['error', 'PascalCase'],
         'vue/custom-event-name-casing': ['error', 'camelCase'],
         'vue/define-macros-order': ['error', {
+          defineExposeLast: true,
           order: ['defineOptions', 'defineProps', 'defineEmits', 'defineSlots'],
         }],
         'vue/define-props-declaration': 'error',
@@ -136,7 +137,6 @@ export async function vue(
         'vue/eqeqeq': ['error', 'smart'],
         'vue/html-indent': ['error', indent],
         'vue/html-quotes': ['error', 'double'],
-        'vue/max-attributes-per-line': 'off',
         'vue/multi-word-component-names': 'off',
         'vue/no-dupe-keys': 'off',
         'vue/no-empty-component-block': 'error',
@@ -198,9 +198,15 @@ export async function vue(
               }],
               'vue/key-spacing': ['error', { afterColon: true, beforeColon: false }],
               'vue/keyword-spacing': ['error', { after: true, before: true }],
+              'vue/max-attributes-per-line': ['error', {
+                multiline: 1,
+                singleline: 3,
+              }],
               'vue/max-len': ['error', {
                 code: maxLineLength,
                 comments: maxLineLength,
+                ignoreHTMLAttributeValues: true,
+                ignoreHTMLTextContents: true,
                 template: maxLineLength,
               }],
               'vue/object-curly-newline': 'off',
