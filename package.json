@@ -1,7 +1,7 @@
 {
   "name": "@eienjs/eslint-config",
   "type": "module",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "packageManager": "pnpm@11.5.3",
   "description": "EienJS ESLint Config",
   "author": "Fernando Isidro <luffynando@gmail.com> (https://github.com/luffynando/)",
@@ -191,11 +191,19 @@
     "npm": {
       "publish": true,
       "publishPackageManager": "pnpm",
-      "publishArgs": ["--no-git-checks"]
+      "publishArgs": [
+        "--no-git-checks"
+      ]
     },
     "hooks": {
-      "before:init": ["pnpm run lint:check", "pnpm run typecheck"],
-      "after:bump": ["pnpm run build", "pnpm run changelog -p"]
+      "before:init": [
+        "pnpm run lint:check",
+        "pnpm run typecheck"
+      ],
+      "after:bump": [
+        "pnpm run build",
+        "pnpm run changelog -p"
+      ]
     }
   }
 }
