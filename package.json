@@ -2,7 +2,7 @@
   "name": "@eienjs/eslint-config",
   "type": "module",
   "version": "2.0.0",
-  "packageManager": "pnpm@11.3.0",
+  "packageManager": "pnpm@11.5.3",
   "description": "EienJS ESLint Config",
   "author": "Fernando Isidro <luffynando@gmail.com> (https://github.com/luffynando/)",
   "license": "MIT",
@@ -54,10 +54,10 @@
   },
   "peerDependencies": {
     "@adonisjs/eslint-plugin": "^2.2.2",
-    "@nuxt/eslint-plugin": "^1.15.2",
+    "@nuxt/eslint-plugin": "^1.16.0",
     "@prettier/plugin-xml": "^3.4.2",
     "astro-eslint-parser": "^1.4.0",
-    "eslint": "^10.4.0",
+    "eslint": "^10.4.1",
     "eslint-plugin-astro": "^1.7.0",
     "eslint-plugin-erasable-syntax-only": "^0.4.1",
     "eslint-plugin-format": "^2.0.1",
@@ -160,9 +160,7 @@
     "@eslint-community/eslint-utils": "catalog:peer",
     "@typescript-eslint/types": "catalog:peer",
     "@typescript-eslint/utils": "catalog:peer",
-    "chokidar": "catalog:dev",
     "eslint": "catalog:peer",
-    "semver": "catalog:dev",
     "tsx": "catalog:dev"
   },
   "commitlint": {
