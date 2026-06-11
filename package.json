@@ -190,7 +190,8 @@
     },
     "npm": {
       "publish": true,
-      "publishPackageManager": "pnpm"
+      "publishPackageManager": "pnpm",
+      "publishArgs": ["--no-git-checks"]
     },
     "hooks": {
       "before:init": ["pnpm run lint:check", "pnpm run typecheck"],
