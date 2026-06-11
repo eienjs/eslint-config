@@ -5,13 +5,33 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [v2.0.0](https://github.com/eienjs/eslint-config/compare/v1.11.4...v2.0.0)
+## [v2.0.1](https://github.com/eienjs/eslint-config/compare/v2.0.0...v2.0.1) - 2026-06-11
 
 ### Commits
 
+- chore: :arrow_up: update dependencies [`3b435ce`](https://github.com/eienjs/eslint-config/commit/3b435ce171e0c42104b38b6d3bff9da6f936af94)
+- perf: :hammer: move from bumpp to release it for publish package [`f467541`](https://github.com/eienjs/eslint-config/commit/f467541b8b3df83e718000030a459a98bfe42513)
+- chore(release): :tada: v2.0.1 [`b17bd96`](https://github.com/eienjs/eslint-config/commit/b17bd963d8106c1f0ad23fbc6eb19519cbe1e84c)
+- perf: :zap: remove duplicated rules config and some performance on vue files [`8c0dad2`](https://github.com/eienjs/eslint-config/commit/8c0dad2af93749ee66fa545e6257e36166e869a2)
+- refactor: :recycle: no force to pnpm workspaces to usage catalog, prefer hybrid [`bb6509e`](https://github.com/eienjs/eslint-config/commit/bb6509e3dabd6e118fe0a5c8c12222756fb937a3)
+- fix(release-it): :bug: resolve correct handle for not git checks on publish [`f0858a5`](https://github.com/eienjs/eslint-config/commit/f0858a5745a1a562f01be9bcd414bcd910e4e01a)
+- docs: :memo: update license 2026 happy new year [`3c2bf68`](https://github.com/eienjs/eslint-config/commit/3c2bf68e3cfa5ea8f61248d2e99392fe5a9a32b3)
+
+## [v2.0.0](https://github.com/eienjs/eslint-config/compare/v1.11.4...v2.0.0) - 2026-05-24
+
+### Commits
+
+- chore(release): :tada: 2.0.0 [`de52241`](https://github.com/eienjs/eslint-config/commit/de52241cab57ead2cb75288b917d1c340f903b2a)
 - chore: :arrow_up: update dependencies and node minimum version [`eadff96`](https://github.com/eienjs/eslint-config/commit/eadff960a6ee58f8a5f8d3a87e63866b2c7d6503)
 - feat: :sparkles: allow easy setting brace style using stylistic [`c915a2b`](https://github.com/eienjs/eslint-config/commit/c915a2b8e83eef0fb347cc73d602998f0ea8c835)
 - build: :construction_worker: update how to publish package [`1b020b4`](https://github.com/eienjs/eslint-config/commit/1b020b4f7656f5f5ee94020846b8af81aff17bea)
+- refactor: :recycle: update gitignore on markdown using composer latest default ignores [`d81f3fe`](https://github.com/eienjs/eslint-config/commit/d81f3fe6732502025345c79c8826ee2e66d2d20d)
+- feat: :sparkles: make perfectionist configurable inside eienjs [`8f323ae`](https://github.com/eienjs/eslint-config/commit/8f323ae329d191fa40dba6e813d99202b3db1057)
+- chore: :construction: update types and resolve issues reported by eslint [`b4a6452`](https://github.com/eienjs/eslint-config/commit/b4a6452b6a4238e4a32a8d53d222c91c32ce10f4)
+- refactor: :recycle: set default max length from 120 to 160 [`1e10483`](https://github.com/eienjs/eslint-config/commit/1e1048374e5c1cae708e2b86bdb34b6c013439e9)
+- chore: :construction: update husky hook and how to ignore lock [`cf618ff`](https://github.com/eienjs/eslint-config/commit/cf618ff771de42ca5236fb914ad5583d91d23758)
+- chore: :arrow_up: update dependencies [`0a7c534`](https://github.com/eienjs/eslint-config/commit/0a7c5340686c540ab9a282dc8c138c38d8c51e37)
+- fix: :bug: default ignore missing agent directory on antigravity ide [`288beb8`](https://github.com/eienjs/eslint-config/commit/288beb806430aca400ed2b353ea9daa4785252fd)
 
 ## [v1.11.4](https://github.com/eienjs/eslint-config/compare/v1.11.3...v1.11.4) - 2026-04-10
 
@@ -20,6 +40,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - chore(release): :tada: 1.11.4 [`a3f0815`](https://github.com/eienjs/eslint-config/commit/a3f0815f8b024bde312fc7846326107af8d763da)
 - fix: :bug: Update default exclude for generated files and ai related [`8c5e013`](https://github.com/eienjs/eslint-config/commit/8c5e013afcef1d76827a01f203f403b27fa2b426)
 - chore: :arrow_up: update dependencies [`f94a2e1`](https://github.com/eienjs/eslint-config/commit/f94a2e100354c54b9fb16b5728727a65066cfe5c)
+- chore: :arrow_up: update files config based on latest package updates [`fbfc932`](https://github.com/eienjs/eslint-config/commit/fbfc9325d1b574a63f880af1e52c07cb8be480c5)
+- fix: :bug: disable some e18e rules for introducing behavioral changes [`8739b95`](https://github.com/eienjs/eslint-config/commit/8739b95f04e42dc84f94b0975723f958fd2384c7)
 
 ## [v1.11.3](https://github.com/eienjs/eslint-config/compare/v1.11.2...v1.11.3) - 2026-04-06
 
@@ -28,6 +50,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - chore(release): :tada: 1.11.3 [`6b879ec`](https://github.com/eienjs/eslint-config/commit/6b879ec9bbc98d4435ae6519596089a3e0e764cc)
 - chore: :arrow_up: update dependencies [`b0faaf3`](https://github.com/eienjs/eslint-config/commit/b0faaf3bd21bb9ce59a6d79523405e5dfe60d1f9)
 - chore: :construction: update e18e configs [`8dcf88b`](https://github.com/eienjs/eslint-config/commit/8dcf88baaa8a50e43854ee807c9dd1c171418169)
+- chore: :construction: update constants and tsdown config [`1d189d5`](https://github.com/eienjs/eslint-config/commit/1d189d5a23b62a6c0089f80abd25753a8863031b)
 
 ## [v1.11.2](https://github.com/eienjs/eslint-config/compare/v1.11.1...v1.11.2) - 2026-03-13
 
@@ -36,6 +59,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - chore: :arrow_up: update dependencies [`5ddf9fe`](https://github.com/eienjs/eslint-config/commit/5ddf9fedcf40e5dd221e143baf68b180ddf130e8)
 - chore(release): :tada: 1.11.2 [`4150dd6`](https://github.com/eienjs/eslint-config/commit/4150dd608655defcf16f1541fc92c17c930c871a)
 - refactor: :recycle: disable default moduleReplacements on e18e configs [`be1ec45`](https://github.com/eienjs/eslint-config/commit/be1ec4503011fd0b13a6c134765e026ec96e9be8)
+- chore: :construction: enable typescript on exists tnp package [`dddd8fc`](https://github.com/eienjs/eslint-config/commit/dddd8fc36502b029d4891073511d325b2cdc71f3)
+- chore: :construction: disable zed for term [`ec02e7e`](https://github.com/eienjs/eslint-config/commit/ec02e7e71106ee3c321aca09076e3de2beae9a72)
 
 ## [v1.11.1](https://github.com/eienjs/eslint-config/compare/v1.11.0...v1.11.1) - 2026-03-09
 
@@ -51,6 +76,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - feat: :sparkles: add e18e plugin [`e821904`](https://github.com/eienjs/eslint-config/commit/e8219041070a3aa90307d89f4e0343ce4a6800ae)
 - chore: :arrow_up: update dependencies and tsdown config [`93e2070`](https://github.com/eienjs/eslint-config/commit/93e2070200463c5b74d21b3d6273d4e99ff7c7d4)
 - refactor: :recycle: small refactor code [`6bbd380`](https://github.com/eienjs/eslint-config/commit/6bbd3801fd676db131f2587f8c9b09db10e9e35f)
+- chore(release): :tada: 1.11.0 [`20cb0bc`](https://github.com/eienjs/eslint-config/commit/20cb0bc8621ce7c836255ef23236d5104bebafc3)
+- chore: :arrow_up: update dependencies [`099883c`](https://github.com/eienjs/eslint-config/commit/099883cc28abfc30903f109a9fa218e6ba8f9e67)
 
 ## [v1.10.0](https://github.com/eienjs/eslint-config/compare/v1.9.3...v1.10.0) - 2026-02-25
 
@@ -59,6 +86,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - feat: :sparkles: use markdown language [`e2c700d`](https://github.com/eienjs/eslint-config/commit/e2c700d699a292bd13276888e91d7bb3460b1b1f)
 - feat: :sparkles: use jsonc/x language and jsdoc separate setup [`7a7731a`](https://github.com/eienjs/eslint-config/commit/7a7731a4cdd585ba83e7cd59a539159b94483950)
 - chore: :arrow_up: update dependencies [`331980f`](https://github.com/eienjs/eslint-config/commit/331980f5281fa80c6f203d14ef1d0f31b5502318)
+- chore(release): :tada: 1.10.0 [`70b9b32`](https://github.com/eienjs/eslint-config/commit/70b9b322c3fa4fb4347380328fe630cabe1c2c62)
+- style: :lipstick: resolve all issues reported by eslint [`c97d26b`](https://github.com/eienjs/eslint-config/commit/c97d26bd84af643e5cfc50a29e667550e4e29f0b)
+- chore: :construction: separate node setup [`312f9a4`](https://github.com/eienjs/eslint-config/commit/312f9a4720f591379e13e64f1ea671116ee78ffd)
 
 ## [v1.9.3](https://github.com/eienjs/eslint-config/compare/v1.9.2...v1.9.3) - 2026-02-20
 
@@ -67,6 +97,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - chore: :arrow_up: update dependencies [`4e4eb64`](https://github.com/eienjs/eslint-config/commit/4e4eb64ca8f7e6b173d7d6cbf2c3feff8fdffadc)
 - build: :construction: prepare build for generate release [`7233777`](https://github.com/eienjs/eslint-config/commit/72337778b3888d34ea547955e6264064c1db92ea)
 - chore(release): :tada: 1.9.3 [`3e415f4`](https://github.com/eienjs/eslint-config/commit/3e415f416397ee5673662e117870893380c1ae07)
+- fix: :recycle: add ignore ts files when its not ts project [`f697102`](https://github.com/eienjs/eslint-config/commit/f6971027c9455c0fced269354025382a19788a0b)
+- chore: :arrow_up: update constants for latest libs versions [`d28dbd9`](https://github.com/eienjs/eslint-config/commit/d28dbd9b70d914862f7991c9978c2bf3503ad712)
+- chore: :construction: small maintenance and files missing on configs [`93f1a7c`](https://github.com/eienjs/eslint-config/commit/93f1a7cf7942dc1088a9166b3a0bf903c90db3dc)
+- chore: :construction: update types for use config with extends [`4f776cd`](https://github.com/eienjs/eslint-config/commit/4f776cd6acccfbee2c27e671060617fcf99c38c3)
+- fix: :bug: resolve problem with bin files on adonisjs v7 [`9c2a2ec`](https://github.com/eienjs/eslint-config/commit/9c2a2eccae0172f5e07b67d983c6877f40f81bec)
 
 ## [v1.9.2](https://github.com/eienjs/eslint-config/compare/v1.9.1...v1.9.2) - 2026-02-02
 
@@ -82,6 +117,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - chore: :arrow_up: update dependencies [`d21dfbf`](https://github.com/eienjs/eslint-config/commit/d21dfbfe0da9789d709cff2368b5a010f9d3deb1)
 - refactor: :recycle: resolve updates of recent packages [`f3fff48`](https://github.com/eienjs/eslint-config/commit/f3fff481fc1a701f08c05e311084cf55bfc8405e)
 - chore(release): :tada: 1.9.1 [`06db4b0`](https://github.com/eienjs/eslint-config/commit/06db4b09b90c36b7c80056e7e9d8f7453e7779af)
+- build: :construction_worker: inlcude inlineOnly dependency [`8c52c5c`](https://github.com/eienjs/eslint-config/commit/8c52c5cdf54185d73a46c57a77e9c9fb60094df1)
 
 ## [v1.9.0](https://github.com/eienjs/eslint-config/compare/v1.8.2...v1.9.0) - 2026-01-09
 
@@ -90,6 +126,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - chore: :arrow_up: update dependencies [`9d4e500`](https://github.com/eienjs/eslint-config/commit/9d4e5007b3e3f5d9c11d80858ac4c5cb1d32a2a3)
 - chore: :arrow_up: update dependencies [`f113f93`](https://github.com/eienjs/eslint-config/commit/f113f9382093aaf0167ec3927bf99a7907bbd208)
 - chore(release): :tada: 1.9.0 [`4ca76e2`](https://github.com/eienjs/eslint-config/commit/4ca76e2b0b9622e1b572eba573ec022c6ec9d8c6)
+- feat: :sparkles: add rule for vue and max len [`7fb1267`](https://github.com/eienjs/eslint-config/commit/7fb1267f6521970a26a4e1bb3f637225d2efcb30)
+- style: :rotating_light: resolve correct type for work with latest update stylistic [`653e1f3`](https://github.com/eienjs/eslint-config/commit/653e1f39abcc88972b2cf131c6ab97d398995835)
+- chore: :construction: update generated file [`7fc56ad`](https://github.com/eienjs/eslint-config/commit/7fc56add31eca5f7100813435fec6953382b152e)
 
 ## [v1.8.2](https://github.com/eienjs/eslint-config/compare/v1.8.1...v1.8.2) - 2025-12-26
 
@@ -114,6 +153,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - feat: :sparkles: add support to pnpm catalog detect and options [`91941fb`](https://github.com/eienjs/eslint-config/commit/91941fb3529dc0cce5c37aaad205d585e8094584)
 - refactor: :recycle: handle better presets and options for node and jsdoc [`2628180`](https://github.com/eienjs/eslint-config/commit/26281805af5cbe84cee3f37b5a31a78892a9156d)
 - chore: :arrow_up: update dependencies [`8439219`](https://github.com/eienjs/eslint-config/commit/8439219efae9179c964203862deb42f523bb7343)
+- feat: :sparkles: add rules for inertia, and disables for types [`497536c`](https://github.com/eienjs/eslint-config/commit/497536c7d30075649005c756d27e2742c7a5ae8b)
+- chore(release): :tada: 1.8.0 [`5b03b20`](https://github.com/eienjs/eslint-config/commit/5b03b201ee5af21755cb80dc17a3938738a08599)
+- chore: :construction: resolve some issues with packages and trust policy [`ff3ef9a`](https://github.com/eienjs/eslint-config/commit/ff3ef9a229d65e981224a7f78c5fac2a3d695e19)
+- chore: :construction: follow recent changes of tsdown for handle esm files [`7eb0ab4`](https://github.com/eienjs/eslint-config/commit/7eb0ab46bb5846c3df7fdddcba5a5d4e668d0ec0)
 
 ## [v1.7.0](https://github.com/eienjs/eslint-config/compare/v1.6.0...v1.7.0) - 2025-12-06
 
@@ -122,6 +165,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - feat(pnpm): :sparkles: enhance pnpm workspace config with new sort rules and dynamic catalog mode [`1fc2a23`](https://github.com/eienjs/eslint-config/commit/1fc2a23bca8c177f90e048bb18f0f3eac65d1855)
 - chore: :arrow_up: update eslint-plugin-format and other dependencies in pnpm workspace [`a4222d0`](https://github.com/eienjs/eslint-config/commit/a4222d0dbcfd8375e43cdefe8fcbfae67054275d)
 - chore(release): :tada: 1.7.0 [`3b02436`](https://github.com/eienjs/eslint-config/commit/3b024360ae590c5b555fd16533f44b91b30f2c71)
+- feat: :sparkles: add 'experimental' option to StylisticConfig and update defaults [`729fc81`](https://github.com/eienjs/eslint-config/commit/729fc81d21ca14802dab4d53589002b2fe5fcfc5)
+- chore: :arrow_up: update eslint-plugin-format to version 1.1.0 [`a05f187`](https://github.com/eienjs/eslint-config/commit/a05f187d1172cf7d050c9b0dbbc7f6b15289899b)
+- chore: :construction: auto generated constants [`885a3bd`](https://github.com/eienjs/eslint-config/commit/885a3bdfed3ed75186460da5d08895d0f2166368)
 
 ## [v1.6.0](https://github.com/eienjs/eslint-config/compare/v1.5.2...v1.6.0) - 2025-12-03
 
@@ -130,6 +176,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - style: :rotating_light: resolve issues with new rule on eslint config [`37af4ba`](https://github.com/eienjs/eslint-config/commit/37af4ba979e2a8c4c02cd599ab76fb5b6a3a1d5d)
 - feat(pnpm): :sparkles: disable pnpm rules autofix when in editor and sort settings [`68a2733`](https://github.com/eienjs/eslint-config/commit/68a2733b4080dc9bfc3235ff47261b9894197e1e)
 - chore: :arrow_up: update dependencies [`715d915`](https://github.com/eienjs/eslint-config/commit/715d9158c68a1b392d12c10befb1f7a87c13e048)
+- chore(release): :tada: 1.6.0 [`302112c`](https://github.com/eienjs/eslint-config/commit/302112c0b70fa9d26c155618591efd7415baa9d8)
+- fix: :bug: resolve issue with ts error [`a343177`](https://github.com/eienjs/eslint-config/commit/a343177ffa2faef81ede956c67f99bb8807d5863)
 
 ## [v1.5.2](https://github.com/eienjs/eslint-config/compare/v1.5.1...v1.5.2) - 2025-11-21
 
@@ -177,6 +225,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - feat: :sparkles: add new plugin for allow erasableSyntaxOnly [`a43aa64`](https://github.com/eienjs/eslint-config/commit/a43aa642530a1b7a9d23e28a3c22e4e73e79a7d7)
 - chore: :arrow_up: update dependencies [`354dd74`](https://github.com/eienjs/eslint-config/commit/354dd744cf2215982c2b18367170f4866880eff5)
 - chore(release): :tada: 1.4.0 [`0cfcbcb`](https://github.com/eienjs/eslint-config/commit/0cfcbcb6fbc252bcb15a375e7c81d8600ece81e6)
+- chore: :construction: add target on config tsdown [`662307d`](https://github.com/eienjs/eslint-config/commit/662307d7e2bcaa6cf01b848b0a4b80162bb16999)
 
 ## [v1.3.0](https://github.com/eienjs/eslint-config/compare/v1.2.2...v1.3.0) - 2025-09-22
 
@@ -185,6 +234,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - chore(release): :tada: 1.3.0 [`30e41a7`](https://github.com/eienjs/eslint-config/commit/30e41a78371fe7703b7249aacd69dc2242d032ba)
 - chore: :arrow_up: update dependencies [`6e319a5`](https://github.com/eienjs/eslint-config/commit/6e319a558fcce352d1886518772eaf7bc085443c)
 - chore: :bug: resolve correct generation of build and changelog [`906619f`](https://github.com/eienjs/eslint-config/commit/906619fb6b6f271329b1bc65f4c1ca169b7b2038)
+- chore: :construction: add support to catalogs and bun catalogs [`3d437ea`](https://github.com/eienjs/eslint-config/commit/3d437ea97d498f2b2cc10b0b4df43e5ecd5cd66d)
+- chore: :arrow_up: update mappep generated contants versions [`d4bba3c`](https://github.com/eienjs/eslint-config/commit/d4bba3c6d3cafece084769ed7790926527d4faab)
+- style: :rotating_light: resolve issues reported by eslint [`30114f8`](https://github.com/eienjs/eslint-config/commit/30114f848b60d99b1106a58eaffeb0c2e235770a)
+- refactor: :recycle: follow eslint guide for ecma to latest [`7d5f23d`](https://github.com/eienjs/eslint-config/commit/7d5f23dcfc0d0691e2391db59bd011af7b9d9b50)
 
 ## [v1.2.2](https://github.com/eienjs/eslint-config/compare/v1.2.1...v1.2.2) - 2025-09-01
 
@@ -224,6 +277,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - style: :rotating_light: resolve issues reported by eslint [`ee54f22`](https://github.com/eienjs/eslint-config/commit/ee54f22a552fd0606cdf5c6a22735b630f9f2a9e)
 - refactor: :recycle: add missing strict type checked and stylistic rules for typescript [`ec345d4`](https://github.com/eienjs/eslint-config/commit/ec345d42d024a695919425002536dc3c31e4e8ac)
 - chore(release): :tada: 1.1.0 [`53147be`](https://github.com/eienjs/eslint-config/commit/53147beffe5a9e908643514943edc2302a3a7858)
+- chore: :arrow_up: update dependencies [`b3b5ae7`](https://github.com/eienjs/eslint-config/commit/b3b5ae7711318241c1e78c8326d76d0e0b175f7b)
+- fix: :bug: resolve correct globals for javascript [`bf5c7d3`](https://github.com/eienjs/eslint-config/commit/bf5c7d339bbb15a8c3ac76290ca485103c180f28)
+- chore: :arrow_up: update file constants [`ffcf444`](https://github.com/eienjs/eslint-config/commit/ffcf444c570d1b9d565bf5fd57932a44f7919fe2)
+- refactor: :recycle: add rules stylistic if not type aware [`64bd12c`](https://github.com/eienjs/eslint-config/commit/64bd12ce5fe7469b1220dec94cb2f1b4e7cc7c2c)
 
 ## [v1.0.2](https://github.com/eienjs/eslint-config/compare/v1.0.1...v1.0.2) - 2025-08-07
 
@@ -268,6 +325,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - feat: :sparkles: add cli for fast usage and small update migration eslint config [`9349423`](https://github.com/eienjs/eslint-config/commit/9349423dfe2a80fa782638f6f10b539fa18b4991)
 - style: :rotating_light: resolve some eslint issues [`1beb533`](https://github.com/eienjs/eslint-config/commit/1beb533074cbe2949ab34eee08e6a9091cc012a7)
 - fix: :bug: resolve rules break adonisjs app and general ts and js files [`47440c0`](https://github.com/eienjs/eslint-config/commit/47440c0d4d49405cf2deec6a79275fe3e9b3baca)
+- chore(release): :tada: 0.3.0 [`cabe49c`](https://github.com/eienjs/eslint-config/commit/cabe49c1301dedf1e85adec1f61267c74061b5d1)
 
 ## [v0.2.0](https://github.com/eienjs/eslint-config/compare/v0.1.0...v0.2.0) - 2025-08-01
 
@@ -276,6 +334,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - chore: :sparkles: add support to adonisjs [`1997fb5`](https://github.com/eienjs/eslint-config/commit/1997fb5fabc047a7fadc4b7d5b4fb55eaf36e0c9)
 - fix: :bug: resolve some rules break current style on org [`aa9cf42`](https://github.com/eienjs/eslint-config/commit/aa9cf42b995c8c53de2abdc1a035aac3c9894b9e)
 - feat: :sparkles: add support for adonisjs config [`fbfc9ef`](https://github.com/eienjs/eslint-config/commit/fbfc9efbac831a5cf25ce936958311d6778d5116)
+- chore: :arrow_up: update dependencies [`4e0d1eb`](https://github.com/eienjs/eslint-config/commit/4e0d1eb9e3bfee0af9e601da1481283ee66784c6)
+- chore(release): :tada: 0.2.0 [`ee0815d`](https://github.com/eienjs/eslint-config/commit/ee0815dca8f68045e8b2a423e46098275d08b468)
 
 ## v0.1.0 - 2025-07-31
 
@@ -284,3 +344,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - chore: :construction: generate rules merge between antfu and nodecfdi [`c5c97d4`](https://github.com/eienjs/eslint-config/commit/c5c97d4248439350d5420cf508aaf0d321bd80a2)
 - chore: :construction: generate base javacript [`c974ed2`](https://github.com/eienjs/eslint-config/commit/c974ed23fe73b11c75a56c110ec6c9db9b9998c7)
 - chore: :tada: initial commit [`8e3575b`](https://github.com/eienjs/eslint-config/commit/8e3575b54b0e558f433a3fbaf7e90f0a6503b4d4)
+- docs: :memo: update license and readme for project [`e32e736`](https://github.com/eienjs/eslint-config/commit/e32e7361d166765a5ab5f05046072c400c657b16)
+- chore: :construction: add husky and commitlint for better message commits [`ea54020`](https://github.com/eienjs/eslint-config/commit/ea5402030060a4d945191a5a1ec8b61156860d22)
+- chore: :construction: update script for generate types [`0541922`](https://github.com/eienjs/eslint-config/commit/0541922f3ae95d320f4f657db4c00926b01b3a40)
+- chore(release): :tada: 0.1.0 [`c7f0c42`](https://github.com/eienjs/eslint-config/commit/c7f0c42ed244711e2b04e02c62aaf346fc53e490)
+- chore: :construction: prepare latest changes for generate first release version [`cb47423`](https://github.com/eienjs/eslint-config/commit/cb47423b8a9b9b04d079b8ad47b954a45dfb78e6)
+- style: :rotating_light: resolve eslint issue with markdown files [`6134117`](https://github.com/eienjs/eslint-config/commit/6134117e18b36168cac80d14bb6b773138970a29)

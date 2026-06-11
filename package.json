@@ -44,7 +44,7 @@
     "build:inspector": "pnpm build && npx @eslint/config-inspector build",
     "watch": "tsdown --watch",
     "gen": "tsx scripts/typegen.ts && tsx scripts/versiongen.ts",
-    "changelog": "auto-changelog --stdout -u",
+    "changelog": "auto-changelog -u -p",
     "release": "release-it",
     "lint": "eslint . --fix",
     "lint:check": "eslint .",
@@ -178,15 +178,16 @@
   },
   "release-it": {
     "git": {
+      "commit": true,
+      "tag": true,
+      "push": true,
       "requireCleanWorkingDir": true,
       "commitMessage": "chore(release): :tada: v${version}",
       "tagAnnotation": "chore(release): :tada: v${version}"
     },
     "github": {
       "release": true,
-      "releaseName": "Release v${version}",
-      "web": true,
-      "autoGenerate": true
+      "releaseName": "Release v${version}"
     },
     "npm": {
       "publish": true,
@@ -202,7 +203,7 @@
       ],
       "after:bump": [
         "pnpm run build",
-        "pnpm run changelog -p"
+        "pnpm run changelog"
       ]
     }
   }
