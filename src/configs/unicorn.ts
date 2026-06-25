@@ -67,8 +67,6 @@ export function unicorn(options: OptionsUnicorn = {}): TypedFlatConfigItem[] {
         'unicorn/prefer-query-selector': 'off',
         'unicorn/prefer-switch': ['error', { emptyDefaultCase: 'do-nothing-comment' }],
         'unicorn/prefer-top-level-await': 'off',
-        // Disable prevent-abbrevations, its necessary in frameworks
-        'unicorn/prevent-abbreviations': 'off',
         ...overrides,
       },
     },

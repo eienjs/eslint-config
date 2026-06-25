@@ -1,5 +1,7 @@
 ignoreWorkspaceRootCheck: true
 minimumReleaseAge: 1440
+minimumReleaseAgeExclude:
+  - eslint-plugin-unicorn@69.0.0
 shamefullyHoist: true
 shellEmulator: true
 strictPeerDependencies: false
@@ -63,7 +65,7 @@ catalogs:
     eslint-plugin-pnpm: ^1.6.1
     eslint-plugin-regexp: ^3.1.0
     eslint-plugin-toml: ^1.4.0
-    eslint-plugin-unicorn: ^68.0.0
+    eslint-plugin-unicorn: ^69.0.0
     eslint-plugin-unused-imports: ^4.4.1
     eslint-plugin-vue: ^10.9.2
     eslint-plugin-yml: ^3.5.0
