@@ -27,15 +27,15 @@ export interface CliRunOptions {
 }
 
 export async function run(options: CliRunOptions = {}): Promise<void> {
-  const argSkipPrompt = Boolean(process.env.SKIP_PROMPT) || options.yes;
-  const argTemplate = options.frameworks?.map((m) => m.trim()).filter(Boolean) as FrameworkOption[] | undefined;
-  const argExtra = options.extra?.map((m) => m.trim()).filter(Boolean) as ExtraLibrariesOption[] | undefined;
-
   if (fs.existsSync(path.join(process.cwd(), 'eslint.config.js'))) {
     p.log.warn(c.yellow`eslint.config.js already exists, migration wizard exited.`);
 
     return process.exit(1);
   }
+
+  const argSkipPrompt = Boolean(process.env.SKIP_PROMPT) || options.yes;
+  const argTemplate = options.frameworks?.map((m) => m.trim()).filter(Boolean) as FrameworkOption[] | undefined;
+  const argExtra = options.extra?.map((m) => m.trim()).filter(Boolean) as ExtraLibrariesOption[] | undefined;
 
   // Set default value for promptResult if `argSkipPrompt` is enabled
   let result: PromptResult = {
@@ -78,7 +78,7 @@ export async function run(options: CliRunOptions = {}): Promise<void> {
       extra: async ({ results }) => {
         const isArgExtraValid
           = argExtra?.length
-            && !argExtra.some((element) => !extra.includes((element)));
+            && argExtra.every((element) => extra.includes((element)));
 
         if (!results.uncommittedConfirmed || isArgExtraValid) {
           return;

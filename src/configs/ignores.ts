@@ -3,13 +3,13 @@ import { GLOB_EXCLUDE, GLOB_TS, GLOB_TSX } from '../globs';
 
 export function ignores(
   userIgnores: string[] | ((originals: string[]) => string[]) = [],
-  ignoreTypescript = false,
+  shouldIgnoreTypescript = false,
 ): TypedFlatConfigItem[] {
   let ignores = [
     ...GLOB_EXCLUDE,
   ];
 
-  if (ignoreTypescript) {
+  if (shouldIgnoreTypescript) {
     ignores.push(GLOB_TS, GLOB_TSX);
   }
 

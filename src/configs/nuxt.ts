@@ -23,24 +23,24 @@ export async function nuxt(
 
   const pluginNuxt = await interopDefault(import('@nuxt/eslint-plugin'));
 
-  dirs.root = dirs.root ?? [version === 4 ? './app' : '.'];
-  dirs.src = dirs.src ?? dirs.root;
-  dirs.pages = dirs.pages ?? dirs.src.map((src) => `${src}/pages`);
-  dirs.layouts = dirs.layouts ?? dirs.src.map((src) => `${src}/layouts`);
-  dirs.components = dirs.components ?? dirs.src.map((src) => `${src}/components`);
-  dirs.composables = dirs.composables ?? dirs.src.map((src) => `${src}/composables`);
-  dirs.plugins = dirs.plugins ?? dirs.src.map((src) => `${src}/plugins`);
-  dirs.modules = dirs.modules ?? dirs.src.map((src) => `${src}/modules`);
-  dirs.middleware = dirs.middleware ?? dirs.src.map((src) => `${src}/middleware`);
-  dirs.servers = dirs.servers ?? dirs.src.map((src) => `${src}/servers`);
-  dirs.utils = dirs.utils ?? dirs.src.map((src) => `${src}/utils`);
-  dirs.componentsPrefixed = dirs.componentsPrefixed ?? [];
+  dirs.root ??= [version === 4 ? './app' : '.'];
+  dirs.src ??= dirs.root;
+  dirs.pages ??= dirs.src.map((src) => `${src}/pages`);
+  dirs.layouts ??= dirs.src.map((src) => `${src}/layouts`);
+  dirs.components ??= dirs.src.map((src) => `${src}/components`);
+  dirs.composables ??= dirs.src.map((src) => `${src}/composables`);
+  dirs.plugins ??= dirs.src.map((src) => `${src}/plugins`);
+  dirs.modules ??= dirs.src.map((src) => `${src}/modules`);
+  dirs.middleware ??= dirs.src.map((src) => `${src}/middleware`);
+  dirs.servers ??= dirs.src.map((src) => `${src}/servers`);
+  dirs.utils ??= dirs.src.map((src) => `${src}/utils`);
+  dirs.componentsPrefixed ??= [];
 
   const fileSingleRoot = [
     ...dirs.layouts.map((layoutsDir) => join(layoutsDir, `**/*.${GLOB_EXTS}`)),
     ...dirs.pages.map((pagesDir) => join(pagesDir, `**/*.${GLOB_EXTS}`)),
     ...dirs.components.map((componentsDir) => join(componentsDir, `**/*.server.${GLOB_EXTS}`)),
-  ].toSorted();
+  ].toSorted((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' }));
 
   // imported from 'eslint-plugin-vue/lib/utils/inline-non-void-elements.json'
   const INLINE_ELEMENTS = [

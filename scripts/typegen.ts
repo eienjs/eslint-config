@@ -8,7 +8,7 @@ const configs = await eienjs(CONFIG_PRESET_FULL_ON)
   .prepend({
     plugins: {
       '': {
-        rules: Object.fromEntries(builtinRules.entries()),
+        rules: Object.fromEntries(builtinRules),
       },
     },
   });

@@ -150,28 +150,26 @@ export async function typescript(
     interopDefault(import('@typescript-eslint/parser')),
   ] as const);
 
-  function makeParser(typeAware: boolean, files: string[], ignores?: string[]): TypedFlatConfigItem {
+  function makeParser(isTypeAware: boolean, files: string[], ignores?: string[]): TypedFlatConfigItem {
     return {
       files,
-      ...ignores ? { ignores } : {},
+      ...ignores && { ignores },
       languageOptions: {
         parser: parserTs,
         parserOptions: {
           extraFileExtensions: componentExts.map((ext) => `.${ext}`),
           sourceType: 'module',
-          ...typeAware
-            ? {
-                projectService: {
-                  allowDefaultProject: ['./*.js'],
-                  defaultProject: tsconfigPath,
-                },
-                tsconfigRootDir: process.cwd(),
-              }
-            : {},
+          ...isTypeAware && {
+            projectService: {
+              allowDefaultProject: ['./*.js'],
+              defaultProject: tsconfigPath,
+            },
+            tsconfigRootDir: process.cwd(),
+          },
           ...parserOptions,
         },
       },
-      name: `eienjs/typescript/${typeAware ? 'type-aware-parser' : 'parser'}`,
+      name: `eienjs/typescript/${isTypeAware ? 'type-aware-parser' : 'parser'}`,
     };
   }
 
@@ -201,7 +199,7 @@ export async function typescript(
     rules: {
       ...pluginTs.configs['eslint-recommended'].overrides?.[0].rules,
       ...pluginTs.configs.strict.rules,
-      ...stylistic ? pluginTs.configs.stylistic.rules : {},
+      ...stylistic && pluginTs.configs.stylistic.rules,
 
       '@typescript-eslint/ban-ts-comment': ['error', { 'ts-expect-error': 'allow-with-description' }],
       '@typescript-eslint/consistent-type-assertions': 'error',
@@ -258,7 +256,7 @@ export async function typescript(
       name: 'eienjs/typescript/rules-type-aware',
       rules: {
         ...pluginTs.configs['strict-type-checked'].rules,
-        ...stylistic ? pluginTs.configs['stylistic-type-checked'].rules : {},
+        ...stylistic && pluginTs.configs['stylistic-type-checked'].rules,
         ...typeAwareRules,
         ...overridesTypeAware,
       },
@@ -283,8 +281,8 @@ export async function typescript(
     const pluginErasableSyntaxOnly = await interopDefault(import('eslint-plugin-erasable-syntax-only'));
 
     const resolvedErasableSyntaxOnly = typeof erasableSyntaxOnly === 'boolean' ? {} : erasableSyntaxOnly;
-    const enums = resolvedErasableSyntaxOnly.enums ?? true;
-    const parameterProperties = resolvedErasableSyntaxOnly.parameterProperties ?? true;
+    const isEnums = resolvedErasableSyntaxOnly.enums ?? true;
+    const isParameterProperties = resolvedErasableSyntaxOnly.parameterProperties ?? true;
 
     rules.push({
       files,
@@ -293,10 +291,10 @@ export async function typescript(
         'erasable-syntax-only': pluginErasableSyntaxOnly,
       },
       rules: {
-        'erasable-syntax-only/enums': enums ? 'error' : 'off',
+        'erasable-syntax-only/enums': isEnums ? 'error' : 'off',
         'erasable-syntax-only/import-aliases': 'error',
         'erasable-syntax-only/namespaces': 'error',
-        'erasable-syntax-only/parameter-properties': parameterProperties ? 'error' : 'off',
+        'erasable-syntax-only/parameter-properties': isParameterProperties ? 'error' : 'off',
       },
     });
   }

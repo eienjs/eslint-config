@@ -22,9 +22,9 @@ export function e18e(options: OptionsE18e = {}): TypedFlatConfigItem[] {
     {
       name: 'eienjs/e18e/rules',
       rules: {
-        ...modernization ? { ...configs.modernization.rules } : {},
-        ...moduleReplacements ? { ...configs.moduleReplacements.rules } : {},
-        ...performanceImprovements ? { ...configs.performanceImprovements.rules } : {},
+        ...modernization && { ...configs.modernization.rules },
+        ...moduleReplacements && { ...configs.moduleReplacements.rules },
+        ...performanceImprovements && { ...configs.performanceImprovements.rules },
 
         // these are a bit opinionated and dangerous (introducing behavioral changes), so we'll disable them by default for now
         'e18e/prefer-array-at': 'off',

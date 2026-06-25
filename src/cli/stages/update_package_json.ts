@@ -17,9 +17,9 @@ export async function updatePackageJson(result: PromptResult): Promise<void> {
   const pkgContent = await fsp.readFile(pathPackageJSON, 'utf8');
   const pkg = JSON.parse(pkgContent) as { devDependencies?: Record<string, unknown> };
 
-  pkg.devDependencies = pkg.devDependencies ?? {};
+  pkg.devDependencies ??= {};
   pkg.devDependencies['@eienjs/eslint-config'] = `^${version}`;
-  pkg.devDependencies.eslint = pkg.devDependencies.eslint ?? versionsMap.eslint;
+  pkg.devDependencies.eslint ??= versionsMap.eslint;
 
   const addedPackages: string[] = [];
 
@@ -27,21 +27,21 @@ export async function updatePackageJson(result: PromptResult): Promise<void> {
     const extraPackages = result.extra;
 
     for (const item of extraPackages) {
-      switch (item) {
-        case 'formatter': {
-          for (const f of ([
-            ...dependenciesMap.formatter,
-            ...(result.frameworks.includes('astro') ? dependenciesMap.formatterAstro : []),
-          ] as const)) {
-            if (!f) {
-              continue;
-            }
+      if (item !== 'formatter') {
+        continue;
+      }
 
-            pkg.devDependencies[f] = versionsMap[f as keyof typeof versionsMap];
-            addedPackages.push(f);
-          }
-          break;
+      for (const f of ([
+        ...dependenciesMap.formatter,
+        ...(result.frameworks.includes('astro') ? dependenciesMap.formatterAstro : []),
+      ] as const)) {
+        if (!f) {
+          // eslint-disable-next-line unicorn/no-break-in-nested-loop
+          continue;
         }
+
+        pkg.devDependencies[f] = versionsMap[f as keyof typeof versionsMap];
+        addedPackages.push(f);
       }
     }
   }

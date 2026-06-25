@@ -25,11 +25,9 @@ export function imports(options: OptionsOverrides & OptionsStylistic = {}): Type
         'import/no-mutable-exports': 'error',
         'import/no-named-default': 'error',
 
-        ...stylistic
-          ? {
-              'import/newline-after-import': ['error', { count: 1 }],
-            }
-          : {},
+        ...stylistic && {
+          'import/newline-after-import': ['error', { count: 1 }],
+        },
 
         ...overrides,
       },

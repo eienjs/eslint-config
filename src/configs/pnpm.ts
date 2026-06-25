@@ -50,11 +50,9 @@ export async function pnpm(
           pnpm: pluginPnpm,
         },
         rules: {
-          ...(catalogs
-            ? {
-                'pnpm/json-enforce-catalog': 'off',
-              }
-            : {}),
+          ...(catalogs && {
+            'pnpm/json-enforce-catalog': 'off',
+          }),
           'pnpm/json-prefer-workspace-settings': [
             'error',
             { autofix: !isInEditor },

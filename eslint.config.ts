@@ -17,5 +17,6 @@ export default eienjs({
   files: ['src/**/*.ts'],
   rules: {
     'perfectionist/sort-objects': 'error',
+    'unicorn/no-useless-spread': 'off',
   },
 });

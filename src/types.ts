@@ -279,6 +279,15 @@ export interface OptionsE18e extends OptionsOverrides {
   performanceImprovements?: boolean;
 }
 
+export interface OptionsUnicorn extends OptionsOverrides {
+  /**
+   * Include all rules recommended by `eslint-plugin-unicorn`, instead of only ones picked by Anthony.
+   *
+   * @default true
+   */
+  allRecommended?: boolean;
+}
+
 export interface OptionsMarkdown extends OptionsOverrides {
   /**
    * Enable GFM (Github Flavored Markdown) support.
@@ -461,7 +470,7 @@ export interface OptionsConfig extends OptionsComponentExts {
    *
    * @default true
    */
-  unicorn?: boolean | OptionsOverrides;
+  unicorn?: boolean | OptionsUnicorn;
 
   /**
    * Options for eslint-plugin-perfectionist.

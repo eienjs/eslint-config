@@ -72,7 +72,8 @@ export async function ensurePackages(packages: (string | undefined)[]): Promise<
   });
 
   if (result) {
-    await import('@antfu/install-pkg').then(async (i) => i.installPackage(nonExistingPackages, { dev: true }));
+    const i = await import('@antfu/install-pkg');
+    await i.installPackage(nonExistingPackages, { dev: true });
   }
 }
 

@@ -1,3 +1,4 @@
+/* eslint-disable unicorn/prefer-await */
 import type { Linter } from 'eslint';
 import type { RuleOptions } from './typegen';
 import type { Awaitable, ConfigNames, OptionsConfig, TypedFlatConfigItem } from './types';
@@ -151,7 +152,7 @@ export function eienjs(
 
   if (enableE18e) {
     configs.push(e18e({
-      ...enableE18e === true ? {} : enableE18e,
+      ...enableE18e !== true && enableE18e,
     }));
   }
 
@@ -287,7 +288,7 @@ export function eienjs(
   // User can optionally pass a flat config item to the first argument
   // We pick the known keys as ESLint would do schema validation
   const fusedConfig = flatConfigProps.reduce<TypedFlatConfigItem>((acc, key) => {
-    if (key in options) {
+    if (Object.hasOwn(options, key)) {
       // @ts-expect-error - ignore, we're just merging
       acc[key] = options[key];
     }
@@ -344,8 +345,6 @@ export function getOverrides(
   const sub = resolveSubOptions(options, key);
 
   return {
-    ...'overrides' in sub
-      ? sub.overrides
-      : {},
+    ...('overrides' in sub) && sub.overrides,
   };
 }
