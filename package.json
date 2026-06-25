@@ -21,8 +21,8 @@
   ],
   "exports": {
     ".": "./dist/index.mjs",
-    "./cli": "./dist/cli.mjs",
-    "./configs": "./dist/configs.mjs",
+    "./cli": "./dist/cli/index.mjs",
+    "./configs": "./dist/configs/index.mjs",
     "./package.json": "./package.json"
   },
   "types": "./dist/index.d.mts",

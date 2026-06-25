@@ -8,7 +8,9 @@ export default defineConfig([
     dts: true,
     shims: true,
     format: ['esm'],
+    minify: 'dce-only',
     exports: true,
+    unbundle: true,
     plugins: [
       StaleGuardRecorder(),
     ],
