@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v2.1.0](https://github.com/eienjs/eslint-config/compare/v2.0.1...v2.1.0)
+
+### Commits
+
+- chore: :arrow_up: update dependencies [`a961978`](https://github.com/eienjs/eslint-config/commit/a961978232de17c67cb25fd5441661f4851dc57f)
+- style: :rotating_light: resolve all issues reported by eslint [`5228ab1`](https://github.com/eienjs/eslint-config/commit/5228ab1ef166d27f0b680b4f98b470ac7ccb5136)
+- chore: :memo: update missing changelog latest tag [`c83721b`](https://github.com/eienjs/eslint-config/commit/c83721b48810787e73131ed6018e75851135648e)
+- chore: :arrow_up: update unicorn rules to latest [`c87f958`](https://github.com/eienjs/eslint-config/commit/c87f95857b656e9903c5672726628c17b0dc3fa9)
+- build: :fire: update how to generate builds tsdown [`26b77bf`](https://github.com/eienjs/eslint-config/commit/26b77bf618b7a5e5680f44dfabdf0fbe2e998f79)
+- chore: :construction: github release web enable [`2e328ca`](https://github.com/eienjs/eslint-config/commit/2e328ca9ce9a54435bb0c6efe8de14c0e79554af)
+
 ## [v2.0.1](https://github.com/eienjs/eslint-config/compare/v2.0.0...v2.0.1) - 2026-06-11
 
 ### Commits
