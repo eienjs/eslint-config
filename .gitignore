@@ -23,7 +23,6 @@ src/typegen.d.ts
 # IDE
 .idea
 
-# Lock files
+# Lock files for other packages
 package-lock.json
 yarn.lock
-pnpm-lock.yaml

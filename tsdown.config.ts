@@ -1,19 +1,16 @@
 import { defineConfig } from 'tsdown';
+import { StaleGuardRecorder } from 'tsdown-stale-guard';
 
 export default defineConfig([
   {
     entry: ['src/index.ts', 'src/cli/index.ts', 'src/configs/index.ts'],
     clean: true,
-    format: 'esm',
-    minify: 'dce-only',
-    fixedExtension: false,
     dts: true,
-    sourcemap: false,
-    target: 'esnext',
+    shims: true,
+    format: ['esm'],
     exports: true,
-    unbundle: true,
-    deps: {
-      onlyBundle: ['find-up-simple'],
-    },
+    plugins: [
+      StaleGuardRecorder(),
+    ],
   },
 ]);

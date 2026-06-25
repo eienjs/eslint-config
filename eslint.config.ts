@@ -7,10 +7,15 @@ export default eienjs({
   },
   formatters: true,
   pnpm: true,
+  perfectionist: true,
+  markdown: {
+    overrides: {
+      'no-dupe-keys': 'off',
+    },
+  },
 }).append({
   files: ['src/**/*.ts'],
   rules: {
     'perfectionist/sort-objects': 'error',
-    'unicorn/no-useless-spread': 'off',
   },
 });
