@@ -11,6 +11,7 @@ export function disables(): TypedFlatConfigItem[] {
         '@typescript-eslint/no-deprecated': 'off',
         'antfu/no-top-level-await': 'off',
         'no-console': 'off',
+        'unicorn/no-top-level-side-effects': 'off',
       },
     },
     {
@@ -21,6 +22,7 @@ export function disables(): TypedFlatConfigItem[] {
         'antfu/no-top-level-await': 'off',
         'no-console': 'off',
         'unicorn/no-process-exit': 'off',
+        'unicorn/no-top-level-side-effects': 'off',
       },
     },
     {
@@ -54,6 +56,7 @@ export function disables(): TypedFlatConfigItem[] {
         '@typescript-eslint/explicit-function-return-type': 'off',
         'antfu/no-top-level-await': 'off',
         'no-console': 'off',
+        'unicorn/no-top-level-side-effects': 'off',
       },
     },
     {
@@ -91,6 +94,7 @@ export function disables(): TypedFlatConfigItem[] {
         'antfu/no-top-level-await': 'off',
         'no-console': 'off',
         'unicorn/no-process-exit': 'off',
+        'unicorn/no-top-level-side-effects': 'off',
       },
     },
   ];

@@ -40,20 +40,31 @@ export function unicorn(options: OptionsUnicorn = {}): TypedFlatConfigItem[] {
             }),
 
         // Custom overrides
+        'unicorn/consistent-class-member-order': ['error', { order: [
+          'static-field',
+          'static-block',
+          'public-field',
+          'private-field',
+          'constructor',
+          'public-method',
+          'static-method',
+          'private-method',
+        ] }],
         'unicorn/consistent-destructuring': 'error',
         'unicorn/consistent-function-scoping': ['error', { checkArrowFunctions: false }],
 
         // Not expiring to-do comments
         'unicorn/expiring-todo-comments': 'off',
-
         // Custom overrides
         'unicorn/filename-case': ['error', { case: 'snakeCase', ignore: [String.raw`\.md$`, String.raw`\.mdx$`] }],
-        'unicorn/max-nested-calls': ['error', { max: 5 }],
 
+        'unicorn/max-nested-calls': ['error', { max: 5 }],
         // Disable name-replacements, not use abbreviations in names
         'unicorn/name-replacements': 'off',
         // Disable because match other functions with object is not array
         'unicorn/no-array-reduce': 'off',
+        // Disable because conflict withadonisjs naming convention
+        'unicorn/no-non-function-verb-prefix': 'off',
         'unicorn/no-null': 'off',
         // Enable usage for helpers classes
         'unicorn/no-static-only-class': 'off',
@@ -63,6 +74,7 @@ export function unicorn(options: OptionsUnicorn = {}): TypedFlatConfigItem[] {
         'unicorn/no-this-outside-of-class': 'off',
         // Dificult read a number
         'unicorn/numeric-separators-style': 'off',
+        'unicorn/prefer-await': 'off',
         // Disable dom-node-because-usage with nodejs not its completed
         'unicorn/prefer-dom-node-append': 'off',
         'unicorn/prefer-dom-node-dataset': 'off',

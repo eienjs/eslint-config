@@ -224,6 +224,7 @@ export async function vue(
         // Disable usage in vue files
         'antfu/no-top-level-await': 'off',
         'n/prefer-global/process': 'off',
+        'unicorn/no-top-level-side-effects': 'off',
 
         ...overrides,
       },

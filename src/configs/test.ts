@@ -54,6 +54,7 @@ export async function test(
         'test/no-only-tests': isInEditor ? 'warn' : 'error',
         'test/prefer-hooks-in-order': 'error',
         'test/prefer-lowercase-title': 'error',
+        'unicorn/no-top-level-side-effects': 'off',
         ...overrides,
       },
     },

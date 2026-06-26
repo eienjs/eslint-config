@@ -80,6 +80,7 @@ export async function adonisjs(
       name: 'eienjs/adonisjs/disables',
       rules: {
         'antfu/no-top-level-await': 'off',
+        'unicorn/no-top-level-side-effects': 'off',
       },
     },
     {

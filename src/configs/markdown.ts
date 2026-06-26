@@ -89,6 +89,7 @@ export async function markdown(
         'no-unused-labels': 'off',
         'no-unused-vars': 'off',
         'unicode-bom': 'off',
+        'unicorn/no-top-level-side-effects': 'off',
         'unused-imports/no-unused-imports': 'off',
         'unused-imports/no-unused-vars': 'off',
         ...overrides,

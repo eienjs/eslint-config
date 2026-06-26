@@ -1,4 +1,3 @@
-/* eslint-disable unicorn/prefer-await */
 import type { Linter } from 'eslint';
 import type { RuleOptions } from './typegen';
 import type { Awaitable, ConfigNames, OptionsConfig, TypedFlatConfigItem } from './types';
