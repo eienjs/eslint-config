@@ -1,7 +1,10 @@
 ignoreWorkspaceRootCheck: true
 minimumReleaseAge: 1440
 minimumReleaseAgeExclude:
-  - eslint-plugin-unicorn@69.0.0
+  - eslint-plugin-n@18.2.1
+  - release-it@20.2.1
+  - eslint-plugin-jsdoc@63.0.9
+  - eslint-plugin-regexp@3.1.1
 shamefullyHoist: true
 shellEmulator: true
 strictPeerDependencies: false
@@ -15,11 +18,11 @@ catalogs:
     '@eslint/config-inspector': ^3.0.4
     '@types/node': ^24.13.2
     auto-changelog: ^2.6.0
-    baseline-browser-mapping: ^2.10.35
+    baseline-browser-mapping: ^2.10.40
     eslint-typegen: ^2.3.1
     husky: ^9.1.7
     pnpm-workspace-yaml: ^1.6.1
-    release-it: ^20.2.0
+    release-it: ^20.2.1
     tsdown: ^0.22.3
     tsdown-stale-guard: ^0.1.2
     tsx: ^4.22.4
@@ -33,9 +36,9 @@ catalogs:
     '@prettier/plugin-xml': ^3.4.2
     '@typescript-eslint/types': ^8.62.0
     '@typescript-eslint/utils': ^8.62.0
-    astro-eslint-parser: ^2.0.0
+    astro-eslint-parser: ^2.1.0
     eslint: ^10.5.0
-    eslint-plugin-astro: ^2.0.0
+    eslint-plugin-astro: ^2.1.1
     eslint-plugin-erasable-syntax-only: ^0.4.2
     eslint-plugin-format: ^2.0.1
     prettier-plugin-astro: ^0.14.1
@@ -57,13 +60,13 @@ catalogs:
     eslint-plugin-antfu: ^3.2.3
     eslint-plugin-command: ^3.5.2
     eslint-plugin-import-lite: ^0.6.0
-    eslint-plugin-jsdoc: ^63.0.2
+    eslint-plugin-jsdoc: ^63.0.9
     eslint-plugin-jsonc: ^3.2.0
-    eslint-plugin-n: ^18.1.0
+    eslint-plugin-n: ^18.2.1
     eslint-plugin-no-only-tests: ^3.4.0
     eslint-plugin-perfectionist: ^5.9.1
     eslint-plugin-pnpm: ^1.6.1
-    eslint-plugin-regexp: ^3.1.0
+    eslint-plugin-regexp: ^3.1.1
     eslint-plugin-toml: ^1.4.0
     eslint-plugin-unicorn: ^69.0.0
     eslint-plugin-unused-imports: ^4.4.1
