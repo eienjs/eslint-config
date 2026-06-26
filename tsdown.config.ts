@@ -11,6 +11,9 @@ export default defineConfig([
     minify: 'dce-only',
     exports: true,
     unbundle: true,
+    deps: {
+      onlyBundle: ['find-up-simple'],
+    },
     plugins: [
       StaleGuardRecorder(),
     ],
