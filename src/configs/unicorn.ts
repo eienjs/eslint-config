@@ -38,11 +38,18 @@ export function unicorn(options: OptionsUnicorn = {}): TypedFlatConfigItem[] {
               'unicorn/prefer-type-error': 'error',
               'unicorn/throw-new-error': 'error',
             }),
+
+        // Custom overrides
         'unicorn/consistent-destructuring': 'error',
         'unicorn/consistent-function-scoping': ['error', { checkArrowFunctions: false }],
+
         // Not expiring to-do comments
         'unicorn/expiring-todo-comments': 'off',
-        'unicorn/filename-case': 'off',
+
+        // Custom overrides
+        'unicorn/filename-case': ['error', { case: 'snakeCase', ignore: [String.raw`\.md$`, String.raw`\.mdx$`] }],
+        'unicorn/max-nested-calls': ['error', { max: 5 }],
+
         // Disable name-replacements, not use abbreviations in names
         'unicorn/name-replacements': 'off',
         // Disable because match other functions with object is not array
@@ -53,6 +60,7 @@ export function unicorn(options: OptionsUnicorn = {}): TypedFlatConfigItem[] {
         // Disable because not work with others function like then
         'unicorn/no-thenable': 'off',
         'unicorn/no-this-assignment': 'off',
+        'unicorn/no-this-outside-of-class': 'off',
         // Dificult read a number
         'unicorn/numeric-separators-style': 'off',
         // Disable dom-node-because-usage with nodejs not its completed
@@ -68,18 +76,6 @@ export function unicorn(options: OptionsUnicorn = {}): TypedFlatConfigItem[] {
         'unicorn/prefer-switch': ['error', { emptyDefaultCase: 'do-nothing-comment' }],
         'unicorn/prefer-top-level-await': 'off',
         ...overrides,
-      },
-    },
-    {
-      files: [GLOB_SRC],
-      name: 'eienjs/unicorn/special-rules',
-      rules: {
-        'unicorn/filename-case': [
-          'error',
-          {
-            case: 'snakeCase',
-          },
-        ],
       },
     },
   ];
