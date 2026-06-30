@@ -5,12 +5,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [v2.1.1](https://github.com/eienjs/eslint-config/compare/v2.1.0...v2.1.1)
+## [v2.1.2](https://github.com/eienjs/eslint-config/compare/v2.1.1...v2.1.2)
+
+### Commits
+
+- chore: :arrow_up: update dependencies [`51025e4`](https://github.com/eienjs/eslint-config/commit/51025e47650629f675392cb2f2e930762a1a8513)
+- fix: :bug: resolve some rules break - unicorn new rules [`0fd26ee`](https://github.com/eienjs/eslint-config/commit/0fd26eeee09a8aa5cca7933800d860097743dd84)
+- build: :white_check_mark: update generate files for versions map [`2d06bed`](https://github.com/eienjs/eslint-config/commit/2d06bed11989cd2527898e7161b15c62065f75b3)
+
+## [v2.1.1](https://github.com/eienjs/eslint-config/compare/v2.1.0...v2.1.1) - 2026-06-26
 
 ### Commits
 
 - chore: :arrow_up: update dependencies [`789042d`](https://github.com/eienjs/eslint-config/commit/789042d49a92838154c4880451e11646d872d4d2)
 - fix: :bug: resolve break rules not work as expected unicorn rules [`137308c`](https://github.com/eienjs/eslint-config/commit/137308ce638b8d2243d01a08fa8d358d7d40fc1a)
+- chore(release): :tada: v2.1.1 [`739e52a`](https://github.com/eienjs/eslint-config/commit/739e52a50ede2896bd763e7d006ce6d1f07caaac)
 - build: :construction: resolve inline dependencies bundled with tsdown [`13e8fb7`](https://github.com/eienjs/eslint-config/commit/13e8fb7a427c6b4db5bc5a203ccdcadf1700fba5)
 
 ## [v2.1.0](https://github.com/eienjs/eslint-config/compare/v2.0.1...v2.1.0) - 2026-06-25
