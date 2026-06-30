@@ -12,6 +12,22 @@
 
 Eslint config preset for EienJS projects and packages, it's a fork from [@antfu/eslint-config](https://github.com/antfu/eslint-config).
 
+## Quick Start
+
+Faster start is using Wizard setup, run command below:
+
+```sh
+pnpm dlx @eienjs/eslint-config@latest
+```
+
+Or install the package directly:
+
+```sh
+pnpm add -D @eienjs/eslint-config
+```
+
+Add or update your `eslint.config.js` acording your needs.
+
 ## Documentation
 
 The documentation is available on [EienJS](https://eienjs.com/packages/eslint-config/getting-started/).
@@ -29,7 +45,7 @@ The `@eienjs/eslint-config` library is licensed for use under the MIT License (M
 [source]: https://github.com/eienjs/eslint-config
 [node-version]: https://www.npmjs.com/package/@eienjs/eslint-config
 [release]: https://www.npmjs.com/package/@eienjs/eslint-config
-[license]: https://github.com/eienjs/eslint-config/blob/main/LICENSE.md
+[license]: https://github.com/eienjs/eslint-config/blob/main/LICENSE
 [downloads]: https://www.npmjs.com/package/@eienjs/eslint-config
 [badge-source]: https://img.shields.io/badge/source-eienjs/eslint--config-blue.svg?logo=github
 [badge-node-version]: https://img.shields.io/node/v/@eienjs/eslint-config.svg?logo=nodedotjs
