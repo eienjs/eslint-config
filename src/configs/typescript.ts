@@ -103,6 +103,7 @@ export async function typescript(
         selector: 'variable',
       },
     ],
+    '@typescript-eslint/no-base-to-string': 'off',
     '@typescript-eslint/no-floating-promises': 'error',
     '@typescript-eslint/no-for-in-array': 'error',
     '@typescript-eslint/no-implied-eval': 'error',

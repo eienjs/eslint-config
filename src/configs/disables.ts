@@ -88,7 +88,7 @@ export function disables(): TypedFlatConfigItem[] {
       },
     },
     {
-      files: ['**/ecosystem.config.js', '**/deploy.js'],
+      files: ['**/ecosystem.config.js', '**/ecosystem.config.cjs', '**/deploy.js'],
       name: 'eienjs/disables/deploy-tools',
       rules: {
         'antfu/no-top-level-await': 'off',

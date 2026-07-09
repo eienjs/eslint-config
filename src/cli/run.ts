@@ -76,9 +76,7 @@ export async function run(options: CliRunOptions = {}): Promise<void> {
         });
       },
       extra: async ({ results }) => {
-        const isArgExtraValid
-          = argExtra?.length
-            && argExtra.every((element) => extra.includes((element)));
+        const isArgExtraValid = Boolean(argExtra?.length && argExtra.every((element) => extra.includes((element))));
 
         if (!results.uncommittedConfirmed || isArgExtraValid) {
           return;

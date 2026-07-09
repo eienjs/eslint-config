@@ -53,11 +53,13 @@ export function unicorn(options: OptionsUnicorn = {}): TypedFlatConfigItem[] {
         'unicorn/consistent-destructuring': 'error',
         'unicorn/consistent-function-scoping': ['error', { checkArrowFunctions: false }],
 
+        // Disable because ssr not completed query selector
+        'unicorn/dom-node-dataset': 'off',
         // Not expiring to-do comments
         'unicorn/expiring-todo-comments': 'off',
+
         // Custom overrides
         'unicorn/filename-case': ['error', { case: 'snakeCase', ignore: [String.raw`\.md$`, String.raw`\.mdx$`] }],
-
         'unicorn/max-nested-calls': ['error', { max: 5 }],
         // Disable name-replacements, not use abbreviations in names
         'unicorn/name-replacements': 'off',
@@ -83,10 +85,10 @@ export function unicorn(options: OptionsUnicorn = {}): TypedFlatConfigItem[] {
         // Preferences
         'unicorn/prefer-export-from': 'off',
         'unicorn/prefer-modern-dom-apis': 'off',
-        // Disable because ssr not completed query selector
         'unicorn/prefer-query-selector': 'off',
         'unicorn/prefer-switch': ['error', { emptyDefaultCase: 'do-nothing-comment' }],
         'unicorn/prefer-top-level-await': 'off',
+        'unicorn/prefer-uint8array-base64': 'off',
         ...overrides,
       },
     },

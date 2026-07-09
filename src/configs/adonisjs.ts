@@ -107,7 +107,7 @@ export async function adonisjs(
       },
     },
     {
-      files: [join(dirs.middleware, nestedGlobPattern)],
+      files: [join(dirs.middleware, nestedGlobPattern), '**/src/middleware/**.ts'],
       name: 'eienjs/adonisjs/middleware-disables',
       rules: {
         ...commonRulesSet,
