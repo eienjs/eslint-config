@@ -5,13 +5,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [v2.1.3](https://github.com/eienjs/eslint-config/compare/v2.1.2...v2.1.3)
+## [v2.1.4](https://github.com/eienjs/eslint-config/compare/v2.1.3...v2.1.4)
+
+### Commits
+
+- chore: :arrow_up: update dependencies [`3979f30`](https://github.com/eienjs/eslint-config/commit/3979f30491c16ff8c683b6b3b562b491e2a8f36e)
+- fix: :bug: resolve some issues with bad rule on unicorn, and rules support to adonisjs v7 [`e124771`](https://github.com/eienjs/eslint-config/commit/e1247718d2c34959cd87c9d23b6148b2f76c7fd3)
+- refactor: :recycle: remove not used dependency plugin [`822bd14`](https://github.com/eienjs/eslint-config/commit/822bd14d3303589d126104381fdd2c8e6513a0ec)
+- build: :fire: remove duplicated script on build [`53803f5`](https://github.com/eienjs/eslint-config/commit/53803f5afedb929891118e8008a8629139ecddb7)
+
+## [v2.1.3](https://github.com/eienjs/eslint-config/compare/v2.1.2...v2.1.3) - 2026-07-09
 
 ### Commits
 
 - chore: :arrow_up: update dependencies [`3b8a5e3`](https://github.com/eienjs/eslint-config/commit/3b8a5e3b38d094997610d2fdd1adeae0bb98028e)
 - docs: :memo: update readme with quickstart and fix link for license file [`433dc4c`](https://github.com/eienjs/eslint-config/commit/433dc4cf2932898c8d58313e7f66df73c2861653)
 - fix: :bug: resolve some rules for correct handle dom and others break rules [`0768f97`](https://github.com/eienjs/eslint-config/commit/0768f97b47b6057ff6ee995fb2e4b41e5244df9c)
+- chore(release): :tada: v2.1.3 [`a19f3a2`](https://github.com/eienjs/eslint-config/commit/a19f3a20f429a47afa74a28d6dfcd6b5ae9a700f)
 
 ## [v2.1.2](https://github.com/eienjs/eslint-config/compare/v2.1.1...v2.1.2) - 2026-06-29
 
