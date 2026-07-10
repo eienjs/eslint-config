@@ -36,7 +36,6 @@
   },
   "scripts": {
     "prepare": "husky",
-    "prebuild": "pnpm tool:code",
     "build": "pnpm gen && tsdown",
     "commitlint": "commitlint --edit",
     "stub": "tsdown",
