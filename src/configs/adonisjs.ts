@@ -134,6 +134,7 @@ export async function adonisjs(
       rules: {
         '@typescript-eslint/explicit-function-return-type': 'off',
         '@typescript-eslint/explicit-module-boundary-types': 'off',
+        '@typescript-eslint/no-unsafe-argument': 'off',
         '@typescript-eslint/require-await': 'off',
       },
     },
@@ -159,8 +160,12 @@ export async function adonisjs(
         '@typescript-eslint/explicit-module-boundary-types': 'off',
         '@typescript-eslint/no-explicit-any': 'off',
         '@typescript-eslint/no-unsafe-assignment': 'off',
+        '@typescript-eslint/no-unsafe-call': 'off',
+        '@typescript-eslint/no-unsafe-member-access': 'off',
         '@typescript-eslint/no-unsafe-return': 'off',
+        '@typescript-eslint/promise-function-async': 'off',
         '@typescript-eslint/unbound-method': 'off',
+        'e18e/prefer-static-regex': 'off',
       },
     },
     {
@@ -174,6 +179,20 @@ export async function adonisjs(
         '@typescript-eslint/no-unsafe-return': 'off',
         'no-restricted-syntax': 'off',
         'unused-imports/no-unused-vars': 'off',
+      },
+    },
+    {
+      files: [join(dirs.start, nestedGlobPattern)],
+      name: 'eienjs/adonisjs/start-disables',
+      rules: {
+        '@typescript-eslint/method-signature-style': 'off',
+      },
+    },
+    {
+      files: ['**/src/define_config.ts'],
+      name: 'eienjs/adonisjs/libs',
+      rules: {
+        '@typescript-eslint/require-await': 'off',
       },
     },
   ];

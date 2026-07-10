@@ -40,6 +40,7 @@ export function unicorn(options: OptionsUnicorn = {}): TypedFlatConfigItem[] {
             }),
 
         // Custom overrides
+        'unicorn/consistent-boolean-name': 'off',
         'unicorn/consistent-class-member-order': ['error', { order: [
           'static-field',
           'static-block',
@@ -52,12 +53,10 @@ export function unicorn(options: OptionsUnicorn = {}): TypedFlatConfigItem[] {
         ] }],
         'unicorn/consistent-destructuring': 'error',
         'unicorn/consistent-function-scoping': ['error', { checkArrowFunctions: false }],
-
         // Disable because ssr not completed query selector
         'unicorn/dom-node-dataset': 'off',
         // Not expiring to-do comments
         'unicorn/expiring-todo-comments': 'off',
-
         // Custom overrides
         'unicorn/filename-case': ['error', { case: 'snakeCase', ignore: [String.raw`\.md$`, String.raw`\.mdx$`] }],
         'unicorn/max-nested-calls': ['error', { max: 5 }],
@@ -84,6 +83,7 @@ export function unicorn(options: OptionsUnicorn = {}): TypedFlatConfigItem[] {
         'unicorn/prefer-dom-node-text-content': 'off',
         // Preferences
         'unicorn/prefer-export-from': 'off',
+        'unicorn/prefer-includes-over-repeated-comparisons': 'off',
         'unicorn/prefer-modern-dom-apis': 'off',
         'unicorn/prefer-query-selector': 'off',
         'unicorn/prefer-switch': ['error', { emptyDefaultCase: 'do-nothing-comment' }],
