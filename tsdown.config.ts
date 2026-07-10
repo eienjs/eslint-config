@@ -1,5 +1,4 @@
 import { defineConfig } from 'tsdown';
-import { StaleGuardRecorder } from 'tsdown-stale-guard';
 
 export default defineConfig([
   {
@@ -14,8 +13,5 @@ export default defineConfig([
     deps: {
       onlyBundle: ['find-up-simple'],
     },
-    plugins: [
-      StaleGuardRecorder(),
-    ],
   },
 ]);
