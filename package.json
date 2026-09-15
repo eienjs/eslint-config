@@ -2,7 +2,7 @@
   "name": "@eienjs/eslint-config",
   "type": "module",
   "version": "2.1.4",
-  "packageManager": "pnpm@11.11.0",
+  "packageManager": "pnpm@12.4.2",
   "description": "EienJS ESLint Config",
   "author": "Fernando Isidro <luffynando@gmail.com> (https://github.com/luffynando/)",
   "license": "MIT",
@@ -31,9 +31,6 @@
     "bin",
     "dist"
   ],
-  "engines": {
-    "node": ">=22"
-  },
   "scripts": {
     "prepare": "husky",
     "build": "pnpm gen && tsdown",
@@ -54,12 +51,12 @@
     "@adonisjs/eslint-plugin": "^2.2.2",
     "@nuxt/eslint-plugin": "^1.16.0",
     "@prettier/plugin-xml": "^3.4.2",
-    "astro-eslint-parser": "^2.0.0",
+    "astro-eslint-parser": ">=1.0.2",
     "eslint": "^10.5.0",
-    "eslint-plugin-astro": "^2.0.0",
-    "eslint-plugin-erasable-syntax-only": "^0.4.2",
+    "eslint-plugin-astro": ">=1.0.2",
+    "eslint-plugin-erasable-syntax-only": "^0.7.1",
     "eslint-plugin-format": "^2.0.1",
-    "prettier-plugin-astro": "^0.14.1"
+    "prettier-plugin-astro": "^1.0.0"
   },
   "peerDependenciesMeta": {
     "@adonisjs/eslint-plugin": {

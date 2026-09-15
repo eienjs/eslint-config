@@ -61,7 +61,7 @@ export async function run(options: CliRunOptions = {}): Promise<void> {
         const isArgTemplateValid
           = typeof argTemplate === 'string' && frameworks.includes((argTemplate));
 
-        if (!results.uncommittedConfirmed || isArgTemplateValid) {
+        if (isArgTemplateValid || !results.uncommittedConfirmed) {
           return;
         }
 
@@ -78,7 +78,7 @@ export async function run(options: CliRunOptions = {}): Promise<void> {
       extra: async ({ results }) => {
         const isArgExtraValid = Boolean(argExtra?.length && argExtra.every((element) => extra.includes((element))));
 
-        if (!results.uncommittedConfirmed || isArgExtraValid) {
+        if (isArgExtraValid || !results.uncommittedConfirmed) {
           return;
         }
 

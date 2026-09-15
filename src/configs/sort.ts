@@ -147,14 +147,18 @@ export function sortTsconfig(): TypedFlatConfigItem[] {
           },
           {
             order: [
-              /* Projects */
+              /*
+              Projects
+              */
               'incremental',
               'composite',
               'tsBuildInfoFile',
               'disableSourceOfProjectReferenceRedirect',
               'disableSolutionSearching',
               'disableReferencedProjectLoad',
-              /* Language and Environment */
+              /*
+              Language and Environment
+              */
               'target',
               'jsx',
               'jsxFactory',
@@ -168,7 +172,9 @@ export function sortTsconfig(): TypedFlatConfigItem[] {
               'emitDecoratorMetadata',
               'experimentalDecorators',
               'libReplacement',
-              /* Modules */
+              /*
+              Modules
+              */
               'baseUrl',
               'rootDir',
               'rootDirs',
@@ -186,11 +192,15 @@ export function sortTsconfig(): TypedFlatConfigItem[] {
               'allowArbitraryExtensions',
               'allowImportingTsExtensions',
               'allowUmdGlobalAccess',
-              /* JavaScript Support */
+              /*
+              JavaScript Support
+              */
               'allowJs',
               'checkJs',
               'maxNodeModuleJsDepth',
-              /* Type Checking */
+              /*
+              Type Checking
+              */
               'strict',
               'strictBindCallApply',
               'strictFunctionTypes',
@@ -210,7 +220,9 @@ export function sortTsconfig(): TypedFlatConfigItem[] {
               'noUnusedLocals',
               'noUnusedParameters',
               'useUnknownInCatchVariables',
-              /* Emit */
+              /*
+              Emit
+              */
               'declaration',
               'declarationDir',
               'declarationMap',
@@ -234,7 +246,9 @@ export function sortTsconfig(): TypedFlatConfigItem[] {
               'sourceMap',
               'sourceRoot',
               'stripInternal',
-              /* Interop Constraints */
+              /*
+              Interop Constraints
+              */
               'allowSyntheticDefaultImports',
               'esModuleInterop',
               'forceConsistentCasingInFileNames',
@@ -243,7 +257,9 @@ export function sortTsconfig(): TypedFlatConfigItem[] {
               'preserveSymlinks',
               'verbatimModuleSyntax',
               'erasableSyntaxOnly',
-              /* Completeness */
+              /*
+              Completeness
+              */
               'skipDefaultLibCheck',
               'skipLibCheck',
             ],

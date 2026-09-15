@@ -55,7 +55,7 @@ export function isPackageInScope(name: string): boolean {
 }
 
 export async function ensurePackages(packages: (string | undefined)[]): Promise<void> {
-  if (process.env.CI || !process.stdout.isTTY || !isCwdInScope) {
+  if (!isCwdInScope || process.env.CI || !process.stdout.isTTY) {
     return;
   }
 
