@@ -48,14 +48,12 @@ export async function run(options: CliRunOptions = {}): Promise<void> {
   if (!argSkipPrompt) {
     result = await p.group({
       uncommittedConfirmed: async () => {
-        if (isGitClean()) {
-          return true;
-        }
-
-        return p.confirm({
-          initialValue: false,
-          message: 'There are uncommitted changes in the current repository, are you sure to continue?',
-        });
+        return isGitClean()
+          ? true
+          : p.confirm({
+              initialValue: false,
+              message: 'There are uncommitted changes in the current repository, are you sure to continue?',
+            });
       },
       frameworks: async ({ results }) => {
         const isArgTemplateValid
@@ -93,14 +91,12 @@ export async function run(options: CliRunOptions = {}): Promise<void> {
         });
       },
       updateVscodeSettings: async ({ results }) => {
-        if (!results.uncommittedConfirmed) {
-          return;
-        }
-
-        return p.confirm({
-          initialValue: true,
-          message: 'Update .vscode/settings.json for better VS Code experience?',
-        });
+        return results.uncommittedConfirmed
+          ? p.confirm({
+              initialValue: true,
+              message: 'Update .vscode/settings.json for better VS Code experience?',
+            })
+          : undefined;
       },
     }, {
       onCancel: () => {

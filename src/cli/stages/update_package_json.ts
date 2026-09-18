@@ -48,11 +48,9 @@ export async function updatePackageJson(result: PromptResult): Promise<void> {
 
   for (const framework of result.frameworks) {
     const deps = dependenciesMap[framework];
-    if (deps.length > 0) {
-      for (const f of deps) {
-        pkg.devDependencies[f] = versionsMap[f as keyof typeof versionsMap];
-        addedPackages.push(f);
-      }
+    for (const f of deps) {
+      pkg.devDependencies[f] = versionsMap[f as keyof typeof versionsMap];
+      addedPackages.push(f);
     }
   }
 

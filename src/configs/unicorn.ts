@@ -64,6 +64,7 @@ export function unicorn(options: OptionsUnicorn = {}): TypedFlatConfigItem[] {
         'unicorn/name-replacements': 'off',
         // Disable because match other functions with object is not array
         'unicorn/no-array-reduce': 'off',
+        'unicorn/no-immediate-mutation': 'off',
         // Disable because conflict withadonisjs naming convention
         'unicorn/no-non-function-verb-prefix': 'off',
         'unicorn/no-null': 'off',

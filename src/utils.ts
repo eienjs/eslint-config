@@ -71,29 +71,25 @@ export async function ensurePackages(packages: (string | undefined)[]): Promise<
     message: `${packagesMissingPlural} required for this config: ${packagesMissing}. Do you want to install them?`,
   });
 
-  if (result) {
-    const i = await import('@antfu/install-pkg');
-    await i.installPackage(nonExistingPackages, { dev: true });
+  if (!result) {
+    return;
   }
+
+  const i = await import('@antfu/install-pkg');
+  await i.installPackage(nonExistingPackages, { dev: true });
 }
 
 export function isInEditorEnv(): boolean {
-  if (process.env.CI) {
-    return false;
-  }
-
-  if (isInGitHooksOrLintStaged()) {
-    return false;
-  }
-
-  return Boolean(
-    process.env.VSCODE_PID
-    || process.env.VSCODE_CWD
-    || process.env.JETBRAINS_IDE
-    || process.env.VIM
-    || process.env.NVIM
-    || (process.env.ZED_ENVIRONMENT && !process.env.ZED_TERM),
-  );
+  return process.env.CI || isInGitHooksOrLintStaged()
+    ? false
+    : Boolean(
+        process.env.VSCODE_PID
+        || process.env.VSCODE_CWD
+        || process.env.JETBRAINS_IDE
+        || process.env.VIM
+        || process.env.NVIM
+        || (process.env.ZED_ENVIRONMENT && !process.env.ZED_TERM),
+      );
 }
 
 export function isInGitHooksOrLintStaged(): boolean {
