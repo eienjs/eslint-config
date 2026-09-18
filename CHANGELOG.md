@@ -5,12 +5,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [v2.1.4](https://github.com/eienjs/eslint-config/compare/v2.1.3...v2.1.4)
+## [v2.2.0](https://github.com/eienjs/eslint-config/compare/v2.1.4...v2.2.0)
+
+### Commits
+
+- chore: :arrow_up: update dependencies and workspace configuration [`f955d28`](https://github.com/eienjs/eslint-config/commit/f955d286334acf930402c38a4208dd1618a9a470)
+- refactor: :recycle: simplify CLI logic and configuration structure while updating dependencies [`5e8ded9`](https://github.com/eienjs/eslint-config/commit/5e8ded940c1142dc6ddbab0397a869da0e69168b)
+- feat: add stylistic option and update pnpm-workspace.yaml sort keys [`fd75c00`](https://github.com/eienjs/eslint-config/commit/fd75c004e83f67a43cf30d612c11f21d17f3f509)
+- chore: :arrow_up: bump dependency versions in versionsMap [`c1cf96e`](https://github.com/eienjs/eslint-config/commit/c1cf96e95a0721753207dd1798fbba6d2d0ea89f)
+
+## [v2.1.4](https://github.com/eienjs/eslint-config/compare/v2.1.3...v2.1.4) - 2026-07-10
 
 ### Commits
 
 - chore: :arrow_up: update dependencies [`3979f30`](https://github.com/eienjs/eslint-config/commit/3979f30491c16ff8c683b6b3b562b491e2a8f36e)
 - fix: :bug: resolve some issues with bad rule on unicorn, and rules support to adonisjs v7 [`e124771`](https://github.com/eienjs/eslint-config/commit/e1247718d2c34959cd87c9d23b6148b2f76c7fd3)
+- chore(release): :tada: v2.1.4 [`0b916d4`](https://github.com/eienjs/eslint-config/commit/0b916d4c5b87761bba6a6bdd150f1a4ac81e1666)
 - refactor: :recycle: remove not used dependency plugin [`822bd14`](https://github.com/eienjs/eslint-config/commit/822bd14d3303589d126104381fdd2c8e6513a0ec)
 - build: :fire: remove duplicated script on build [`53803f5`](https://github.com/eienjs/eslint-config/commit/53803f5afedb929891118e8008a8629139ecddb7)
 
