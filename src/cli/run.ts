@@ -48,12 +48,14 @@ export async function run(options: CliRunOptions = {}): Promise<void> {
   if (!argSkipPrompt) {
     result = await p.group({
       uncommittedConfirmed: async () => {
-        return isGitClean()
-          ? true
-          : p.confirm({
-              initialValue: false,
-              message: 'There are uncommitted changes in the current repository, are you sure to continue?',
-            });
+        if (isGitClean()) {
+          return true;
+        }
+
+        return p.confirm({
+          initialValue: false,
+          message: 'There are uncommitted changes in the current repository, are you sure to continue?',
+        });
       },
       frameworks: async ({ results }) => {
         const isArgTemplateValid

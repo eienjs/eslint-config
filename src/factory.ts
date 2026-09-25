@@ -91,11 +91,10 @@ export function eienjs(
     }
   }
 
-  const stylisticOptions = options.stylistic === false
-    ? false
-    : (typeof options.stylistic === 'object'
-        ? options.stylistic
-        : {});
+  let { stylistic: stylisticOptions } = options;
+  if (stylisticOptions === true || stylisticOptions === undefined) {
+    stylisticOptions = {};
+  }
 
   const configs: Awaitable<TypedFlatConfigItem[]>[] = [];
 

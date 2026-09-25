@@ -36,7 +36,6 @@ export async function updatePackageJson(result: PromptResult): Promise<void> {
         ...(result.frameworks.includes('astro') ? dependenciesMap.formatterAstro : []),
       ] as const)) {
         if (!f) {
-          // eslint-disable-next-line unicorn/no-break-in-nested-loop
           continue;
         }
 

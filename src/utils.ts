@@ -80,16 +80,20 @@ export async function ensurePackages(packages: (string | undefined)[]): Promise<
 }
 
 export function isInEditorEnv(): boolean {
-  return process.env.CI || isInGitHooksOrLintStaged()
-    ? false
-    : Boolean(
-        process.env.VSCODE_PID
-        || process.env.VSCODE_CWD
-        || process.env.JETBRAINS_IDE
-        || process.env.VIM
-        || process.env.NVIM
-        || (process.env.ZED_ENVIRONMENT && !process.env.ZED_TERM),
-      );
+  if (process.env.CI || isInGitHooksOrLintStaged()) {
+    return false;
+  }
+
+  const isInEditor = Boolean(
+    process.env.VSCODE_PID
+    || process.env.VSCODE_CWD
+    || process.env.JETBRAINS_IDE
+    || process.env.VIM
+    || process.env.NVIM
+    || (process.env.ZED_ENVIRONMENT && !process.env.ZED_TERM),
+  );
+
+  return isInEditor;
 }
 
 export function isInGitHooksOrLintStaged(): boolean {
