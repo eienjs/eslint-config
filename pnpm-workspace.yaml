@@ -21,18 +21,18 @@ allowBuilds:
 
 catalogs:
   dev:
-    '@commitlint/cli': ^21.2.2
-    '@commitlint/config-conventional': ^21.2.2
+    '@commitlint/cli': ^21.2.3
+    '@commitlint/config-conventional': ^21.2.3
     '@eslint/config-inspector': ^3.5.0
-    '@types/node': ^24.13.5
+    '@types/node': ^24.13.6
     auto-changelog: ^2.6.1
-    baseline-browser-mapping: ^2.11.24
+    baseline-browser-mapping: ^2.11.25
     eslint-typegen: ^2.3.1
     husky: ^9.1.7
     pnpm-workspace-yaml: ^1.9.1
-    release-it: ^21.0.3
+    release-it: ^21.1.0
     tsdown: ^0.23.0
-    tsx: ^4.23.13
+    tsx: ^4.23.15
     typescript: ^6.0.3
   inline:
     find-up-simple: ^1.0.1
@@ -44,9 +44,9 @@ catalogs:
     '@typescript-eslint/types': ^8.70.0
     '@typescript-eslint/utils': ^8.70.0
     astro-eslint-parser: ^3.1.0
-    eslint: ^10.10.0
+    eslint: ^10.11.0
     eslint-plugin-astro: ^3.2.1
-    eslint-plugin-erasable-syntax-only: ^0.7.1
+    eslint-plugin-erasable-syntax-only: ^0.7.2
     eslint-plugin-format: ^2.0.1
     prettier-plugin-astro: ^1.0.1
   prod:
@@ -56,8 +56,8 @@ catalogs:
     '@eslint-community/eslint-plugin-eslint-comments': ^4.8.1
     '@eslint/markdown': ^8.0.3
     '@stylistic/eslint-plugin': ^5.10.0
-    '@typescript-eslint/eslint-plugin': ^8.70.0
-    '@typescript-eslint/parser': ^8.70.0
+    '@typescript-eslint/eslint-plugin': ^8.70.1
+    '@typescript-eslint/parser': ^8.70.1
     '@vitest/eslint-plugin': ^1.6.27
     ansis: ^4.4.0
     cac: ^7.0.0
@@ -67,17 +67,17 @@ catalogs:
     eslint-plugin-antfu: ^3.2.3
     eslint-plugin-command: ^4.0.0
     eslint-plugin-import-lite: ^0.6.0
-    eslint-plugin-jsdoc: ^64.5.2
+    eslint-plugin-jsdoc: ^64.5.4
     eslint-plugin-jsonc: ^3.4.2
     eslint-plugin-n: ^18.3.0
     eslint-plugin-no-only-tests: ^3.4.0
-    eslint-plugin-perfectionist: ^5.11.1
+    eslint-plugin-perfectionist: ^5.12.0
     eslint-plugin-pnpm: ^1.9.1
-    eslint-plugin-regexp: ^3.3.0
+    eslint-plugin-regexp: ^3.3.1
     eslint-plugin-toml: ^1.5.0
-    eslint-plugin-unicorn: ^75.0.0
+    eslint-plugin-unicorn: ^76.0.0
     eslint-plugin-unused-imports: ^4.4.1
-    eslint-plugin-vue: ^10.11.0
+    eslint-plugin-vue: ^10.11.1
     eslint-plugin-yml: ^3.8.1
     eslint-processor-vue-blocks: ^2.0.0
     globals: ^17.12.0
