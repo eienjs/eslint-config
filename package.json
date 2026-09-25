@@ -1,7 +1,7 @@
 {
   "name": "@eienjs/eslint-config",
   "type": "module",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "packageManager": "pnpm@12.6.0",
   "description": "EienJS ESLint Config",
   "author": "Fernando Isidro <luffynando@gmail.com> (https://github.com/luffynando/)",

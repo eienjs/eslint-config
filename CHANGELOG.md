@@ -5,13 +5,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [v2.2.0](https://github.com/eienjs/eslint-config/compare/v2.1.4...v2.2.0)
+## [v2.2.1](https://github.com/eienjs/eslint-config/compare/v2.2.0...v2.2.1)
+
+### Commits
+
+- chore: :arrow_up: update dependencies [`99028a8`](https://github.com/eienjs/eslint-config/commit/99028a8265d9f23e3af2332810842b808bdbf9e6)
+- refactor: :recycle: simplify conditional logic and options parsing across codebase [`071d0b2`](https://github.com/eienjs/eslint-config/commit/071d0b2a4e73fe9ab2155e50826cb97e591990ae)
+
+## [v2.2.0](https://github.com/eienjs/eslint-config/compare/v2.1.4...v2.2.0) - 2026-09-18
 
 ### Commits
 
 - chore: :arrow_up: update dependencies and workspace configuration [`f955d28`](https://github.com/eienjs/eslint-config/commit/f955d286334acf930402c38a4208dd1618a9a470)
 - refactor: :recycle: simplify CLI logic and configuration structure while updating dependencies [`5e8ded9`](https://github.com/eienjs/eslint-config/commit/5e8ded940c1142dc6ddbab0397a869da0e69168b)
 - feat: add stylistic option and update pnpm-workspace.yaml sort keys [`fd75c00`](https://github.com/eienjs/eslint-config/commit/fd75c004e83f67a43cf30d612c11f21d17f3f509)
+- chore(release): :tada: v2.2.0 [`ee93c09`](https://github.com/eienjs/eslint-config/commit/ee93c09165bf5be1ecba07d4e9c3b0cd698cb4ce)
 - chore: :arrow_up: bump dependency versions in versionsMap [`c1cf96e`](https://github.com/eienjs/eslint-config/commit/c1cf96e95a0721753207dd1798fbba6d2d0ea89f)
 
 ## [v2.1.4](https://github.com/eienjs/eslint-config/compare/v2.1.3...v2.1.4) - 2026-07-10
