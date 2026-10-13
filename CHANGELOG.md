@@ -5,12 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [v2.2.1](https://github.com/eienjs/eslint-config/compare/v2.2.0...v2.2.1)
+## [v2.3.0](https://github.com/eienjs/eslint-config/compare/v2.2.1...v2.3.0)
+
+### Commits
+
+- refactor: :recycle: remove e18e eslint plugin and update dependencies [`9abaec2`](https://github.com/eienjs/eslint-config/commit/9abaec2aefa4ab7865ed80f1909a3d294e0c6f03)
+- feat: :sparkles: update nuxt eslint rules and disable unicorn/prefer-ternary [`be3e28f`](https://github.com/eienjs/eslint-config/commit/be3e28f46488874dd1c08edf65557697ba133987)
+
+## [v2.2.1](https://github.com/eienjs/eslint-config/compare/v2.2.0...v2.2.1) - 2026-09-24
 
 ### Commits
 
 - chore: :arrow_up: update dependencies [`99028a8`](https://github.com/eienjs/eslint-config/commit/99028a8265d9f23e3af2332810842b808bdbf9e6)
 - refactor: :recycle: simplify conditional logic and options parsing across codebase [`071d0b2`](https://github.com/eienjs/eslint-config/commit/071d0b2a4e73fe9ab2155e50826cb97e591990ae)
+- chore(release): :tada: v2.2.1 [`6b77969`](https://github.com/eienjs/eslint-config/commit/6b77969c5f83330ceccbe91f4acc4f795cf80538)
 
 ## [v2.2.0](https://github.com/eienjs/eslint-config/compare/v2.1.4...v2.2.0) - 2026-09-18
 
