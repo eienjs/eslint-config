@@ -91,7 +91,6 @@ export async function markdown(
         'unicode-bom': 'off',
         'unicorn/no-top-level-side-effects': 'off',
         'unused-imports/no-unused-imports': 'off',
-        'unused-imports/no-unused-vars': 'off',
         ...overrides,
       },
     },

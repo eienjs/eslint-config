@@ -39,7 +39,6 @@ export function disables(): TypedFlatConfigItem[] {
       rules: {
         '@eslint-community/eslint-comments/no-unlimited-disable': 'off',
         'no-restricted-syntax': 'off',
-        'unused-imports/no-unused-vars': 'off',
       },
     },
     {

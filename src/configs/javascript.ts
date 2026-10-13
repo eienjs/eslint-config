@@ -177,7 +177,13 @@ export function javascript(
           allowTaggedTemplates: true,
           allowTernary: true,
         }],
-        'no-unused-vars': 'off',
+        'no-unused-vars': ['error', {
+          args: 'after-used',
+          argsIgnorePattern: '^_',
+          ignoreRestSiblings: true,
+          vars: 'all',
+          varsIgnorePattern: '^_',
+        }],
         'no-use-before-define': ['error', { classes: false, functions: false, variables: true }],
         'no-useless-backreference': 'error',
         'no-useless-call': 'error',
@@ -235,16 +241,6 @@ export function javascript(
         'unicode-bom': ['error', 'never'],
 
         'unused-imports/no-unused-imports': isInEditor ? 'warn' : 'error',
-        'unused-imports/no-unused-vars': [
-          'error',
-          {
-            args: 'after-used',
-            argsIgnorePattern: '^_',
-            ignoreRestSiblings: true,
-            vars: 'all',
-            varsIgnorePattern: '^_',
-          },
-        ],
 
         'use-isnan': ['error', { enforceForIndexOf: true, enforceForSwitchCase: true }],
         'valid-typeof': ['error', { requireStringLiterals: true }],

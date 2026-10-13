@@ -178,7 +178,6 @@ export async function adonisjs(
         '@typescript-eslint/no-unsafe-assignment': 'off',
         '@typescript-eslint/no-unsafe-return': 'off',
         'no-restricted-syntax': 'off',
-        'unused-imports/no-unused-vars': 'off',
       },
     },
     {

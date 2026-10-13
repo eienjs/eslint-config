@@ -75,6 +75,8 @@ export function unicorn(options: OptionsUnicorn = {}): TypedFlatConfigItem[] {
         'unicorn/no-thenable': 'off',
         'unicorn/no-this-assignment': 'off',
         'unicorn/no-this-outside-of-class': 'off',
+        'unicorn/no-top-level-assignment-in-function': 'off',
+        'unicorn/no-top-level-side-effects': 'off',
         // Dificult read a number
         'unicorn/numeric-separators-style': 'off',
         'unicorn/prefer-await': 'off',

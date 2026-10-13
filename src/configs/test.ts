@@ -23,7 +23,7 @@ export async function test(
     interopDefault<{ rules: Record<string, unknown> }>(import('eslint-plugin-no-only-tests')),
   ] as const);
 
-  // eslint-disable-next-line unicorn/logical-assignment-operators, unicorn/no-top-level-assignment-in-function
+  // eslint-disable-next-line unicorn/logical-assignment-operators
   _pluginTest = _pluginTest || {
     ...pluginVitest,
     rules: {
