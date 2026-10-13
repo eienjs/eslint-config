@@ -2,7 +2,7 @@
   "name": "@eienjs/eslint-config",
   "type": "module",
   "version": "2.2.1",
-  "packageManager": "pnpm@12.6.0",
+  "packageManager": "pnpm@12.11.2",
   "description": "EienJS ESLint Config",
   "author": "Fernando Isidro <luffynando@gmail.com> (https://github.com/luffynando/)",
   "license": "MIT",
@@ -87,7 +87,6 @@
   "dependencies": {
     "@antfu/install-pkg": "catalog:prod",
     "@clack/prompts": "catalog:prod",
-    "@e18e/eslint-plugin": "catalog:prod",
     "@eslint-community/eslint-plugin-eslint-comments": "catalog:prod",
     "@eslint/markdown": "catalog:prod",
     "@stylistic/eslint-plugin": "catalog:prod",
