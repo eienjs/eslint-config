@@ -84,6 +84,9 @@ export async function nuxt(
     'video',
   ];
 
+  const filePages = (dirs.pages.map((pagesDir) => join(pagesDir, `**/*.${GLOB_EXTS}`)))
+    .toSorted((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' }));
+
   return [
     {
       languageOptions: {
@@ -102,7 +105,7 @@ export async function nuxt(
             files: fileSingleRoot,
             name: 'eienjs/nuxt/vue/single-root',
             rules: {
-              'vue/no-multiple-template-root': 'error',
+              'vue/no-multiple-template-root': ['error', { disallowComments: true }],
             },
           } as TypedFlatConfigItem,
         ]
@@ -115,16 +118,40 @@ export async function nuxt(
       },
     },
     {
+      files: [
+        '**/.config/nuxt.?([cm])[jt]s?(x)',
+        '**/nuxt.config.?([cm])[jt]s?(x)',
+      ],
+      name: 'eienjs/nuxt/nuxt-config',
+      rules: {
+        'nuxt/no-nuxt-config-test-key': 'error',
+      },
+    },
+    {
       files: dirs.utils.map((utilsDir) => join(utilsDir, GLOB_SRC)),
       name: 'eienjs/nuxt/utils-disables',
       rules: {
         '@typescript-eslint/explicit-module-boundary-types': 'off',
       },
     },
+    ...filePages.length > 0
+      ? [
+          {
+            files: filePages,
+            name: 'eienjs/nuxt/pages',
+            rules: {
+              'nuxt/no-page-meta-runtime-values': 'error',
+            },
+          } as TypedFlatConfigItem,
+        ]
+      : [],
     ...sortConfigKeys
       ? [
           {
-            files: ['**/nuxt.config.?([cm])[jt]s?(x)'],
+            files: [
+              '**/.config/nuxt.?([cm])[jt]s?(x)',
+              '**/nuxt.config.?([cm])[jt]s?(x)',
+            ],
             name: 'eienjs/nuxt/sort-config',
             rules: {
               'nuxt/nuxt-config-keys-order': 'error',

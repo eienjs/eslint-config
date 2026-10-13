@@ -89,6 +89,7 @@ export function unicorn(options: OptionsUnicorn = {}): TypedFlatConfigItem[] {
         'unicorn/prefer-modern-dom-apis': 'off',
         'unicorn/prefer-query-selector': 'off',
         'unicorn/prefer-switch': ['error', { emptyDefaultCase: 'do-nothing-comment' }],
+        'unicorn/prefer-ternary': 'off',
         'unicorn/prefer-top-level-await': 'off',
         'unicorn/prefer-uint8array-base64': 'off',
         ...overrides,
