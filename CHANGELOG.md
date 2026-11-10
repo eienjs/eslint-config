@@ -5,11 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [v2.3.1](https://github.com/eienjs/eslint-config/compare/v2.3.0...v2.3.1)
+## [v2.3.2](https://github.com/eienjs/eslint-config/compare/v2.3.1...v2.3.2)
+
+### Commits
+
+- chore: :arrow_up: update pnpm version and dependencies [`d486538`](https://github.com/eienjs/eslint-config/commit/d48653893ee7064ad732510cf52d741494b749df)
+- docs: :memo: add documentation and release workflow for eslint-config [`863965a`](https://github.com/eienjs/eslint-config/commit/863965a73833267283cd6f8d198918dc6025b165)
+- chore: :arrow_up: update node engine requirements and dependency versions [`08bdaa6`](https://github.com/eienjs/eslint-config/commit/08bdaa676549d0fdd42869ea454148aece9750bf)
+
+## [v2.3.1](https://github.com/eienjs/eslint-config/compare/v2.3.0...v2.3.1) - 2026-10-12
 
 ### Commits
 
 - refactor: :recycle: replace unused-imports/no-unused-vars and update unicorn disables [`c29063f`](https://github.com/eienjs/eslint-config/commit/c29063fe6197111e2bcdb8ca957878d776619a00)
+- chore(release): :tada: v2.3.1 [`d15110d`](https://github.com/eienjs/eslint-config/commit/d15110de2dc71e5b9dbd632fe95082f4b1bfbc09)
 
 ## [v2.3.0](https://github.com/eienjs/eslint-config/compare/v2.2.1...v2.3.0) - 2026-10-12
 
