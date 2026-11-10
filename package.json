@@ -202,5 +202,10 @@
         "pnpm run changelog"
       ]
     }
+  },
+  "eienjs": {
+    "title": "ESLint Config",
+    "icon": "i-tabler-list-check",
+    "category": "tooling"
   }
 }
